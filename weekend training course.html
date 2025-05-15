@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weekend Training Courses - Software Institute</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f4f4; /* Page background from user's training page */
+      color: #333;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex; /* For sticky footer */
+      flex-direction: column; /* For sticky footer */
+    }
+
+    a { /* General link styling for content, not header/footer */
+      color: #007bff; /* Default link color for content */
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #0056b3; /* Darker blue on hover */
+    }
+
+    /* Header Styles (Standardized Fixed Header) */
+    header {
+      background-color: #1e1e2f;
+      color: #fff;
+      padding: 1rem 2rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    header nav { /* Targets the nav element within the header */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #f9dc5c;
+      margin: 0;
+    }
+
+    .logo h6 {
+      font-size: 0.9rem;
+      color: #cccccc;
+      font-style: italic;
+      margin: 0;
+    }
+
+    ul.nav-links { /* Standardized nav links container */
+      list-style: none;
+      display: flex;
+      gap: 0.5rem; 
+      padding: 0;
+      margin: 0;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    ul.nav-links li a { /* Standardized nav link items */
+      color: #fff; 
+      text-decoration: none;
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+      font-weight: bold; 
+      transition: background-color 0.3s, color 0.3s;
+      display: block;
+    }
+
+    ul.nav-links li a:hover { 
+      background-color: #f9dc5c;
+      color: #1e1e2f;
+    }
+
+    .section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      margin-bottom: 2px;
+    }
+
+    .section h2 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 30px;
+      color: #00bcd4;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+    }
+
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background-color: #dbeeff;
+      font-weight: bold;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    /* Updated .register class to style the link within the cell */
+    .register a {
+      color: red;
+      cursor: pointer;
+      text-decoration: underline;
+      font-weight: bold; /* Making it slightly more prominent */
+    }
+    .register a:hover {
+        color: darkred; /* Darken on hover */
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(28, 34, 56, 0.9);
+      color: #fff;
+      margin-top: 120px;
+    }
+  </style>
+</head>
+<body>
+
+  <header role="banner">
+    <nav role="navigation" aria-label="Main navigation">
+      <div class="logo">
+        <h1>Software Institute</h1>
+        <h6>Best Courses</h6>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html#Home">Home</a></li>
+        <li><a href="Course.html">All Courses</a></li>
+        <li><a href="Training.html" class="active">Software Training</a></li> <li><a href="projects.html">Projects</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="Login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="section">
+    <h2>Weekend Training Courses</h2>
+
+    <table>
+      <thead> <tr>
+          <th>Course</th>
+          <th>Time</th>
+          <th>Start Date</th>
+          <th>Duration</th>
+          <th>Registration</th>
+        </tr>
+      </thead>
+      <tbody> <tr>
+          <td>HTML</td>
+          <td>10:00 AM</td>
+          <td>--</td>
+          <td>1 Day</td>
+          <td class="register"><a href="register.html">Register</a></td>
+        </tr>
+        <tr>
+          <td>CSS</td>
+          <td>6:00 PM</td>
+          <td>--</td>
+          <td>5 Days</td>
+          <td class="register"><a href="register.html">Register</a></td>
+        </tr>
+        <tr>
+          <td>SQL</td>
+          <td>7:00 PM</td>
+          <td>--</td>
+          <td>4 Days</td>
+          <td class="register"><a href="register.html">Register</a></td>
+        </tr>
+        <tr>
+          <td>ReactJS</td>
+          <td>3:00 PM</td>
+          <td>--</td>
+          <td>2 Days</td>
+          <td class="register"><a href="register.html">Register</a></td>
+        </tr>
+        <tr>
+          <td>Core Java</td>
+          <td>12:00 PM</td>
+          <td>--</td>
+          <td>6 Weekends</td>
+          <td class="register"><a href="register.html">Register</a></td>
+        </tr>
+        <tr>
+          <td>Full Stack Java</td>
+          <td>8:00 AM</td>
+          <td>--</td>
+          <td>2 Weekends</td>
+          <td class="register"><a href="register.html">Register</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <footer>
+    &copy; 2025 Software Institute. All rights reserved.
+  </footer>
+
+</body>
+</html>

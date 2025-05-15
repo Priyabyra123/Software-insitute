@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Software Institute | HTML, CSS, JS Courses</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* General Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif; /* Font from user's new page */
+      background: #f4f7fa; /* Background from user's new page */
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header Styles (Standardized Fixed Header) */
+    header {
+      background-color: #1e1e2f; /* Standardized header background */
+      color: #fff;
+      padding: 1rem 2rem; /* Standardized padding */
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    header nav { /* Targets the nav within the header */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 { /* Standardized logo h1 */
+      font-size: 1.8rem; /* Standardized size */
+      font-weight: bold;
+      color: #f9dc5c; /* Standardized color */
+      margin: 0;
+      letter-spacing: normal; /* Reset letter-spacing if not desired from user's .logo */
+    }
+
+    .logo h6 { /* Standardized logo h6 */
+      font-size: 0.9rem;
+      color: #cccccc;
+      font-style: italic;
+      margin: 0;
+    }
+
+    ul.nav-links { /* Standardized nav links container */
+      list-style: none;
+      display: flex;
+      gap: 0.5rem; 
+      padding: 0;
+      margin: 0;
+      align-items: center;
+    }
+
+    ul.nav-links li a { /* Standardized nav link items */
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+      font-weight: bold; /* Standardized font-weight */
+      transition: background-color 0.3s, color 0.3s;
+      display: block;
+    }
+
+    ul.nav-links li a:hover{
+      background-color: #f9dc5c;
+      color: #1e1e2f;
+    }
+    
+    /* Main Content Styles */
+    main {
+      padding-top: 7rem; /* Adjusted for fixed header */
+      flex-grow: 1;
+    }
+
+    /* Hero Section Styles (from user's new page) */
+    .hero {
+      text-align: center;
+      padding: 60px 20px; /* Adjusted padding slightly */
+      background: linear-gradient(135deg, #3b82f6, #1e40af);
+      color: white;
+      margin-bottom: 30px; /* Space below hero */
+    }
+
+    .hero h1 {
+      font-size: 2.5rem; /* Adjusted font size */
+      font-weight: 700; /* User's Poppins font has good weight options */
+    }
+
+    /* Courses Section Styles (from user's new page) */
+    .courses-section { /* Renamed class to avoid conflict if 'courses' is too generic */
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px; /* Reduced padding as hero has margin-bottom */
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      width: 320px;
+      max-width: calc(100% - 20px); /* Ensure card fits on smaller screens with padding */
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08); /* Softer shadow */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card:hover {
+      transform: translateY(-8px); /* Slightly less lift */
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12); /* Softer hover shadow */
+    }
+
+    .card h2 {
+      color: #1e3a8a;
+      font-size: 1.3rem; /* Slightly larger */
+      margin-bottom: 15px; /* More space */
+    }
+
+    .card p {
+      font-size: 0.95rem; /* Adjusted for Poppins */
+      line-height: 1.7; /* Increased line height */
+      margin-bottom: 25px; /* More space */
+      color: #4a5568; /* Softer text color */
+    }
+    
+    .card ul { /* Styling for lists within cards if any are added */
+        list-style-position: inside;
+        padding-left: 0;
+    }
+    .card ul li {
+        margin-bottom: 5px;
+    }
+
+
+    .card .btn {
+      background-color: #1e3a8a;
+      color: white;
+      padding: 12px 22px; /* Adjusted padding */
+      border-radius: 25px;
+      border: none;
+      font-size: 0.9rem; /* Adjusted for Poppins */
+      font-weight: 600; /* Good weight for Poppins button text */
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      text-align: center;
+      text-decoration: none; /* Ensure links styled as buttons don't have underlines */
+      display: inline-block; /* For proper padding and centering if needed */
+      margin-top: auto; /* Pushes button to the bottom if card content varies */
+    }
+
+    .card .btn:hover {
+      background-color: #2563eb;
+      transform: translateY(-2px); /* Slight lift on hover */
+    }
+
+    /* Footer Styles (Standardized) */
+    footer {
+      background-color: #2a2a3d; /* Standardized footer background */
+      color: #ffffff;
+      text-align: center;
+      padding: 1.5rem;
+      font-weight: bold; /* Standardized */
+      font-size: 1rem; /* Standardized */
+      margin-top: 40px; /* Ensure space above footer */
+      border-top: 2px solid #f9dc5c; /* Standardized */
+      width: 100%;
+    }
+
+    /* Responsive Media Queries */
+    @media (max-width: 768px) {
+      /* Standardized Header Responsive */
+      header {
+        padding: 1rem;
+      }
+      header nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      .logo {
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      .logo h1 { font-size: 1.6rem; }
+      .logo h6 { font-size: 0.8rem; }
+
+      ul.nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        margin-top: 10px;
+        align-items: center;
+      }
+      ul.nav-links li {
+        width: 80%;
+        max-width: 300px;
+      }
+      ul.nav-links li a {
+        font-size: 1rem;
+        display: block;
+        text-align: center;
+        padding: 0.75rem;
+      }
+      
+      main {
+        padding-top: 15rem; /* Increased top padding for taller mobile header */
+      }
+
+      /* Page Specific Responsive */
+      .hero h1 {
+        font-size: 2rem; /* Adjust hero heading for mobile */
+      }
+      .courses-section {
+        flex-direction: column; /* Stack cards on mobile */
+        align-items: center; /* Center cards when stacked */
+        padding: 20px 10px; /* Adjust padding */
+      }
+      .card {
+        width: 90%; /* Make cards wider on mobile */
+        max-width: 350px; /* Max width for cards on mobile */
+      }
+    }
+
+     @media (max-width: 480px) {
+        .logo h1 {
+            font-size: 1.4rem;
+        }
+        ul.nav-links li a {
+            font-size: 0.9rem;
+            padding: 0.6rem;
+        }
+        main {
+             padding-top: 14rem; /* Adjust if header is still too tall */
+        }
+        .hero h1 {
+            font-size: 1.8rem;
+        }
+        .card h2 {
+            font-size: 1.15rem;
+        }
+        .card p {
+            font-size: 0.9rem;
+        }
+        .card .btn {
+            font-size: 0.85rem;
+            padding: 10px 18px;
+        }
+    }
+  </style>
+</head>
+<body>
+
+  <header role="banner">
+    <nav role="navigation" aria-label="Main navigation">
+      <div class="logo">
+        <h1>Software Institute</h1>
+        <h6>Best Courses</h6>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html#Home">Home</a></li>
+        <li><a href="Course.html">All Courses</a></li>
+        <li><a href="Training.html">Software Training</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li> <li><a href="services.html">Services</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="Login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main role="main">
+    <section class="hero">
+      <h1>HTML, CSS & JavaScript Course Content</h1>
+      <p style="font-size: 1.1rem; margin-top: 10px;">Dive deep into the foundational technologies of web development.</p>
+    </section>
+
+    <section class="courses-section">
+      <div class="card">
+        <h2>HTML: HyperText Markup Language</h2>
+        <p>
+          Learn the structure of web pages with HTML. This module covers: <br>
+          • Introduction to HTML & Basic Syntax<br>
+          • Essential Elements, Tags, and Attributes<br>
+          • Creating Forms, Tables, and Lists<br>
+          • Embedding Media (Images, Video, Audio)<br>
+          • Understanding Semantic HTML5 Elements<br>
+          • Best Practices for SEO-friendly HTML
+        </p>
+        <a href="Login.html" class="btn">Enroll in HTML</a>
+      </div>
+
+      <div class="card">
+        <h2>CSS: Cascading Style Sheets</h2>
+        <p>
+          Style your web pages and make them visually appealing with CSS. Topics include:<br>
+          • CSS Syntax, Selectors, and Specificity<br>
+          • The Box Model (Padding, Margin, Border)<br>
+          • Layout Techniques: Flexbox and CSS Grid<br>
+          • Styling Text, Colors, and Backgrounds<br>
+          • Responsive Design with Media Queries<br>
+          • CSS Transitions, Animations, and Transforms
+        </p>
+        <a href="Login.html" class="btn">Enroll in CSS</a>
+      </div>
+
+      <div class="card">
+        <h2>JavaScript: The Language of the Web</h2>
+        <p>
+          Add interactivity and dynamic behavior to your websites with JavaScript. Learn about:<br>
+          • Core JavaScript: Variables, Data Types, Operators<br>
+          • Control Flow: Conditional Statements and Loops<br>
+          • Functions and Scope<br>
+          • DOM Manipulation and Event Handling<br>
+          • Working with Arrays and Objects<br>
+          • Asynchronous JavaScript: Promises, async/await, Fetch API<br>
+          • Introduction to ES6+ Features
+        </p>
+        <a href="Login.html" class="btn">Enroll in JavaScript</a>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>&copy; 2025 Software Institute. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

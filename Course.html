@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Software Institute Courses</title>
+    <style>
+    /* General Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4; /* Background for the page content area */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      color: #333;
+    }
+
+    /* Header Styles (Standardized Fixed Header) */
+    header {
+      background-color: #1e1e2f; /* Standardized header background */
+      color: #fff;
+      padding: 1rem 2rem;
+      position: fixed; /* Standardized fixed header */
+      top: 0;
+      width: 100%;
+      z-index: 1000; /* Ensure header is above other content */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    header nav { /* Targets the nav within the header */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 { /* Standardized logo style */
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #f9dc5c;
+      margin: 0;
+    }
+
+    .logo h6 { /* Standardized tagline style */
+      font-size: 0.9rem;
+      color: #cccccc;
+      font-style: italic;
+      margin: 0;
+    }
+
+    ul.nav-links { /* Standardized nav links container */
+      list-style: none;
+      display: flex;
+      gap: 0.5rem; /* Slightly reduced gap for more links if needed */
+      padding: 0; /* Remove default padding */
+      margin: 0; /* Remove default margin */
+      align-items: center; /* Align items vertically */
+    }
+
+    ul.nav-links li a { /* Standardized nav link items */
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
+      display: block; /* Ensure padding is applied correctly */
+    }
+
+    ul.nav-links li a:hover { /* Style for hover and active state */
+      background-color: #f9dc5c;
+      color: #1e1e2f;
+    }
+    
+    /* Main content wrapper */
+    main {
+      padding-top: 7rem; /* Adjusted for fixed header (approx height: 1rem padding + 1.8rem h1 + 0.9rem h6 + 1rem padding ~4.7rem, plus buffer) */
+      flex-grow: 1;
+      width: 100%;
+    }
+
+    /* Courses Page Specific Styles (Card Container & Cards) - Unchanged */
+    .card-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      max-width: 1800px;
+      margin: 20px auto;
+      gap: 25px;
+      padding: 0 20px;
+    }
+
+    .course-card {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .course-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+    }
+
+    .course-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 1px solid #eee;
+    }
+
+    .course-card-content {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .course-card h2 {
+      font-size: 1.25rem;
+      margin: 0 0 10px 0;
+      color: #2c3e50;
+      line-height: 1.3;
+    }
+
+    .price {
+      font-size: 1.15rem;
+      margin: 0 0 15px 0;
+      color: #f57c00;
+      font-weight: bold;
+    }
+
+    .buy-btn {
+      display: block;
+      width: 100%;
+      padding: 12px 15px;
+      background: #8e24aa;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.3s ease, transform 0.2s ease;
+      margin-top: auto;
+    }
+
+    .buy-btn:hover {
+      background: #6a1b9a;
+      transform: scale(1.03);
+    }
+
+    /* Footer Styles (Standardized) - Unchanged */
+    footer {
+      background-color: #2a2a3d;
+      color: #ffffff;
+      text-align: center;
+      padding: 1.5rem;
+      font-weight: bold;
+      font-size: 1rem;
+      margin-top: auto;
+      border-top: 2px solid #f9dc5c;
+      width: 100%;
+    }
+    
+    /* Responsive Media Queries */
+    /* Standardized Header Responsive */
+    @media (max-width: 880px) { 
+      header {
+        padding: 1rem;
+      }
+      header nav { /* nav element itself */
+        flex-direction: column;
+        align-items: center;
+        width: 100%; 
+      }
+      .logo {
+        margin-bottom: 10px;
+        text-align: center; 
+      }
+      .logo h1 { font-size: 1.6rem; }
+      .logo h6 { font-size: 0.8rem; }
+
+      ul.nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        margin-top: 10px; 
+        align-items: center; 
+      }
+      ul.nav-links li {
+        width: 80%; 
+        max-width: 300px; 
+      }
+      ul.nav-links li a {
+        font-size: 1rem;
+        display: block;
+        text-align: center;
+        padding: 0.75rem;
+        width: 100%; 
+      }
+      
+      main {
+        /* Adjust top padding for taller fixed header on mobile */
+        padding-top: 15rem; /* Increased from 7rem, adjust as needed */
+      }
+    }
+
+    /* Card Container Responsive Adjustments (from user's original CSS) - Unchanged */
+    @media (min-width: 501px) {
+        .card-container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (min-width: 769px) {
+        .card-container {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        /* Revert main padding-top if header is not stacked */
+        @media (min-width: 881px) { 
+            main {
+                padding-top: 7rem; /* Revert to desktop fixed header padding */
+            }
+        }
+    }
+
+    @media (min-width: 1025px) {
+        .card-container {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+    @media (min-width: 1401px) {
+        .card-container {
+            grid-template-columns: repeat(5, 1fr);
+        }
+    }
+    
+    /* Further responsive adjustments for very small screens if necessary */
+     @media (max-width: 480px) {
+        .logo h1 {
+            font-size: 1.4rem;
+        }
+        ul.nav-links li a {
+            font-size: 0.9rem;
+            padding: 0.6rem;
+        }
+        main {
+             padding-top: 14rem; /* Adjust if header is still too tall */
+        }
+        .course-card h2 {
+            font-size: 1.1rem;
+        }
+        .price {
+            font-size: 1rem;
+        }
+        .buy-btn {
+            font-size: 0.9rem;
+        }
+    }
+
+</style>
+</head>
+<body>
+
+    <header role="banner">
+        <nav role="navigation" aria-label="Main navigation">
+          <div class="logo">
+            <h1>Software Institute</h1>
+            <h6>Best Courses</h6>
+          </div>
+          <ul class="nav-links">
+            <li><a href="index.html#Home">Home</a></li>
+            <li><a href="Course.html" class="active">All Courses</a></li>
+            <li><a href="Training.html">Software Training</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="Login.html">Login</a></li>
+          </ul>
+        </nav>
+    </header>
+
+    <main role="main">
+        <div class="card-container">
+            <div class="course-card">
+                <img src="https://html.com/wp-content/uploads/html-hpg-featured-new.png" alt="HTML Course" onerror="this.onerror=null; this.src='https://placehold.co/600x180/cccccc/ffffff?text=HTML+Fundamentals';">
+                <div class="course-card-content">
+                    <h2>HTML Fundamentals</h2>
+                    <p class="price">$199.99</p>
+                    <button onclick="goToPayment('HTML Fundamentals')" class="buy-btn">Buy Now</button>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="https://cdn.mos.cms.futurecdn.net/Vp9WvV7YKdH4k8sKRePcE8-1200-80.jpg" alt="CSS Course" onerror="this.onerror=null; this.src='https://placehold.co/600x180/cccccc/ffffff?text=CSS+Styling';">
+                <div class="course-card-content">
+                    <h2>CSS Styling Techniques</h2>
+                    <p class="price">$199.99</p>
+                    <button onclick="goToPayment('CSS Styling Techniques')" class="buy-btn">Buy Now</button>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="https://c8.alamy.com/comp/2D9N00E/javascript-inscription-against-laptop-and-code-background-learn-javascript-programming-language-computer-courses-training-2D9N00E.jpg" alt="JavaScript Course" onerror="this.onerror=null; this.src='https://placehold.co/600x180/cccccc/ffffff?text=JavaScript';">
+                <div class="course-card-content">
+                    <h2>JavaScript Essentials</h2>
+                    <p class="price">$199.99</p>
+                    <button onclick="goToPayment('JavaScript Essentials')" class="buy-btn">Buy Now</button>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="https://wallpaperaccess.com/full/3949076.jpg" alt="React JS Course" onerror="this.onerror=null; this.src='https://placehold.co/600x180/cccccc/ffffff?text=React+JS';">
+                <div class="course-card-content">
+                    <h2>React JS Development</h2>
+                    <p class="price">$199.99</p>
+                    <button onclick="goToPayment('React JS Development')" class="buy-btn">Buy Now</button>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="https://itgizz.com/wp-content/uploads/2024/05/core-java-image.jpg" alt="Core Java Course" onerror="this.onerror=null; this.src='https://placehold.co/600x180/cccccc/ffffff?text=Core+Java';">
+                <div class="course-card-content">
+                    <h2>Core Java Programming</h2>
+                    <p class="price">$199.99</p>
+                    <button onclick="goToPayment('Core Java Programming')" class="buy-btn">Buy Now</button>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="https://knowasap.com/wp-content/uploads/2020/03/adv-ajva.png" alt="Advance Java Course" onerror="this.onerror=null; this.src='https://placehold.co/600x180/cccccc/ffffff?text=Advance+Java';">
+                <div class="course-card-content">
+                    <h2>Advance Java Concepts</h2>
+                    <p class="price">$199.99</p>
+                    <button onclick="goToPayment('Advance Java Concepts')" class="buy-btn">Buy Now</button>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="https://thehackpost.com/wp-content/uploads/2020/10/Top-7-Reasons-to-Use-Selenium-for-Automation-Testing.jpg" alt="Selenium Course" onerror="this.onerror=null; this.src='https://placehold.co/600x180/cccccc/ffffff?text=Selenium';">
+                <div class="course-card-content">
+                    <h2>Selenium Automation</h2>
+                    <p class="price">$199.99</p>
+                    <button onclick="goToPayment('Selenium Automation')" class="buy-btn">Buy Now</button>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="https://static.vecteezy.com/system/resources/previews/012/614/985/non_2x/hand-showing-sql-word-and-sql-structured-query-language-code-with-server-room-background-photo.jpg" alt="SQL Course" onerror="this.onerror=null; this.src='https://placehold.co/600x180/cccccc/ffffff?text=SQL+Databases';">
+                <div class="course-card-content">
+                    <h2>SQL Database Management</h2>
+                    <p class="price">$199.99</p>
+                    <button onclick="goToPayment('SQL Database Management')" class="buy-btn">Buy Now</button>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="https://swansoftwaresolutions.com/wp-content/uploads/2020/04/05.14.20-Meet-a-Full-Stack-Developer-Vlad-Ryba.jpg" alt="Full Stack Course" onerror="this.onerror=null; this.src='https://placehold.co/600x180/cccccc/ffffff?text=Full+Stack';">
+                <div class="course-card-content">
+                    <h2>Full Stack Development</h2>
+                    <p class="price">$199.99</p>
+                    <button onclick="goToPayment('Full Stack Development')" class="buy-btn">Buy Now</button>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <img src="https://images.yourstory.com/cs/2/96eabe90392211eb93f18319e8c07a74/DATAANALYTICS-1686234812978.png?fm=png&auto=format" alt="Data Analyst Course" onerror="this.onerror=null; this.src='https://placehold.co/600x180/cccccc/ffffff?text=Data+Analyst';">
+                <div class="course-card-content">
+                    <h2>Data Analyst Program</h2>
+                    <p class="price">$199.99</p>
+                    <button onclick="goToPayment('Data Analyst Program')" class="buy-btn">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer role="contentinfo">
+        &copy; 2025 Software Institute. All rights reserved.
+    </footer>
+
+    <script>
+        function goToPayment(courseName) {
+            // Construct the URL for the payment page, passing the course name as a query parameter
+            // Ensure the paymentmethod.html page exists or this will lead to a 404 error.
+            window.location.href = `paymentmethod.html?course=${encodeURIComponent(courseName)}`;
+        }
+    </script>
+
+</body>
+</html>

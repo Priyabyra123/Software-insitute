@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects | Software Institute</title>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* General Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f8ff; /* Page background from user's project page */
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header Styles (Standardized Fixed Header) */
+    header {
+      background-color: #1e1e2f; /* Standardized header background */
+      color: #fff;
+      padding: 1rem 2rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    header nav { /* Targets the nav element within the header */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 { /* Standardized logo h1 */
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #f9dc5c;
+      margin: 0;
+    }
+
+    .logo h6 { /* Standardized logo h6 */
+      font-size: 0.9rem;
+      color: #cccccc;
+      font-style: italic;
+      margin: 0;
+    }
+
+    ul.nav-links { /* Standardized nav links container */
+      list-style: none;
+      display: flex;
+      gap: 0.5rem; 
+      padding: 0;
+      margin: 0;
+      align-items: center;
+      flex-wrap: wrap; /* Allow nav links to wrap on smaller screens if necessary */
+    }
+
+    ul.nav-links li a { /* Standardized nav link items */
+      color: #fff; /* White text for links */
+      text-decoration: none;
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
+      display: block;
+    }
+
+    ul.nav-links li a:hover { /* Style for hover and active link */
+      background-color: #f9dc5c;
+      color: #1e1e2f;
+    }
+    
+    /* Main Content Styles for Projects Page */
+    main {
+      padding: 7rem 2rem 2rem; /* Top padding for fixed header */
+      max-width: 1200px; /* Max width from user's project page */
+      margin-left: auto;
+      margin-right: auto;
+      flex-grow: 1; /* Allows main to fill available space */
+      width: 100%;
+    }
+
+    .grid-container { /* Styles from user's project page */
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+      gap: 25px; /* Increased gap slightly */
+      padding: 20px 0; /* Padding for the grid container itself */
+    }
+
+    .card { /* Styles from user's project page */
+      background: #fff;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex; /* Added for flex column layout */
+      flex-direction: column; /* Added for flex column layout */
+      justify-content: space-between; /* Distribute space */
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* Enhanced hover shadow */
+    }
+
+    .card img { /* Styles from user's project page */
+      width: 100%; /* Make image take full width of card */
+      max-width: 100%; /* Ensure it doesn't overflow */
+      border-radius: 8px;
+      height: 180px;
+      object-fit: cover;
+      margin-bottom: 15px; /* Space below image */
+    }
+
+    .card h3 { /* Styles from user's project page */
+      margin: 0 0 10px 0; /* Adjusted margin */
+      color: #1a1a1a;
+      font-size: 1.25rem; /* Slightly larger heading */
+    }
+
+    .card p { /* Styles from user's project page */
+      font-size: 0.9rem; /* Adjusted font size */
+      color: #555;
+      line-height: 1.5; /* Improved line height */
+      flex-grow: 1; /* Allow paragraph to take space */
+      margin-bottom: 12px; /* Space before button */
+    }
+
+    .card a.view-more-btn { /* Specific class for view more button */
+      display: inline-block;
+      margin-top: auto; /* Push button to bottom if content varies */
+      padding: 10px 20px; /* Slightly larger padding */
+      background-color: #007bff;
+      color: white;
+      border-radius: 5px; /* Slightly more rounded */
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      font-weight: 500; /* Medium weight */
+    }
+
+    .card a.view-more-btn:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px); /* Slight lift on hover */
+    }
+
+    /* Footer Styles (Standardized) */
+    footer {
+      background-color: #2a2a3d; /* Standardized footer background */
+      color: #ffffff; /* Standardized text color */
+      text-align: center;
+      padding: 1.5rem; /* Standardized padding */
+      font-weight: bold;
+      font-size: 1rem;
+      margin-top: auto; /* Push footer to bottom */
+      border-top: 2px solid #f9dc5c; /* Standardized border */
+      width: 100%;
+    }
+
+    /* Responsive Media Queries */
+    @media (max-width: 768px) {
+      /* Standardized Header Responsive */
+      header {
+        padding: 1rem;
+      }
+      header nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      .logo {
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      .logo h1 { font-size: 1.6rem; }
+      .logo h6 { font-size: 0.8rem; }
+
+      ul.nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        margin-top: 10px;
+        align-items: center;
+        /* background: rgba(0, 0, 0, 0.6); From user's original, can be added if desired for this page */
+        /* padding: 1rem; */
+        /* border-radius: 6px; */
+      }
+      ul.nav-links li {
+        width: 80%;
+        max-width: 300px;
+      }
+      ul.nav-links li a {
+        font-size: 1rem; /* User's original was 1.1rem */
+        display: block;
+        text-align: center;
+        padding: 0.75rem;
+      }
+      
+      main {
+        padding-top: 15rem; /* Increased top padding for taller mobile header */
+        padding-left: 1rem; /* Adjust side padding */
+        padding-right: 1rem;
+      }
+      .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adjust minmax for smaller screens */
+        padding: 15px 0;
+      }
+      .card h3 {
+        font-size: 1.15rem;
+      }
+    }
+
+     @media (max-width: 480px) {
+        .logo h1 {
+            font-size: 1.4rem;
+        }
+        ul.nav-links li a {
+            font-size: 0.9rem;
+            padding: 0.6rem;
+        }
+        main {
+             padding-top: 14rem; /* Adjust if header is still too tall */
+        }
+        .grid-container {
+            grid-template-columns: 1fr; /* Single column on very small screens */
+            gap: 20px;
+        }
+        .card {
+            padding: 15px;
+        }
+        .card h3 {
+            font-size: 1.1rem;
+        }
+        .card p {
+            font-size: 0.85rem;
+        }
+        .card a.view-more-btn {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+        }
+    }
+  </style>
+</head>
+<body>
+
+  <header role="banner">
+    <nav role="navigation" aria-label="Main navigation">
+      <div class="logo">
+        <h1>Software Institute</h1>
+        <h6>Best Courses</h6>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html#Home">Home</a></li>
+        <li><a href="Course.html">All Courses</a></li>
+        <li><a href="Training.html">Software Training</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li> <li><a href="services.html">Services</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="Login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main role="main">
+    <section class="grid-container">
+      <div class="card">
+        <img src="https://www.cloudblue.com/wp-content/uploads/2023/01/real-time-data-visualization.jpg" alt="Real-Time Projects" onerror="this.onerror=null; this.src='https://placehold.co/300x180/2575FC/FFFFFF?text=Real-Time+Projects';">
+        <h3>Real-Time Projects</h3>
+        <p>Learn by Doing: Real-World Projects for Practical Mastery and industry exposure.</p>
+        <a href="Realtimeproject.html" class="view-more-btn">View more &rarr;</a>
+      </div>
+
+      <div class="card">
+        <img src="https://opi.org.pl/wp-content/uploads/2024/12/Erasmus.png" alt="Internship Projects" onerror="this.onerror=null; this.src='https://placehold.co/300x180/34D399/FFFFFF?text=Internships';">
+        <h3>Internship Projects</h3>
+        <p>Gain practical experience with our Industry-Mentor Guided INTERNSHIP programs.</p>
+        <a href="IntenshipProjects.html" class="view-more-btn">View more &rarr;</a>
+      </div>
+
+      <div class="card">
+        <img src="https://assets-global.website-files.com/6254ae25c3e3a2cdc526ebaf/63644a84ec09440a05e1b7ec_image.jpeg" alt="Workshops" onerror="this.onerror=null; this.src='https://placehold.co/300x180/F9A825/FFFFFF?text=Workshops';">
+        <h3>Workshops</h3>
+        <p>Unlocking IT Excellence: Join Our Transformative and skill-enhancing Workshops.</p>
+        <a href="Workshops.html" class="view-more-btn">View more &rarr;</a>
+      </div>
+
+      <div class="card">
+        <img src="https://www.herkesebilimteknoloji.com/wp-content/uploads/2020/06/uzaktan.jpg" alt="Placement Training" onerror="this.onerror=null; this.src='https://placehold.co/300x180/8B5CF6/FFFFFF?text=Placements';">
+        <h3>Placement Training</h3> <p>Boost your career with our specialized IT Training and Placement programs.</p>
+        <a href="weekend training course.html" class="view-more-btn">View more &rarr;</a> </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>&copy; 2025 Software Institute. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

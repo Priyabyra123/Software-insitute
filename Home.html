@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Software Institute" />
+  <title>Software Institute | Portfolio</title>
+  <style>
+    /* General Reset & Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f4f4; /* Page background */
+      color: #333; /* Default text color for content */
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex; /* For sticky footer */
+      flex-direction: column; /* For sticky footer */
+    }
+
+    /* Links within main content */
+    main a { /* Styles for links within the main content, not header/footer */
+      color: #0077cc;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    main a:hover {
+      color: #005fa3;
+    }
+
+    /* Header Styles (Standardized Fixed Header) */
+    header {
+      background-color: #1e1e2f;
+      color: #fff;
+      padding: 1rem 2rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    header nav { /* Targets the nav within the header */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #f9dc5c;
+      margin: 0;
+    }
+
+    .logo h6 {
+      font-size: 0.9rem;
+      color: #cccccc;
+      font-style: italic;
+      margin: 0;
+    }
+
+    ul.nav-links { /* Standardized nav links container */
+      list-style: none;
+      display: flex;
+      gap: 0.5rem; 
+      padding: 0;
+      margin: 0;
+      align-items: center;
+    }
+
+    ul.nav-links li a { /* Standardized nav link items */
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
+      display: block;
+    }
+
+    ul.nav-links li a:hover,
+    ul.nav-links li a.active { /* For active state, JS might be needed for scroll-based active link */
+      background-color: #f9dc5c;
+      color: #1e1e2f;
+    }
+
+    /* Main Content Styles */
+    main {
+      padding-top: 7rem; /* Adjusted for fixed header */
+      padding-bottom: 2rem; /* Bottom padding */
+      max-width: 900px; /* Max width for content */
+      margin-left: auto; /* Centering main content */
+      margin-right: auto; /* Centering main content */
+      width: 100%;
+      flex-grow: 1; /* For sticky footer */
+    }
+
+    section {
+      margin-bottom: 2rem;
+      background: #ffffff; /* White background for sections */
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #f9dc5c; /* Accent border */
+      padding-bottom: 0.3rem;
+      color: #1e1e2f; /* Dark color for section titles */
+    }
+    
+    section p { /* Paragraphs within sections */
+        margin-bottom: 1rem; /* Ensure paragraphs have bottom margin */
+    }
+
+    section ul { /* Lists within sections */
+      list-style: disc; /* Default disc style from user */
+      padding-left: 1.2rem; /* Default padding from user */
+    }
+
+    section ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Footer Styles (Standardized) */
+    footer {
+      background-color: #2a2a3d;
+      color: #ffffff;
+      text-align: center;
+      padding: 1.5rem;
+      font-weight: bold;
+      font-size: 1rem;
+      margin-top: auto; /* Pushes footer to bottom */
+      border-top: 2px solid #f9dc5c;
+      width: 100%;
+    }
+
+    /* Responsive Media Queries */
+    @media (max-width: 768px) {
+      /* Standardized Header Responsive */
+      header {
+        padding: 1rem;
+      }
+      header nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      .logo {
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      .logo h1 { font-size: 1.6rem; }
+      .logo h6 { font-size: 0.8rem; }
+
+      ul.nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        margin-top: 10px;
+        align-items: center;
+      }
+      ul.nav-links li {
+        width: 80%;
+        max-width: 300px;
+      }
+      ul.nav-links li a {
+        font-size: 1rem; /* User's original font-size for mobile was 1.1rem, using 1rem for consistency */
+        display: block;
+        text-align: center;
+        padding: 0.75rem;
+        /* User's original mobile nav had a background: rgba(0,0,0,0.6) and padding: 1rem. */
+        /* Keeping standardized nav link style for now, but can be changed. */
+      }
+      
+      main {
+        padding-top: 15rem; /* Increased top padding for taller mobile header */
+        padding-left: 1rem; /* Adjust side padding for mobile */
+        padding-right: 1rem;
+      }
+      section {
+        padding: 1rem; /* Reduce padding in sections on mobile */
+      }
+      section h2 {
+        font-size: 1.4rem;
+      }
+    }
+     @media (max-width: 480px) {
+        .logo h1 {
+            font-size: 1.4rem;
+        }
+        ul.nav-links li a {
+            font-size: 0.9rem;
+            padding: 0.6rem;
+        }
+        main {
+             padding-top: 14rem; /* Adjust if header is still too tall */
+        }
+    }
+  </style>
+</head>
+<body>
+
+  <header role="banner">
+    <nav role="navigation" aria-label="Main navigation">
+      <div class="logo">
+        <h1>Software Institute</h1>
+        <h6>Best Courses</h6>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#Home">Home</a></li>
+        <li><a href="#Allcourses">All Courses</a></li>
+        <li><a href="#Softwaretraining">Software Training</a></li>
+        <li><a href="#Projects">Projects</a></li>
+        <li><a href="#Services">Services</a></li>
+        <li><a href="#Contact">Contact</a></li>
+        <li><a href="#About">About</a></li>
+        <li><a href="Login.html">Login</a></li> </ul>
+    </nav>
+  </header>
+
+  <main role="main">
+    <section id="Home">
+      <h2>Welcome to Software Institute</h2>
+      <p>We provide a variety of software courses and services to help you build a successful career in IT. Explore our offerings and start your learning journey today!</p>
+    </section>
+
+    <section id="Allcourses">
+      <h2>Courses Offered</h2>
+      <p>We offer a wide range of courses designed to meet industry demands. Our popular courses include:</p>
+      <ul>
+        <li>HTML & CSS Fundamentals</li>
+        <li>JavaScript for Beginners to Advanced</li>
+        <li>React.js & Modern Frontend Frameworks</li>
+        <li>Core Java Programming</li>
+        <li>Advanced Java & Enterprise Applications</li>
+        <li>Full Stack Development (MERN, MEAN, Java Full Stack)</li>
+        <li>Python with Django/Flask</li>
+        <li>Data Science & Machine Learning</li>
+        <li>DevOps & Cloud Computing (AWS, Azure)</li>
+        <li>Software Testing & Automation (Selenium, Appium)</li>
+      </ul>
+    </section>
+
+    <section id="Softwaretraining">
+      <h2>Software Training Programs</h2>
+      <p>Our training programs are tailored to provide hands-on experience and real-world skills:</p>
+      <ul>
+        <li><strong>Classroom Training:</strong> Interactive sessions at our state-of-the-art facilities.</li>
+        <li><strong>Online Training:</strong> Flexible learning from anywhere with live instructor-led classes.</li>
+        <li><strong>Weekend Training:</strong> Special batches for working professionals and students.</li>
+        <li><strong>Corporate Training:</strong> Customized training solutions for organizations.</li>
+        <li><strong>Internships:</strong> Gain practical experience with our internship programs.</li>
+        <li><strong>Trainers Profile:</strong> Learn from industry experts with years of experience.</li>
+        <li><strong>Course Schedule:</strong> Check our upcoming batches and enroll.</li>
+      </ul>
+    </section>
+
+    <section id="Projects">
+      <h2>Hands-on Projects</h2>
+      <p>We believe in learning by doing. Our project-based approach includes:</p>
+      <ul>
+        <li><strong>Real-time Projects:</strong> Work on projects that simulate actual industry scenarios.</li>
+        <li><strong>Internship Projects:</strong> Dedicated projects as part of our internship offerings.</li>
+        <li><strong>Workshops Projects:</strong> Develop mini-projects during our specialized workshops.</li>
+        <li><strong>Weekend Projects:</strong> Intensive project work for accelerated learning.</li>
+        <li><strong>Capstone Projects:</strong> Showcase your skills with a comprehensive final project.</li>
+      </ul>
+    </section>
+
+    <section id="Services">
+      <h2>Our Services</h2>
+      <p>Beyond training, we offer services to support your career growth:</p>
+      <ul>
+        <li><strong>Internship Programs:</strong> Structured internships with mentorship.</li>
+        <li><strong>Placement Assistance:</strong> Dedicated support to help you find job opportunities.</li>
+        <li><strong>Job Placement Drives:</strong> Regular placement events with partner companies.</li>
+        <li><strong>Resume Building & Interview Preparation:</strong> Workshops to prepare you for the job market.</li>
+        <li><strong>IT Consulting:</strong> Expert advice and solutions for businesses.</li>
+      </ul>
+    </section>
+
+    <section id="Contact">
+      <h2>Get in Touch</h2>
+      <p>Have questions or want to enroll? Contact us today!</p>
+      <p><strong>Email:</strong> <a href="mailto:info@softwareinstitute.com">info@softwareinstitute.com</a></p>
+      <p><strong>Phone:</strong> <a href="tel:+911234567890">+91-123-456-7890</a></p>
+      <p><strong>Address:</strong> 123 Tech Park, IT Hub, Visakhapatnam, Andhra Pradesh, India</p>
+      <p>You can also visit our <a href="Contact.html">dedicated contact page</a> for a contact form and map.</p>
+    </section>
+
+    <section id="About">
+      <h2>About Software Institute</h2>
+      <p>Software Institute is a leading training provider dedicated to empowering individuals and organizations with cutting-edge technology skills. Founded with a vision to bridge the gap between academic learning and industry requirements, we offer a comprehensive range of courses, hands-on projects, and placement services.</p>
+      <p>Our experienced trainers, state-of-the-art infrastructure, and industry-aligned curriculum ensure that our students are well-prepared for the challenges of the IT world. Join us to transform your career and achieve your professional goals.</p>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>&copy; 2025 Software Institute. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

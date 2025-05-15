@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password - EduMetricx</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%); /* Consistent background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 1rem;
+        }
+
+        .forgot-password-container {
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 6px 10px rgba(0, 0, 0, 0.06);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .forgot-password-container h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #374151;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .forgot-password-container p.instructions {
+            font-size: 0.9375rem; /* 15px */
+            color: #4B5563; /* Medium gray */
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #4B5563;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #D1D5DB;
+            border-radius: 0.375rem;
+            font-size: 0.9375rem;
+            color: #1F2937;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus {
+            border-color: #4F46E5;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+        }
+        
+        .form-group input::placeholder {
+            color: #9CA3AF;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: #4F46E5;
+            color: white;
+            padding: 0.875rem 1rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin-top: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            background-color: #4338CA;
+        }
+
+        .back-to-login-link {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.875rem;
+            color: #4B5563;
+        }
+
+        .back-to-login-link a {
+            color: #4F46E5;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .back-to-login-link a:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            color: #EF4444;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="forgot-password-container">
+        <h2>Forgot Your Password?</h2>
+        <p class="instructions">No worries! Enter your email address below and we'll send you a link to reset your password.</p>
+        <form id="forgotPasswordForm">
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                <p class="error-message" id="emailError"></p>
+            </div>
+            <button type="submit" class="submit-btn">Send Reset Link</button>
+        </form>
+        <div class="back-to-login-link">
+            <a href="login.html">Back to Login</a>
+            </div>
+    </div>
+
+    <script>
+        const forgotPasswordForm = document.getElementById('forgotPasswordForm');
+        const emailInput = document.getElementById('email');
+        const emailError = document.getElementById('emailError');
+
+        forgotPasswordForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            emailError.textContent = ''; // Clear previous errors
+            let isValid = true;
+
+            if (emailInput.value.trim() === '' || !/^\S+@\S+\.\S+$/.test(emailInput.value)) {
+                emailError.textContent = 'Please enter a valid email address.';
+                isValid = false;
+            }
+
+            if (isValid) {
+                // Simulate sending a reset link
+                alert('If an account exists for ' + emailInput.value + ', a password reset link has been sent. Please check your email.');
+                // In a real application, you would make an API call here.
+                forgotPasswordForm.reset(); // Optionally reset the form
+            }
+        });
+    </script>
+</body>
+</html>

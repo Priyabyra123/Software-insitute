@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Selenium Course - Software Institute</title>
+  <link rel="stylesheet" href="styles-selenium.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head><style>
+    /* Base Styles */
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f0f4f8; /* Default background for the page */
+      color: #333;
+      line-height: 1.6;
+      display: flex; 
+      flex-direction: column; 
+      min-height: 100vh; 
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .container { /* General container class */
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px; 
+    }
+
+    /* Header Styles (Updated to match screenshot aesthetics) */
+    header {
+      background: #111111; /* Very dark grey/black background like screenshot */
+      color: white;
+      padding: 20px 0; 
+    }
+    .header-container { /* Specific container for header content */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px; 
+      margin: 0 auto;     
+      padding: 0 20px;    
+    }
+    header .logo { /* Style for the logo text */
+      font-size: 24px; /* Adjusted font size */
+      font-weight: bold;
+      color: #ede212; /* White logo text like screenshot */
+    }
+    header .nav-links { /* Style for nav links */
+      list-style: none;
+      display: flex;
+      padding: 0;
+      margin: 0;
+    }
+    header .nav-links li {
+      margin-left: 25px;
+    }
+    header .nav-links a {
+      color: #fff; /* White nav links */
+      font-size: 1rem; 
+      font-weight: bold; 
+      transition: color 0.3s, background-color 0.3s;
+      padding: 0.5rem 0.75rem; 
+      border-radius: 4px; 
+    }
+    header .nav-links a:hover,
+    header .nav-links a.active { 
+      color: #1e1e2f; /* Dark text on hover/active */
+      background-color: #f9dc5c; /* Yellow background on hover/active */
+    }
+  
+    
+
+/* Banner */
+.course-banner {
+  background: url('https://example.com/selenium-banner.jpg') center/cover no-repeat;
+  height: 60vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner-content {
+  text-align: center;
+  color: white;
+}
+.banner-content h2 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+.banner-content p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.cta-btn {
+  background-color: #28a745;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 18px;
+  transition: background 0.3s;
+}
+.cta-btn:hover {
+  background-color: #218838;
+}
+
+/* Curriculum */
+.curriculum {
+  background: #fff;
+  padding: 50px 20px;
+  text-align: center;
+}
+.curriculum h3 {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+.curriculum ul {
+  list-style: none;
+}
+.curriculum li {
+  font-size: 18px;
+  margin-bottom: 12px;
+  padding: 10px;
+  border-radius: 6px;
+  background: #f7f9fc;
+  border: 1px solid #e1e1e1;
+  transition: background 0.3s;
+}
+.curriculum li:hover {
+  background-color: #eaf6ff;
+}
+
+/* Instructor */
+.instructor {
+  background-color: #f4f4f4;
+  padding: 50px 20px;
+}
+.instructor-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.instructor-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.instructor-info h4 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.instructor-info p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Footer */
+footer {
+  background-color: #1e1e2f;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+.footer-cta {
+  margin: 20px 0;
+}
+.footer-cta p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.social-links a {
+  color: white;
+  margin: 0 10px;
+  font-size: 16px;
+}
+.social-links a:hover {
+  color: #1e90ff;
+}
+
+</style>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <h1 class="logo">Software Institute</h1>
+    
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html#Home">Home</a></li>
+        <li><a href="Course.html#All Courses">All Courses</a></li>
+        <li><a href="Training.html">Software Training</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="Home.html">About</a></li>
+        <li><a href="Login.html">Login</a></li>
+      </ul>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Banner Section -->
+  <section class="course-banner">
+    <div class="banner-overlay">
+      <div class="banner-content">
+        <h2>Selenium Automation Testing</h2>
+        <p>Master the art of automated testing with industry-relevant Selenium training.</p>
+        <a href="register.html" class="cta-btn">Enroll Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curriculum -->
+  <section class="curriculum">
+    <div class="container">
+      <h3>Course Curriculum</h3>
+      <ul>
+        <li> Introduction to Selenium</li>
+        <li> Selenium WebDriver Basics</li>
+        <li>Handling Web Elements</li>
+        <li> Selenium with Java</li>
+        <li> TestNG Framework Integration</li>
+        <li> Selenium Grid & Parallel Testing</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Instructor Section -->
+  <section class="instructor">
+    <div class="container instructor-container">
+    
+      <div class="instructor-info">
+        <h4>Jane Smith</h4>
+        <p>Jane is a seasoned automation engineer with 8+ years of experience, specializing in Selenium and Java-based testing frameworks.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2025 Software Institute | All Rights Reserved</p>
+      <div class="footer-cta">
+        <p>Ready to kickstart your Selenium journey?</p>
+        <a href="register.html" class="cta-btn">Enroll Now</a>
+      </div>
+      <div class="social-links">
+        <a href="#">Facebook</a> |
+        <a href="#">Twitter</a> |
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

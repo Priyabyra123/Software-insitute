@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Core Java Course - Software Institute</title>
+  <style>
+    /* General Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Standardized font */
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4; /* Specific background for this page */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      color: #333; /* Default text color for the page content */
+    }
+
+    /* Header Styles (Standardized) */
+    header {
+      background-color: #1e1e2f;
+      color: #fff;
+      padding: 1rem 2rem;
+      position: fixed; /* Standardized fixed header */
+      top: 0;
+      width: 100%;
+      z-index: 1000; /* Ensure header is above other content */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    header nav { /* Targets the nav within the header */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 { /* Standardized logo style */
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #f9dc5c;
+      margin: 0;
+    }
+
+    .logo h6 { /* Standardized tagline style */
+      font-size: 0.9rem;
+      color: #cccccc;
+      font-style: italic;
+      margin: 0;
+    }
+
+    ul.nav-links { /* Standardized nav links container */
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      padding: 0; /* Remove default padding */
+      margin: 0; /* Remove default margin */
+    }
+
+    ul.nav-links li a { /* Standardized nav link items */
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    ul.nav-links li a:hover {
+      background-color: #f9dc5c;
+      color: #1e1e2f;
+    }
+    
+    /* Main content wrapper */
+    main {
+      padding-top: 5rem; /* Adjust based on actual header height, initial value */
+      flex-grow: 1; /* For sticky footer */
+      width: 100%;
+    }
+
+
+    /* Styles for Core Java Course Page Content */
+    section {
+      padding: 20px;
+      margin: 20px auto; /* Centering sections */
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 1000px; /* Max width for content sections */
+    }
+
+    .course-intro {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px; /* Add gap between info and image */
+      flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    }
+
+    .course-info {
+      flex: 1 1 50%; /* Allow flex grow and shrink, basis 50% */
+      min-width: 300px; /* Minimum width before wrapping */
+    }
+    
+    .course-info h2 { /* Specific h2 style for this page */
+        font-size: 1.8em; /* From original, ensure it's applied */
+        color: #333; /* Darker color for heading */
+        margin-bottom: 0.5em;
+    }
+    .course-info p {
+        font-size: 1em; /* From original */
+        color: #555; /* From original */
+        line-height: 1.6; /* Improve readability */
+    }
+
+
+    .course-image {
+      flex: 1 1 40%; /* Allow flex grow and shrink, basis 40% */
+      min-width: 280px; /* Minimum width before wrapping */
+    }
+
+    .course-image img {
+      width: 100%;
+      height: auto; /* Maintain aspect ratio */
+      border-radius: 8px;
+      display: block; /* Remove extra space below image */
+    }
+    
+    /* Section headings (h3) */
+    section h3 {
+        font-size: 1.5em;
+        color: #333;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #f0f0f0;
+        padding-bottom: 10px;
+    }
+
+
+    .curriculum ul {
+      list-style-type: disc; /* Standard disc bullets */
+      padding-left: 20px;
+    }
+
+    .curriculum li {
+      margin-bottom: 10px;
+      font-size: 1em; /* Consistent font size */
+      color: #444; /* Slightly darker text for list items */
+    }
+
+    .instructor {
+      /* display: flex; -- Removed as inner div handles flex */
+      /* align-items: center; -- Removed as inner div handles flex */
+      margin-top: 20px;
+    }
+
+    .instructor-info {
+      display: flex;
+      align-items: center; /* Vertically align image and details */
+      gap: 20px; /* Add gap */
+      flex-wrap: wrap; /* Allow wrapping */
+    }
+
+    .instructor-info img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover; /* Ensure image covers the area well */
+    }
+
+    .instructor-details h4 {
+      margin: 0 0 5px 0; /* Adjusted margin */
+      font-size: 1.4em; /* From original, adjusted */
+      color: #333;
+    }
+
+    .instructor-details p {
+      font-size: 1em; /* From original */
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .cta {
+      text-align: center;
+      margin-top: 30px; /* Increased margin */
+      padding: 20px; /* Add padding to CTA section */
+      background-color: #f9f9f9; /* Light background for CTA section */
+    }
+    
+    .cta p {
+        font-size: 1.1em;
+        margin-bottom: 15px;
+        color: #333;
+    }
+
+
+    .cta-btn {
+      background-color: #007BFF;
+      color: white;
+      padding: 12px 25px; /* Increased padding */
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1.1em; /* Slightly larger font */
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .cta-btn:hover {
+      background-color: #0056b3;
+      transform: translateY(-2px); /* Slight lift on hover */
+    }
+
+    /* Footer Styles (Standardized) */
+    footer {
+      background-color: #2a2a3d;
+      color: #ffffff;
+      text-align: center;
+      padding: 1.5rem;
+      font-weight: bold;
+      font-size: 1rem;
+      margin-top: auto; /* Pushes footer to bottom */
+      border-top: 2px solid #f9dc5c;
+      width: 100%;
+    }
+    
+    /* Responsive Media Queries */
+    @media (max-width: 768px) {
+      /* Standardized Header Responsive */
+      header {
+        padding: 1rem;
+      }
+      header nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      .logo {
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      .logo h1 { font-size: 1.6rem; }
+      .logo h6 { font-size: 0.8rem; }
+
+      ul.nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        margin-top: 10px;
+        padding: 0.5rem 0;
+        border-radius: 6px;
+      }
+      ul.nav-links li a {
+        font-size: 1rem;
+        display: block;
+        text-align: center;
+        padding: 0.75rem;
+      }
+      
+      main {
+        padding-top: 12rem; /* Adjust for taller mobile header */
+      }
+
+      /* Course Page Specific Responsive */
+      .course-intro, .instructor-info {
+        flex-direction: column; /* Stack elements in intro and instructor sections */
+        align-items: flex-start; /* Align items to the start */
+      }
+      .course-info, .course-image, .instructor-details {
+        width: 100%; /* Make info, image, and details full width */
+        flex-basis: auto; /* Reset flex-basis */
+      }
+      .course-image {
+        margin-top: 15px; /* Add space above image when stacked */
+      }
+      .instructor-info img {
+        margin-bottom: 15px; /* Add space below instructor image when stacked */
+      }
+      section {
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      /* Standardized Header Responsive */
+      .logo h1 { font-size: 1.4rem; }
+      ul.nav-links li a {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+      }
+      
+      main {
+        padding-top: 10rem; /* Further adjust for very small screens */
+      }
+      
+      /* Course Page Specific Responsive */
+      .course-info h2, section h3 { font-size: 1.3em; }
+      .instructor-details h4 { font-size: 1.2em; }
+      .course-info p, .curriculum li, .instructor-details p, .cta p { font-size: 0.95em; }
+      .cta-btn { font-size: 1em; padding: 10px 20px; }
+    }
+
+  </style>
+</head>
+<body>
+  <header role="banner">
+    <nav role="navigation" aria-label="Main navigation">
+      <div class="logo">
+        <h1>Software Institute</h1>
+        <h6>Best Courses</h6>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html#Home">Home</a></li>
+        <li><a href="Course.html">All Courses</a></li>
+        <li><a href="Training.html">Software Training</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li> <li><a href="Login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main role="main">
+    <section class="course-intro">
+      <div class="course-info">
+        <h2>Core Java Course</h2>
+        <p>Master Java and become an expert developer with this comprehensive Core Java course. Learn from the basics to advanced concepts!</p>
+      </div>
+      <div class="course-image">
+        <img src="https://itgizz.com/wp-content/uploads/2024/05/core-java-image.jpg" alt="Core Java Course Visual Representation" onerror="this.onerror=null; this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';">
+      </div>
+    </section>
+
+    <section class="curriculum">
+      <h3>Course Curriculum</h3>
+      <ul>
+        <li>Module 1: Introduction to Java</li>
+        <li>Module 2: Object-Oriented Programming</li>
+        <li>Module 3: Data Structures & Algorithms in Java</li>
+        <li>Module 4: Exception Handling</li>
+        <li>Module 5: Java Collections Framework</li>
+        <li>Module 6: Java Streams and Lambda Expressions</li>
+        <li>Module 7: Multithreading in Java</li>
+        <li>Module 8: File I/O and Serialization</li>
+        <li>Module 9: Introduction to JDBC</li>
+        <li>Module 10: Final Project</li>
+      </ul>
+    </section>
+
+    <section class="instructor">
+      <h3>Meet Your Instructor</h3>
+        <div class="instructor-details">
+          <h4>John Doe</h4>
+          <p>John is an experienced Java developer and instructor with over 10 years of teaching and industry experience. He is passionate about helping students achieve their programming goals and has a knack for explaining complex concepts in an easy-to-understand manner.</p>
+        </div>
+    </section>
+
+    <section class="cta">
+      <p>Ready to start your journey with Core Java and elevate your programming skills?</p>
+      <a href="Login.html" class="cta-btn">Enroll Now</a>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    &copy; 2025 Software Institute. All rights reserved.
+  </footer>
+</body>
+</html>

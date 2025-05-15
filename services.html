@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services - Software Institute</title>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* General Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f8; /* Background from user's services page */
+      color: #333;
+      line-height: 1.6; /* Default line height */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header Styles (Standardized Fixed Header) */
+    header {
+      background-color: #1e1e2f; /* Standardized header background */
+      color: #fff;
+      padding: 1rem 2rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    header nav { /* Targets the nav element within the header */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 { /* Standardized logo h1 */
+      font-size: 1.8rem; /* Standardized size */
+      font-weight: bold;
+      color: #f9dc5c; /* Standardized color */
+      margin: 0;
+    }
+
+    .logo h6 { /* Standardized logo h6 */
+      font-size: 0.9rem;
+      color: #cccccc;
+      font-style: italic;
+      margin: 0;
+    }
+
+    ul.nav-links { /* Standardized nav links container */
+      list-style: none;
+      display: flex;
+      gap: 0.5rem; 
+      padding: 0;
+      margin: 0;
+      align-items: center;
+      flex-wrap: wrap; /* Allow nav links to wrap */
+    }
+
+    ul.nav-links li a { /* Standardized nav link items */
+      color: #fff; 
+      text-decoration: none;
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+      font-weight: bold; 
+      transition: background-color 0.3s, color 0.3s;
+      display: block;
+    }
+
+    ul.nav-links li a:hover { 
+      background-color: #f9dc5c;
+      color: #1e1e2f;
+    }
+    
+    /* Main Content Styles for Services Page */
+    main {
+      padding-top: 7rem; /* Adjust for fixed header height */
+      padding-bottom: 2rem; /* Bottom padding for main content */
+      flex-grow: 1;
+      width: 100%;
+    }
+
+    .section-container { /* Renamed from .section to avoid conflict with semantic <section> tag if used elsewhere */
+      max-width: 1000px; /* Max width from user's services page */
+      margin: 20px auto; /* Top/bottom margin, centered */
+      padding: 0 20px; /* Side padding */
+    }
+    
+    /* Styling for individual service sections */
+    .service-item {
+        background-color: #fff; /* White background for each service item block */
+        padding: 25px;
+        margin-bottom: 30px; /* Space between service items */
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+
+    .service-item h2 { /* Styles from user's services page .section h2 */
+      font-size: 1.8rem; /* Increased size slightly for better hierarchy */
+      color: #007bff; /* Changed to a more common blue, was #00bcd4 */
+      margin-bottom: 15px; /* Increased margin */
+      border-bottom: 2px solid #007bff; /* Matching border color */
+      padding-bottom: 8px; /* Increased padding */
+      font-weight: 600; /* Bolder heading */
+    }
+
+    .service-item p { /* Styles from user's services page .section p */
+      font-size: 1rem; /* Standardized font size */
+      line-height: 1.8;
+      margin-bottom: 15px; /* Adjusted margin */
+      text-align: left; /* Changed from justify for better readability */
+      color: #444; /* Slightly darker text for better contrast on white */
+    }
+
+    /* Footer Styles (Standardized) */
+    footer {
+      background-color: #2a2a3d; /* Standardized footer background */
+      color: #ffffff;
+      text-align: center;
+      padding: 1.5rem;
+      font-weight: bold;
+      font-size: 1rem;
+      margin-top: auto; /* Push footer to bottom */
+      border-top: 2px solid #f9dc5c; /* Standardized border */
+      width: 100%;
+    }
+
+    /* Responsive Media Queries */
+    @media (max-width: 768px) {
+      /* Standardized Header Responsive */
+      header {
+        padding: 1rem;
+      }
+      header nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      .logo {
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      .logo h1 { font-size: 1.6rem; }
+      .logo h6 { font-size: 0.8rem; }
+
+      ul.nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        margin-top: 10px;
+        align-items: center;
+      }
+      ul.nav-links li {
+        width: 80%;
+        max-width: 300px;
+      }
+      ul.nav-links li a {
+        font-size: 1rem;
+        display: block;
+        text-align: center;
+        padding: 0.75rem;
+      }
+      
+      main {
+        padding-top: 15rem; /* Increased top padding for taller mobile header */
+        padding-left: 1rem; /* Adjust side padding */
+        padding-right: 1rem;
+      }
+      .section-container {
+          margin-top: 0; /* Remove top margin as main has padding */
+      }
+      .service-item h2 {
+        font-size: 1.5rem;
+      }
+      .service-item p {
+        font-size: 0.95rem;
+      }
+    }
+
+     @media (max-width: 480px) {
+        .logo h1 {
+            font-size: 1.4rem;
+        }
+        ul.nav-links li a {
+            font-size: 0.9rem;
+            padding: 0.6rem;
+        }
+        main {
+             padding-top: 14rem; /* Adjust if header is still too tall */
+        }
+        .service-item h2 {
+            font-size: 1.3rem;
+        }
+    }
+  </style>
+</head>
+<body>
+
+  <header role="banner">
+    <nav role="navigation" aria-label="Main navigation">
+      <div class="logo">
+        <h1>Software Institute</h1>
+        <h6>Best Courses</h6>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html#Home">Home</a></li>
+        <li><a href="Course.html">All Courses</a></li>
+        <li><a href="Training.html">Software Training</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="services.html" class="active">Services</a></li> <li><a href="Contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="Login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main role="main">
+    <div class="section-container">
+      <div class="service-item">
+        <h2>Software Training</h2>
+        <p>
+          Software Institute's major area of focus is IT Training at all levels, including academic and corporate. The mode and content of training programs are tailored based on participant needs. Our training division is segmented for maximum effectiveness, earning us recognition for providing top-notch programs for those aspiring to become software professionals. We cover a wide array of technologies from foundational web development to advanced AI and cloud computing.
+        </p>
+      </div>
+
+      <div class="service-item">
+        <h2>Internships</h2>
+        <p>
+          Our tailored internship program welcomes aspirants from diverse educational backgrounds. Renowned globally, it offers in-depth technical sessions covering every aspect of the subject. Participants receive extensive hands-on experience through lab assignments, real-world case studies, and mentorship from industry experts, making them industry-ready and highly employable.
+        </p>
+      </div>
+
+      <div class="service-item">
+        <h2>Placement Assistance</h2>
+        <p>
+          Designed for educational institutions like colleges and universities, as well as individual trainees, this program bridges the gap between academia and industry expectations. By preparing students and professionals while they are still on campus or completing their courses, we significantly enhance their placement and hiring prospects through resume workshops, mock interviews, and direct connections with our network of hiring partners.
+        </p>
+      </div>
+
+      <div class="service-item">
+        <h2>Online Training Assistance</h2>
+        <p>
+          Our online technical training sessions cater to aspirants who cannot attend in person. Delivered using advanced software tools and interactive platforms, these sessions provide convenience and practical experience. Participants gain the same hands-on skills and expert guidance from the comfort of their homes, with flexible schedules to suit their needs.
+        </p>
+      </div>
+       <div class="service-item">
+        <h2>Corporate Training Solutions</h2>
+        <p>
+          We provide customized corporate training programs designed to upskill and reskill employees in various cutting-edge technologies. Our solutions are tailored to meet specific business objectives, helping organizations enhance productivity, foster innovation, and maintain a competitive edge in the rapidly evolving tech landscape.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer role="contentinfo">
+    <p>&copy; 2025 Software Institute. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

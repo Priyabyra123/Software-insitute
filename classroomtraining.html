@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Classroom Training - Software Institute</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" type="image/png">
+  <style>
+    /* General Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: url('https://www.transparenttextures.com/patterns/cubes.png') repeat, #204d40; /* Specific background for this page */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff; /* Default text color for this page */
+      line-height: 1.8; /* Specific line height for this page */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header Styles (Standardized) */
+    header {
+      background-color: #1e1e2f;
+      color: #fff;
+      padding: 1rem 2rem;
+      position: fixed; /* Standardized fixed header */
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    header nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #f9dc5c;
+      margin: 0;
+    }
+
+    .logo h6 {
+      font-size: 0.9rem;
+      color: #cccccc;
+      font-style: italic;
+      margin: 0;
+    }
+
+    ul.nav-links { /* Targeting ul for specificity */
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      padding: 0; /* Ensure no default padding */
+    }
+
+    ul.nav-links li a { /* Targeting li a for specificity */
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    ul.nav-links li a:hover {
+      background-color: #f9dc5c;
+      color: #1e1e2f;
+    }
+
+    /* Main Content Styles for Classroom Training Page */
+    main.container {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 2rem; /* Original bottom margin */
+      /* Adjusted padding: top for fixed header, others from original */
+      padding: 7rem 2rem 2rem; 
+      background: rgba(0, 0, 0, 0.65); /* Specific background for content area */
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      flex-grow: 1; /* For sticky footer */
+      width: calc(100% - 4rem); /* Adjust width considering side padding for full bleed within margins */
+    }
+    
+    /* Styles for links within the main content area */
+    main.container a:not(.button) {
+      color: #facc15; /* Yellow, stands out on dark background */
+      text-decoration: underline;
+      transition: color 0.3s ease;
+    }
+    main.container a:not(.button):hover {
+      color: #fff8dd; /* Lighter yellow on hover */
+    }
+
+
+    /* Page-specific H1 for Classroom Training */
+    main.container h1 {
+      text-align: center;
+      color: #ffcc00;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+    }
+
+    /* Page-specific H2 for Classroom Training */
+    main.container h2 {
+      color: #ffd700;
+      margin-top: 2rem; /* Keep original margin-top for sections */
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Page-specific section styling */
+    main.container section {
+        margin-bottom: 1.5rem; /* Spacing between sections */
+    }
+
+
+    /* Page-specific P for Classroom Training */
+    main.container p {
+      color: #e0e0e0;
+      margin-top: 10px; /* Keep original margin-top */
+      text-align: left;
+      font-size: 1.1rem;
+    }
+
+    /* Page-specific CTA for Classroom Training */
+    .cta {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .cta p strong {
+      color: #f0f0f0;
+      font-size: 1.15rem;
+    }
+
+    .cta a.button {
+      display: inline-block;
+      background-color: #ffcc00;
+      color: #2c3e50;
+      text-decoration: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .cta a.button:hover {
+      background-color: #e6b800;
+      transform: scale(1.05);
+    }
+
+    /* Footer Styles (Standardized) */
+    footer {
+      background-color: #2a2a3d;
+      color: #ffffff;
+      text-align: center;
+      padding: 1.5rem;
+      font-weight: bold;
+      font-size: 1rem;
+      margin-top: auto; /* Pushes footer to bottom */
+      border-top: 2px solid #f9dc5c;
+      width: 100%;
+    }
+
+    /* Responsive Media Queries */
+    @media (max-width: 768px) {
+      /* Standardized Header Responsive */
+      header {
+        padding: 1rem;
+      }
+      header nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      .logo {
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      .logo h1 {
+        font-size: 1.6rem;
+      }
+      .logo h6 {
+        font-size: 0.8rem;
+      }
+      ul.nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        margin-top: 10px;
+        padding: 0.5rem 0;
+        border-radius: 6px;
+      }
+      ul.nav-links li a {
+        font-size: 1rem;
+        display: block;
+        text-align: center;
+        padding: 0.75rem;
+      }
+
+      /* Classroom Training Content Responsive */
+      main.container {
+        margin-left: 1rem;
+        margin-right: 1rem;
+        margin-bottom: 1rem; /* Original mobile bottom margin */
+        /* Adjusted padding: top for fixed header, others from original mobile */
+        padding: 12rem 1.5rem 1.5rem; 
+        width: calc(100% - 2rem); /* Adjust width considering side padding */
+      }
+
+      main.container h1 {
+        font-size: 2rem;
+      }
+
+      main.container h2 {
+        font-size: 1.5rem;
+      }
+
+      main.container p {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      /* Standardized Header Responsive */
+      .logo h1 {
+        font-size: 1.4rem;
+      }
+      ul.nav-links li a {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+      }
+
+      /* Classroom Training Content Responsive */
+      main.container {
+         /* Further adjust top padding for very small screens */
+        padding-top: 10rem; 
+        padding-left: 1rem; /* Adjust side padding for smaller screens */
+        padding-right: 1rem;
+        width: calc(100% - 2rem);
+      }
+       /* Adjust logo and tagline from original classroom page if needed, but shared header is simpler */
+    }
+  </style>
+</head>
+<body>
+
+  <header role="banner">
+    <nav role="navigation" aria-label="Main navigation">
+      <div class="logo">
+        <h1>Software Institute</h1>
+        <h6>Best Courses</h6>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html#Home">Home</a></li>
+        <li><a href="Course.html">All Courses</a></li>
+        <li><a href="Training.html">Software Training</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="Login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container" role="main">
+    <h1>🎓 Classroom Training</h1>
+
+    <section>
+      <h2>📘 Learn with Industry Experts</h2>
+      <p>Learning a new technology and to lead a job role is not easy. With instructor-led Classroom Training from Software Institute, you can develop skills that directly transfer from the classroom to the workplace.</p>
+    </section>
+
+    <section>
+      <h2>💡 Real-World Learning Approach</h2>
+      <p>Every student is made to understand the skills demanded by the industry and is mentored to lead a responsible role. Our training is practical and tailored to real-world applications.</p>
+    </section>
+
+    <section>
+      <h2>👨‍🏫 Expert Trainers & Mentors</h2>
+      <p>Each trainer is trained to be a mentor, ensuring students get industry-ready knowledge. Team-based training ensures a smooth learning experience across multiple technologies.</p>
+    </section>
+
+    <section>
+      <h2>🏛️ Smart Classrooms & Infrastructure</h2>
+      <p>Our classrooms are equipped with industry-standard infrastructure. Every student builds not just technical skills but also a professional attitude.</p>
+    </section>
+
+    <section>
+      <h2>🚀 Transform Your Career</h2>
+      <p>From beginner to advanced level, students are guided through every step. We make sure students are job-ready and aligned with the latest trends in the software industry.</p>
+    </section>
+
+    <div class="cta">
+      <p><strong>Ready to transform your future?</strong></p>
+      <a class="button" href="register.html">Join Classroom Training</a>
+    </div>
+  </main>
+
+  <footer role="contentinfo">
+    &copy; 2025 Software Institute. All rights reserved.
+  </footer>
+
+</body>
+</html>

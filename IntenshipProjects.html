@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Real-Time Projects - Software Institute</title>
+  <style>
+    /* General Reset & Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Standardized font */
+      background-color: #f4f4f4; /* Fallback background, will be mostly covered by ::before */
+      color: #333;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative; /* For the ::before pseudo-element */
+    }
+
+    body::before { /* Full page background image with opacity from user's new page */
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      opacity: 0.1;
+      z-index: -1;
+    }
+
+    /* Header Styles (Standardized Fixed Header) */
+    header {
+      background-color: #1e1e2f;
+      color: #fff;
+      padding: 1rem 2rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    header nav { /* Targets the nav within the header */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #f9dc5c;
+      margin: 0;
+    }
+
+    .logo h6 {
+      font-size: 0.9rem;
+      color: #cccccc;
+      font-style: italic;
+      margin: 0;
+    }
+
+    ul.nav-links { /* Standardized nav links container */
+      list-style: none;
+      display: flex;
+      gap: 0.5rem; 
+      padding: 0;
+      margin: 0;
+      align-items: center;
+    }
+
+    ul.nav-links li a { /* Standardized nav link items */
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
+      display: block;
+    }
+
+    ul.nav-links li a:hover { /* Assuming 'projects.html' is the current page */
+      background-color: #f9dc5c;
+      color: #1e1e2f;
+    }
+    
+    /* Main Content Styles for Real-Time Projects Page */
+    main {
+      padding: 7rem 2rem 2rem; /* Ensure space for fixed header */
+      flex-grow: 1;
+      position: relative; /* Ensure main content is above body::before */
+      z-index: 1;
+      width: 100%;
+      max-width: 1200px; /* Max width for the content area */
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-title { /* Style from user's new page */
+      font-size: 32px;
+      color: #00bcd4;
+      margin-bottom: 30px; /* Increased margin */
+      text-align: center;
+      font-weight: 600; /* Added for emphasis */
+    }
+
+    .flex-container {
+      display: flex;
+      gap: 30px;
+      align-items: stretch; /* Ensures flex items (image and content) have the same height */
+      flex-wrap: wrap; 
+      justify-content: center; 
+      max-width: 1200px;
+      margin: 0 auto; 
+    }
+
+     .flex-container .image-container { /* Added a wrapper for the image for better flex control */
+        flex: 1 1 550px; /* Adjust flex-basis as needed */
+        display: flex; /* To make the image itself fill this container */
+    }
+
+    .flex-container img {
+      width: 100%; 
+      height: 1100px; /* INCREASED explicit height for the image */
+      object-fit: cover; 
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    }
+    .content { /* Style from user's new page */
+      flex: 1 1 500px; /* Allow content to take up space */
+      max-width: 600px;
+      background: #ffffffea; /* Slightly more opaque for better readability */
+      padding: 25px; /* Increased padding */
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Slightly enhanced shadow */
+    }
+
+    .content h3 { /* Style from user's new page */
+      font-size: 1.5rem; /* Adjusted for Poppins if used, or general readability */
+      font-weight: 600; /* Poppins bold */
+      margin-bottom: 15px; /* Increased margin */
+      color: #00796b;
+    }
+
+    .content p { /* Style from user's new page */
+      line-height: 1.7; /* Increased line height */
+      margin-bottom: 15px;
+      font-size: 0.95rem; /* Good default size */
+      color: #333;
+    }
+
+    .content ul { /* Style from user's new page */
+      list-style: none; /* Remove default disc, using ::before */
+      padding-left: 0; /* Remove default padding, using li padding for indent */
+    }
+
+    .content ul li { /* Style from user's new page */
+      margin-bottom: 12px; /* Increased margin */
+      position: relative;
+      padding-left: 30px; /* Space for custom marker */
+      font-size: 0.95rem;
+    }
+
+    .content ul li::before { /* Style from user's new page */
+      content: '✔';
+      position: absolute;
+      left: 0;
+      top: 2px; /* Align with text better */
+      color: #00bcd4;
+      font-weight: bold; /* Make checkmark bolder */
+      font-size: 1.1em; /* Slightly larger checkmark */
+    }
+
+    .highlight { /* Style from user's new page */
+      font-weight: bold;
+      color: #d32f2f;
+    }
+
+    /* Footer Styles (Standardized) */
+    footer {
+      background-color: #2a2a3d;
+      color: #ffffff;
+      text-align: center;
+      padding: 1.5rem;
+      font-weight: bold;
+      font-size: 1rem;
+      margin-top: auto; /* Push footer to bottom */
+      border-top: 2px solid #f9dc5c;
+      position: relative; /* Ensure footer is above body::before */
+      z-index: 1;
+      width: 100%;
+    }
+
+    /* Responsive Media Queries */
+    @media (max-width: 768px) {
+      /* Standardized Header Responsive */
+      header {
+        padding: 1rem;
+      }
+      header nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      .logo {
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      .logo h1 { font-size: 1.6rem; }
+      .logo h6 { font-size: 0.8rem; }
+
+      ul.nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        margin-top: 10px;
+        align-items: center;
+        /* background: rgba(0,0,0,0.3); From user's project page, can be added if desired */
+        /* padding: 0.5rem; */
+        /* border-radius: 5px; */
+      }
+      ul.nav-links li {
+        width: 80%;
+        max-width: 300px;
+      }
+      ul.nav-links li a {
+        font-size: 1rem;
+        display: block;
+        text-align: center;
+        padding: 0.75rem;
+      }
+      
+      main {
+        padding-top: 15rem; /* Increased top padding for taller mobile header */
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      /* Page Specific Responsive */
+      .flex-container {
+        flex-direction: column; /* Stack image and content on mobile */
+        align-items: center; /* Center items when stacked */
+      }
+      .image-container, .content {
+        flex-basis: auto; /* Reset flex-basis */
+        width: 100%; /* Make them full width */
+        max-width: 500px; /* Max width for content on mobile for readability */
+      }
+       .image-container {
+        max-width: 600px; /* Allow image to be a bit wider if needed */
+      }
+    }
+     @media (max-width: 480px) {
+        .logo h1 {
+            font-size: 1.4rem;
+        }
+        ul.nav-links li a {
+            font-size: 0.9rem;
+            padding: 0.6rem;
+        }
+        main {
+             padding-top: 14rem; /* Adjust if header is still too tall */
+        }
+        .section-title {
+            font-size: 28px;
+        }
+        .content h3 {
+            font-size: 1.3rem;
+        }
+        .content p, .content ul li {
+            font-size: 0.9rem;
+        }
+    }
+  </style>
+</head>
+<body>
+
+  <header role="banner">
+    <nav role="navigation" aria-label="Main navigation">
+      <div class="logo">
+        <h1>Software Institute</h1>
+        <h6>Best Courses</h6>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html#Home">Home</a></li>
+        <li><a href="Course.html">All Courses</a></li>
+        <li><a href="Training.html">Software Training</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li> <li><a href="services.html">Services</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="Login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main role="main">
+    <div class="section-title">Internship Projects</div>
+
+    <div class="flex-container">
+      <div class="image-container">
+        <img src="realtimeprojects.jpeg" alt="Students working on Real-Time Projects" onerror="this.onerror=null; this.src='https://placehold.co/640x420/cccccc/ffffff?text=Image+Not+Found';">
+      </div>
+
+      <div class="content">
+        <h3>Learn by Doing: Real-World Projects for Practical Mastery</h3>
+        <p>
+          At our cutting-edge software training institute, we specialize in offering <span class="highlight">real-time projects</span> that immerse learners in the dynamic world of <span class="highlight">IT technologies</span>. Our courses are designed to mirror real-world scenarios encountered in the IT industry, ensuring a practical and hands-on learning experience.
+        </p>
+        <p>
+          In addition to theoretical knowledge, our institute emphasizes <span class="highlight">hands-on projects</span>, allowing students to apply what they've learned in a tangible, real-world context. Our state-of-the-art lab facility provides the perfect environment for learners to experiment and hone their skills.
+        </p>
+        <h3>Key Features of Our Project-Based Learning:</h3>
+        <ul>
+          <li>Real-time projects provide practical exposure to current IT technologies.</li>
+          <li>Courses are structured around real-world scenarios prevalent in the IT industry.</li>
+          <li>Comprehensive software courses address the latest industry demands and trends.</li>
+          <li>Hands-on projects enable the direct application of theoretical knowledge.</li>
+          <li>State-of-the-art lab facility for practical experimentation and development.</li>
+          <li>Dedicated mentors to support and guide students throughout their project lifecycle.</li>
+          <li>Industry-standard tools, platforms, and technologies used during training.</li>
+          <li>Collaborative team projects to simulate real work environments.</li>
+          <li>Regular project reviews and feedback sessions for continuous improvement.</li>
+          <li>Final project presentations help build confidence and professionalism.</li>
+          <li>Portfolio-ready outcomes for job placements and internships.</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer role="contentinfo">
+    <p>&copy; 2025 Software Institute. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Software Institute - Weekend Training</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f4f4; /* Page background from user's training page */
+      color: #333;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex; /* For sticky footer */
+      flex-direction: column; /* For sticky footer */
+    }
+
+    a { /* General link styling for content, not header/footer */
+      color: #007bff; /* Default link color for content */
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #0056b3; /* Darker blue on hover */
+    }
+
+    /* Header Styles (Standardized Fixed Header) */
+    header {
+      background-color: #1e1e2f;
+      color: #fff;
+      padding: 1rem 2rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    header nav { /* Targets the nav element within the header */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #f9dc5c;
+      margin: 0;
+    }
+
+    .logo h6 {
+      font-size: 0.9rem;
+      color: #cccccc;
+      font-style: italic;
+      margin: 0;
+    }
+
+    ul.nav-links { /* Standardized nav links container */
+      list-style: none;
+      display: flex;
+      gap: 0.5rem; 
+      padding: 0;
+      margin: 0;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    ul.nav-links li a { /* Standardized nav link items */
+      color: #fff; 
+      text-decoration: none;
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+      font-weight: bold; 
+      transition: background-color 0.3s, color 0.3s;
+      display: block;
+    }
+
+    ul.nav-links li a:hover { 
+      background-color: #f9dc5c;
+      color: #1e1e2f;
+    }
+    section {
+      background: rgba(255, 255, 255, 0.95);
+      margin: 20px auto;
+      max-width: 1000px;
+      padding: 70px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #ccc;
+    }
+
+    th {
+      background-color: #dbeeff;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    .register {
+      color: red;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .flex-container {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      margin-top: 20px;
+    }
+
+    .flex-container img {
+      max-width: 100%;
+      border-radius: 10px;
+      flex: 1 1 300px;
+    }
+
+    .content {
+      flex: 2;
+    }
+
+    .content h3 {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #0077b6;
+    }
+
+    footer {
+      background-color: #06090b;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+ <header role="banner">
+    <nav role="navigation" aria-label="Main navigation">
+      <div class="logo">
+        <h1>Software Institute</h1>
+        <h6>Best Courses</h6>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html#Home">Home</a></li>
+        <li><a href="Course.html">All Courses</a></li>
+        <li><a href="Training.html" class="active">Software Training</a></li> <li><a href="projects.html">Projects</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="Login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Services Section -->
+  <section>
+    <h2>Our Services</h2>
+    <p>Software Technologies Major Aspect of Concentration is IT Training at all the levels like Academic or Corporate Level. We are recognized to be the connoisseur in providing the best training program to the Candidates who are inclined to be Software Professionals.</p>
+  </section>
+
+  <!-- Training Types Section -->
+  <section>
+    <h2>Training Types</h2>
+    <h3>Classroom Training</h3>
+    <p>Custom-made training program to suit aspirants from different educational backgrounds held at our campus with hands-on experience.</p>
+
+    <h3>On-Campus Training</h3>
+    <p>Training for Colleges and Universities bridging academic standards and industry requirements.</p>
+
+    <h3>Online Training</h3>
+    <p>Online sessions using advanced software tools for those unable to attend in person.</p>
+
+    <h3>Corporate Training</h3>
+    <p>Customized for working professionals based on project requirements to enhance productivity.</p>
+  </section>
+
+
+  <!-- Real-Time Projects Section -->
+  <section>
+    <h2>Real-Time Projects</h2>
+    <div class="flex-container">
+      <img src="https://www.herkesebilimteknoloji.com/wp-content/uploads/2020/06/uzaktan.jpg" alt="Real-Time Projects">
+      <div class="content">
+        <h3>Learn by Doing: Real-World Projects for Practical Mastery</h3>
+        <p>
+          At our cutting-edge software training institute, we specialize in offering
+          <span class="highlight">real-time projects</span> that immerse learners in the dynamic world of
+          <span class="highlight">IT technologies</span>. Our <span class="highlight">courses</span> are designed
+          to mirror real-world scenarios encountered in the IT industry.
+        </p>
+        <p>
+          In addition to theoretical knowledge, our institute emphasizes
+          <span class="highlight">hands-on projects</span>, allowing students to apply what they've learned in
+          a tangible, real-world context.
+        </p>
+
+        <h3>Key Features:</h3>
+        <ul>
+          <li>Real-time projects for practical exposure.</li>
+          <li>Courses based on real-world industry scenarios.</li>
+          <li>Latest, in-demand software technologies.</li>
+          <li>Hands-on labs for technical mastery.</li>
+          <li>Expert mentors for guidance and support.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Software Institute. All rights reserved.
+  </footer>
+
+</body>
+</html>

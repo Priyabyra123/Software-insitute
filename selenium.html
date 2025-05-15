@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selenium Course - Software Institute</title>
+    <link rel="stylesheet" href="styles-selenium.css">
+</head>
+<style>/* General Styles */
+ *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Fallback fonts */
+      margin: 0;
+      padding: 0; /* Added padding reset */
+      color: #333; 
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      position: relative; /* For the ::before pseudo-element */
+      background-color: #f8f9fa; /* Fallback background color */
+    }
+
+    body::before { /* Full page background image with opacity */
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      opacity: 0.1; /* Adjust opacity as needed */
+      z-index: -1; /* Place it behind the content */
+    }
+
+    /* Header Styles */
+    header {
+      background-color: #1e1e2f; /* Original dark header */
+      color: #fff;
+      padding: 1rem 2rem; 
+      position: fixed; /* Changed from sticky to fixed as per user's new code */
+      top: 0;
+      width: 100%;
+      z-index: 999; /* Original z-index */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    header nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap; 
+    }
+
+    .logo h1 {
+      font-size: 1.8rem; 
+      font-weight: bold;
+      color: #f9dc5c; 
+      margin: 0;
+    }
+
+    .logo h6 { 
+      font-size: 0.9rem;
+      color: #cccccc;
+      margin: 0;
+      font-style: italic;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem; 
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+      font-weight: bold; /* Kept bold from user's new code */
+      transition: background-color 0.3s, color 0.3s; /* Added color transition */
+    }
+
+    .nav-links li a:hover {
+      background-color: #f9dc5c;
+      color: #1e1e2f;
+    }
+section {
+    padding: 60px;
+    margin: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.course-intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.course-info {
+    width: 50%;
+}
+
+.course-info h2 {
+    font-size: 28px;
+    color: #333;
+}
+
+.course-info p {
+    font-size: 18px;
+    color: #555;
+    margin-top: 10px;
+}
+
+.course-image img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.curriculum ul {
+    padding-left: 20px;
+}
+
+.curriculum li {
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: #555;
+}
+
+.instructor {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.instructor-info {
+    display: flex;
+}
+
+.instructor-info img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    margin-right: 20px;
+    border: 3px solid #007bff;
+}
+
+.instructor-details h4 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.instructor-details p {
+    font-size: 16px;
+    color: #555;
+}
+
+.cta {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.cta-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.cta-btn:hover {
+    background-color: #218838;
+}
+
+ footer {
+      background-color: #2a2a3d; /* User's new footer background */
+      color: #ffffff;
+      text-align: center;
+      padding: 1.5rem; /* User's new padding */
+      font-weight: bold; 
+      font-size: 1rem; 
+      margin-top: auto; /* Push footer to bottom */
+      border-top: 2px solid #f9dc5c; /* User's new border */
+      position: relative; /* Ensure footer is above body::before */
+      z-index: 1;
+    }@media (max-width: 768px) {
+      header nav {
+        flex-direction: column; 
+        align-items: center; 
+      }
+      .logo {
+        margin-bottom: 10px; 
+      }
+      .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        /* background: rgba(0, 0, 0, 0.3); User's new style, applied this */
+        padding: 0.5rem;
+        border-radius: 5px;
+        width: 100%; 
+        align-items: center; 
+        margin-top: 10px; /* User's new style */
+      }
+      .nav-links li a {
+        display: block; 
+        text-align: center;
+        width: 100%;
+      }
+
+      .flex-container {
+        flex-direction: column;
+        align-items: center; 
+      }
+      .flex-container .image-container, /* Target the wrapper */
+      .flex-container img {
+         max-width: 100%; 
+         flex-basis: auto; 
+         height: auto; /* Let height adjust in column layout, or set a specific mobile height */
+         min-height: 300px; /* Example minimum height for mobile image */
+      }
+       .content {
+         max-width: 100%; 
+         flex-basis: auto;
+      }
+      main {
+        padding-top: 170px; /* Increased padding top for potentially taller mobile header */
+      }
+    }
+</style>
+<body>
+    <!-- Header -->
+   <header>
+    <nav>
+      <div class="logo">
+        <h1>Software Institute</h1>
+        <h6>Best Courses</h6>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html#Home">Home</a></li>
+        <li><a href="Course.html">All Courses</a></li>
+        <li><a href="Training.html">Software Training</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="Login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <!-- Selenium Course Section -->
+    <section class="course-intro">
+        <div class="course-info">
+            <h2>Selenium Automation Testing Course</h2>
+            <p>Become proficient in test automation with Selenium. This course covers everything from the basics of Selenium to advanced automation techniques.</p>
+        </div>
+       
+    </section>
+
+    <!-- Course Curriculum -->
+    <section class="curriculum">
+        <h3>Course Curriculum</h3>
+        <ul>
+            <li>Module 1: Introduction to Selenium</li>
+            <li>Module 2: Selenium WebDriver Basics</li>
+            <li>Module 3: Handling Web Elements</li>
+            <li>Module 4: Selenium with Java</li>
+            <li>Module 5: TestNG Framework Integration</li>
+            <li>Module 6: Selenium Grid & Parallel Testing</li>
+        </ul>
+    </section>
+
+    <!-- Instructor Information -->
+    <section class="instructor">
+        <h3>Meet Your Instructor</h3>
+        <div class="instructor-info">
+            
+            <div class="instructor-details">
+                <h4>Jane Smith</h4>
+                <p>Jane is an experienced test automation engineer with expertise in Selenium and over 8 years of experience in the industry.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <p>Start your Selenium journey today!</p>
+        <a href="Login.html" class="cta-btn">Enroll Now</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+    &copy; 2025 Software Institute. All rights reserved.
+  </footer>
+</body>
+</html>

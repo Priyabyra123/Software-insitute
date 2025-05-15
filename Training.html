@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Training Programs at Software Institute" />
+  <title>Software Institute | Training</title>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* General Reset & Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f4f4; /* Page background from user's training page */
+      color: #333;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex; /* For sticky footer */
+      flex-direction: column; /* For sticky footer */
+    }
+
+    a { /* General link styling for content, not header/footer */
+      color: #007bff; /* Default link color for content */
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #0056b3; /* Darker blue on hover */
+    }
+
+    /* Header Styles (Standardized Fixed Header) */
+    header {
+      background-color: #1e1e2f;
+      color: #fff;
+      padding: 1rem 2rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    header nav { /* Targets the nav element within the header */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #f9dc5c;
+      margin: 0;
+    }
+
+    .logo h6 {
+      font-size: 0.9rem;
+      color: #cccccc;
+      font-style: italic;
+      margin: 0;
+    }
+
+    ul.nav-links { /* Standardized nav links container */
+      list-style: none;
+      display: flex;
+      gap: 0.5rem; 
+      padding: 0;
+      margin: 0;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    ul.nav-links li a { /* Standardized nav link items */
+      color: #fff; 
+      text-decoration: none;
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+      font-weight: bold; 
+      transition: background-color 0.3s, color 0.3s;
+      display: block;
+    }
+
+    ul.nav-links li a:hover { 
+      background-color: #f9dc5c;
+      color: #1e1e2f;
+    }
+    
+    /* Main Content Styles for Training Page */
+    main {
+      padding-top: 7rem; /* Adjusted for fixed header */
+      padding-bottom: 2rem; 
+      max-width: 1000px; /* Max width from user's training page */
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      flex-grow: 1; /* For sticky footer */
+      padding-left: 1rem; /* Side padding for main content */
+      padding-right: 1rem;
+    }
+
+    /* Section styling from user's training page */
+    section { /* This will style the <section> elements directly */
+      margin-bottom: 2.5rem; /* Increased margin */
+      background: #ffffff;
+      padding: 2rem; /* Increased padding */
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Softer shadow */
+    }
+
+    section h2 {
+      font-size: 1.8rem; /* Increased size */
+      margin-bottom: 1.5rem; /* Increased margin */
+      border-bottom: 3px solid #f9dc5c; /* Thicker, more prominent border */
+      padding-bottom: 0.75rem; /* Increased padding */
+      color: #1e1e2f; /* Dark color for section titles */
+      font-weight: 600;
+    }
+    
+    section p { /* General paragraph styling within sections */
+        margin-bottom: 1rem;
+        color: #454545; /* Slightly softer text color */
+    }
+
+    .training-types { /* Styles from user's training page */
+      display: flex;
+      justify-content: space-around; /* Changed to space-around for better distribution */
+      gap: 1.5rem; /* Increased gap */
+      flex-wrap: wrap;
+      margin-top: 1rem; /* Add some space above the types */
+    }
+
+    .training-type { /* Styles from user's training page, applied to <a> tags */
+      background-color: #7655c276;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      /* width: 30%; Removed fixed width to allow flex-basis to work better */
+      flex: 1 1 280px; /* Flex grow, shrink, and basis for responsiveness */
+      max-width: 300px; /* Max width for each type */
+      transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+      text-align: center;
+      text-decoration: none; /* Ensure a tags don't have underlines */
+      color: #333; /* Default text color for training type cards */
+      border: 1px solid #e0e0e0; /* Subtle border */
+    }
+
+    .training-type:hover {
+      transform: translateY(-5px) scale(1.03); /* Enhanced hover effect */
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      background-color: #f0f8ff; /* Light blue hover, was #f9dc5c */
+      cursor: pointer;
+    }
+     .training-type:hover h3 {
+        color: #eaed05; /* Darker blue heading on hover */
+     }
+
+
+    .training-type h3 { /* Styles from user's training page */
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem; /* Increased margin */
+      color: #1e1e2f;
+      font-weight: 600;
+    }
+    .training-type p {
+        font-size: 0.95rem;
+        color: #555;
+    }
+
+
+    .classroom-img { /* Styles from user's training page */
+      width: 100%;
+      max-width: 600px; /* Max width for images */
+      height: auto; /* Maintain aspect ratio */
+      border-radius: 10px;
+      margin-top: 1rem;
+      display: block; /* Center image if its container is text-align:center */
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Footer Styles (Standardized) */
+    footer {
+      background-color: #2a2a3d;
+      color: #ffffff;
+      text-align: center;
+      padding: 1.5rem;
+      font-weight: bold;
+      font-size: 1rem;
+      margin-top: auto; /* Push footer to bottom */
+      border-top: 2px solid #f9dc5c;
+      width: 100%;
+    }
+
+    /* Responsive Media Queries */
+    @media (max-width: 768px) {
+      /* Standardized Header Responsive */
+      header {
+        padding: 1rem;
+      }
+      header nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      .logo {
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      .logo h1 { font-size: 1.6rem; }
+      .logo h6 { font-size: 0.8rem; }
+
+      ul.nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        margin-top: 10px;
+        align-items: center;
+      }
+      ul.nav-links li {
+        width: 80%;
+        max-width: 300px;
+      }
+      ul.nav-links li a {
+        font-size: 1rem;
+        display: block;
+        text-align: center;
+        padding: 0.75rem;
+      }
+      
+      main {
+        padding-top: 15rem; /* Increased top padding for taller mobile header */
+        padding-left: 1rem; 
+        padding-right: 1rem;
+      }
+      
+      /* Page Specific Responsive */
+      .training-types {
+        flex-direction: column; /* Stack training types on mobile */
+        gap: 1.5rem; /* Maintain gap */
+      }
+      .training-type {
+        width: 100%; /* Make training types full width on mobile */
+        max-width: none; /* Remove max-width for stacked items */
+        flex-basis: auto; /* Reset flex-basis */
+      }
+      section {
+        padding: 1.5rem; /* Adjust section padding */
+      }
+      section h2 {
+        font-size: 1.6rem;
+      }
+    }
+
+     @media (max-width: 480px) {
+        .logo h1 {
+            font-size: 1.4rem;
+        }
+        ul.nav-links li a {
+            font-size: 0.9rem;
+            padding: 0.6rem;
+        }
+        main {
+             padding-top: 14rem; /* Adjust if header is still too tall */
+        }
+        section h2 {
+            font-size: 1.4rem;
+        }
+        .training-type h3 {
+            font-size: 1.25rem;
+        }
+    }
+  </style>
+</head>
+<body>
+
+  <header role="banner">
+    <nav role="navigation" aria-label="Main navigation">
+      <div class="logo">
+        <h1>Software Institute</h1>
+        <h6>Best Courses</h6>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html#Home">Home</a></li>
+        <li><a href="Course.html">All Courses</a></li>
+        <li><a href="Training.html" class="active">Software Training</a></li> <li><a href="projects.html">Projects</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="Login.html">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main role="main">
+    <section id="Home"> <h2>Welcome to Software Institute Training</h2>
+      <p>Explore our various training programs designed to boost your skills and advance your career in the IT industry. We offer flexible learning options to suit your needs.</p>
+    </section>
+
+    <section id="Training">
+      <h2>Our Training Programs</h2>
+      <p>We offer the following types of training, each tailored to provide the best learning experience:</p>
+      <div class="training-types">
+        <a href="onlinetraining.html" class="training-type">
+          <h3>Online Training</h3>
+          <p>Learn at your own pace with interactive online courses, accessible from anywhere in the world.</p>
+        </a>
+        <a href="classroomtraining.html" class="training-type">
+          <h3>Classroom Training</h3>
+          <p>Join in-person sessions with expert instructors and benefit from real-time interaction and collaboration.</p>
+        </a>
+        <a href="weekend training course.html" class="training-type">
+          <h3>Weekend Training</h3>
+          <p>Ideal for working professionals and students looking to balance their current commitments with skill development.</p>
+        </a>
+        <a href="OnCampustraining.html" class="training-type">
+          <h3>On-Campus Training</h3>
+          <p>We partner with educational institutions to deliver specialized training programs directly on campus.</p>
+        </a>
+      </div>
+    </section>
+
+    <section id="OnlineTrainingDetails"> <h2>Online Training Details</h2>
+      <p>Our online training provides comprehensive learning material, recorded video sessions for flexible study, and live doubt-clearing sessions with experienced trainers. Get certified from the comfort of your home.</p>
+      <img src="https://img.freepik.com/premium-photo/business-training-concept-training-webinar-elearning-financial-technology-communication-concept_161452-6455.jpg" alt="Online Training Illustration" class="classroom-img" onerror="this.onerror=null; this.src='https://placehold.co/600x400/4A90E2/FFFFFF?text=Online+Training';">
+    </section>
+
+    <section id="ClassroomTrainingDetails"> <h2>Classroom Training Details</h2>
+      <p>Experience immersive learning in our state-of-the-art classrooms. We provide hands-on sessions, live projects, and encourage team-based learning to simulate real-world work environments.</p>
+      <img src="https://blog.commlabindia.com/hubfs/Imported_Blog_Media/classroom-training-2.jpg" alt="Classroom Training Environment" class="classroom-img" onerror="this.onerror=null; this.src='https://placehold.co/600x400/50E3C2/FFFFFF?text=Classroom+Training';">
+    </section>
+
+    <section id="WeekendTrainingDetails"> <h2>Weekend Training Details</h2>
+      <p>Our weekend programs are specifically designed for working professionals and students who wish to learn new skills or upgrade existing ones without affecting their weekday schedule. These intensive sessions cover the curriculum effectively.</p>
+      <img src="https://media.publit.io/file/w_1920,h_1080,c_fit,q_80/chrmpWebsite/featured-2.png" alt="Weekend Training Session" class="classroom-img" onerror="this.onerror=null; this.src='https://placehold.co/600x400/F5A623/FFFFFF?text=Weekend+Training';">
+    </section>
+
+    <section id="AboutTrainings"> <h2>About Our Trainings</h2>
+      <p>All our training sessions, whether online, classroom, or weekend, are conducted by certified industry experts with extensive practical experience in their respective fields. We focus on a hands-on, project-based approach to ensure you gain applicable skills.</p>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>&copy; 2025 Software Institute. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
