@@ -7,51 +7,49 @@
   <link rel="stylesheet" href="styles-selenium.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head><style>
-    /* Base Styles */
- * {
+  * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
     body {
       font-family: 'Roboto', sans-serif;
-      background-color: #f0f4f8; /* Default background for the page */
+      background-color: #f0f4f8;
       color: #333;
       line-height: 1.6;
-      display: flex; 
-      flex-direction: column; 
-      min-height: 100vh; 
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
     a {
       text-decoration: none;
       color: inherit;
     }
-    .container { /* General container class */
+    .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 20px; 
+      padding: 0 20px;
     }
 
-    /* Header Styles (Updated to match screenshot aesthetics) */
     header {
-      background: #111111; /* Very dark grey/black background like screenshot */
+      background: #111111;
       color: white;
-      padding: 20px 0; 
+      padding: 20px 0;
     }
-    .header-container { /* Specific container for header content */
+    .header-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      max-width: 1200px; 
-      margin: 0 auto;     
-      padding: 0 20px;    
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
-    header .logo { /* Style for the logo text */
-      font-size: 24px; /* Adjusted font size */
+    header .logo {
+      font-size: 24px;
       font-weight: bold;
-      color: #ede212; /* White logo text like screenshot */
+      color: #ede212;
     }
-    header .nav-links { /* Style for nav links */
+    header .nav-links {
       list-style: none;
       display: flex;
       padding: 0;
@@ -61,22 +59,20 @@
       margin-left: 25px;
     }
     header .nav-links a {
-      color: #fff; /* White nav links */
-      font-size: 1rem; 
-      font-weight: bold; 
+      color: #fff;
+      font-size: 1rem;
+      font-weight: bold;
       transition: color 0.3s, background-color 0.3s;
-      padding: 0.5rem 0.75rem; 
-      border-radius: 4px; 
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
     }
     header .nav-links a:hover,
-    header .nav-links a.active { 
-      color: #1e1e2f; /* Dark text on hover/active */
-      background-color: #f9dc5c; /* Yellow background on hover/active */
+    header .nav-links a.active {
+      color: #1e1e2f;
+      background-color: #f9dc5c;
     }
-  
-    
 
-/* Banner */
+
 .course-banner {
   background: url('https://example.com/selenium-banner.jpg') center/cover no-repeat;
   height: 60vh;
@@ -117,7 +113,6 @@
   background-color: #218838;
 }
 
-/* Curriculum */
 .curriculum {
   background: #fff;
   padding: 50px 20px;
@@ -143,7 +138,6 @@
   background-color: #eaf6ff;
 }
 
-/* Instructor */
 .instructor {
   background-color: #f4f4f4;
   padding: 50px 20px;
@@ -169,7 +163,6 @@
   color: #555;
 }
 
-/* Footer */
 footer {
   background-color: #1e1e2f;
   color: white;
@@ -194,11 +187,10 @@ footer {
 
 </style>
 <body>
-  <!-- Header -->
   <header>
     <div class="container header-container">
       <h1 class="logo">Software Institute</h1>
-    
+
       <nav>
         <ul class="nav-links">
           <li><a href="index.html#Home">Home</a></li>
@@ -215,7 +207,6 @@ footer {
     </div>
   </header>
 
-  <!-- Banner Section -->
   <section class="course-banner">
     <div class="banner-overlay">
       <div class="banner-content">
@@ -226,7 +217,6 @@ footer {
     </div>
   </section>
 
-  <!-- Curriculum -->
   <section class="curriculum">
     <div class="container">
       <h3>Course Curriculum</h3>
@@ -241,10 +231,9 @@ footer {
     </div>
   </section>
 
-  <!-- Instructor Section -->
   <section class="instructor">
     <div class="container instructor-container">
-    
+
       <div class="instructor-info">
         <h4>Jane Smith</h4>
         <p>Jane is a seasoned automation engineer with 8+ years of experience, specializing in Selenium and Java-based testing frameworks.</p>
@@ -252,7 +241,6 @@ footer {
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
       <p>© 2025 Software Institute | All Rights Reserved</p>
