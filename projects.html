@@ -6,7 +6,6 @@
   <title>Projects | Software Institute</title>
   <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* General Reset & Base Styles */
     * {
       margin: 0;
       padding: 0;
@@ -15,16 +14,15 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f8ff; /* Page background from user's project page */
+      background-color: #f4f8ff;
       color: #333;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
 
-    /* Header Styles (Standardized Fixed Header) */
     header {
-      background-color: #1e1e2f; /* Standardized header background */
+      background-color: #1e1e2f;
       color: #fff;
       padding: 1rem 2rem;
       position: fixed;
@@ -34,39 +32,39 @@
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
 
-    header nav { /* Targets the nav element within the header */
+    header nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
     }
 
-    .logo h1 { /* Standardized logo h1 */
+    .logo h1 {
       font-size: 1.8rem;
       font-weight: bold;
       color: #f9dc5c;
       margin: 0;
     }
 
-    .logo h6 { /* Standardized logo h6 */
+    .logo h6 {
       font-size: 0.9rem;
       color: #cccccc;
       font-style: italic;
       margin: 0;
     }
 
-    ul.nav-links { /* Standardized nav links container */
+    ul.nav-links {
       list-style: none;
       display: flex;
-      gap: 0.5rem; 
+      gap: 0.5rem;
       padding: 0;
       margin: 0;
       align-items: center;
-      flex-wrap: wrap; /* Allow nav links to wrap on smaller screens if necessary */
+      flex-wrap: wrap;
     }
 
-    ul.nav-links li a { /* Standardized nav link items */
-      color: #fff; /* White text for links */
+    ul.nav-links li a {
+      color: #fff;
       text-decoration: none;
       padding: 0.5rem 0.75rem;
       border-radius: 4px;
@@ -75,101 +73,97 @@
       display: block;
     }
 
-    ul.nav-links li a:hover { /* Style for hover and active link */
+    ul.nav-links li a:hover {
       background-color: #f9dc5c;
       color: #1e1e2f;
     }
-    
-    /* Main Content Styles for Projects Page */
+
     main {
-      padding: 7rem 2rem 2rem; /* Top padding for fixed header */
-      max-width: 1200px; /* Max width from user's project page */
+      padding: 7rem 2rem 2rem;
+      max-width: 1200px;
       margin-left: auto;
       margin-right: auto;
-      flex-grow: 1; /* Allows main to fill available space */
+      flex-grow: 1;
       width: 100%;
     }
 
-    .grid-container { /* Styles from user's project page */
+    .grid-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
-      gap: 25px; /* Increased gap slightly */
-      padding: 20px 0; /* Padding for the grid container itself */
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 20px 0;
     }
 
-    .card { /* Styles from user's project page */
+    .card {
       background: #fff;
       padding: 20px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      display: flex; /* Added for flex column layout */
-      flex-direction: column; /* Added for flex column layout */
-      justify-content: space-between; /* Distribute space */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* Enhanced hover shadow */
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
     }
 
-    .card img { /* Styles from user's project page */
-      width: 100%; /* Make image take full width of card */
-      max-width: 100%; /* Ensure it doesn't overflow */
+    .card img {
+      width: 100%;
+      max-width: 100%;
       border-radius: 8px;
       height: 180px;
       object-fit: cover;
-      margin-bottom: 15px; /* Space below image */
+      margin-bottom: 15px;
     }
 
-    .card h3 { /* Styles from user's project page */
-      margin: 0 0 10px 0; /* Adjusted margin */
+    .card h3 {
+      margin: 0 0 10px 0;
       color: #1a1a1a;
-      font-size: 1.25rem; /* Slightly larger heading */
+      font-size: 1.25rem;
     }
 
-    .card p { /* Styles from user's project page */
-      font-size: 0.9rem; /* Adjusted font size */
+    .card p {
+      font-size: 0.9rem;
       color: #555;
-      line-height: 1.5; /* Improved line height */
-      flex-grow: 1; /* Allow paragraph to take space */
-      margin-bottom: 12px; /* Space before button */
+      line-height: 1.5;
+      flex-grow: 1;
+      margin-bottom: 12px;
     }
 
-    .card a.view-more-btn { /* Specific class for view more button */
+    .card a.view-more-btn {
       display: inline-block;
-      margin-top: auto; /* Push button to bottom if content varies */
-      padding: 10px 20px; /* Slightly larger padding */
+      margin-top: auto;
+      padding: 10px 20px;
       background-color: #007bff;
       color: white;
-      border-radius: 5px; /* Slightly more rounded */
+      border-radius: 5px;
       text-decoration: none;
       transition: background-color 0.3s ease, transform 0.2s ease;
-      font-weight: 500; /* Medium weight */
+      font-weight: 500;
     }
 
     .card a.view-more-btn:hover {
       background-color: #0056b3;
-      transform: translateY(-2px); /* Slight lift on hover */
+      transform: translateY(-2px);
     }
 
-    /* Footer Styles (Standardized) */
     footer {
-      background-color: #2a2a3d; /* Standardized footer background */
-      color: #ffffff; /* Standardized text color */
+      background-color: #2a2a3d;
+      color: #ffffff;
       text-align: center;
-      padding: 1.5rem; /* Standardized padding */
+      padding: 1.5rem;
       font-weight: bold;
       font-size: 1rem;
-      margin-top: auto; /* Push footer to bottom */
-      border-top: 2px solid #f9dc5c; /* Standardized border */
+      margin-top: auto;
+      border-top: 2px solid #f9dc5c;
       width: 100%;
     }
 
-    /* Responsive Media Queries */
     @media (max-width: 768px) {
-      /* Standardized Header Responsive */
       header {
         padding: 1rem;
       }
@@ -190,28 +184,25 @@
         width: 100%;
         margin-top: 10px;
         align-items: center;
-        /* background: rgba(0, 0, 0, 0.6); From user's original, can be added if desired for this page */
-        /* padding: 1rem; */
-        /* border-radius: 6px; */
       }
       ul.nav-links li {
         width: 80%;
         max-width: 300px;
       }
       ul.nav-links li a {
-        font-size: 1rem; /* User's original was 1.1rem */
+        font-size: 1rem;
         display: block;
         text-align: center;
         padding: 0.75rem;
       }
-      
+
       main {
-        padding-top: 15rem; /* Increased top padding for taller mobile header */
-        padding-left: 1rem; /* Adjust side padding */
+        padding-top: 15rem;
+        padding-left: 1rem;
         padding-right: 1rem;
       }
       .grid-container {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adjust minmax for smaller screens */
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         padding: 15px 0;
       }
       .card h3 {
@@ -228,10 +219,10 @@
             padding: 0.6rem;
         }
         main {
-             padding-top: 14rem; /* Adjust if header is still too tall */
+             padding-top: 14rem;
         }
         .grid-container {
-            grid-template-columns: 1fr; /* Single column on very small screens */
+            grid-template-columns: 1fr;
             gap: 20px;
         }
         .card {
@@ -269,7 +260,7 @@
       </ul>
     </nav>
   </header>
-  
+
   <main role="main">
     <section class="grid-container">
       <div class="card">
