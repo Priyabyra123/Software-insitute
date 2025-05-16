@@ -6,7 +6,6 @@
   <title>On-Campus Training - Software Institute</title>
   <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* General Reset & Base Styles */
     * {
       margin: 0;
       padding: 0;
@@ -15,17 +14,16 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #1a1a2e; /* Dark background for the page, consistent with content's theme */
-      color: #e0e0e0; /* Default light text color for the page */
+      background-color: #e7e7f4;
+      color: #e0e0e0;
       line-height: 1.6;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
 
-    /* Header Styles (Standardized Fixed Header) */
     header {
-      background-color: #1e1e2f; /* Standardized header background */
+      background-color: #1e1e2f;
       color: #fff;
       padding: 1rem 2rem;
       position: fixed;
@@ -35,37 +33,37 @@
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
 
-    header nav { /* Targets the nav element within the header */
+    header nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
     }
 
-    .logo h1 { /* Standardized logo h1 */
+    .logo h1 {
       font-size: 1.8rem;
       font-weight: bold;
       color: #f9dc5c;
       margin: 0;
     }
 
-    .logo h6 { /* Standardized logo h6 */
+    .logo h6 {
       font-size: 0.9rem;
       color: #cccccc;
       font-style: italic;
       margin: 0;
     }
 
-    ul.nav-links { /* Standardized nav links container */
+    ul.nav-links {
       list-style: none;
       display: flex;
-      gap: 0.5rem; 
+      gap: 0.5rem;
       padding: 0;
       margin: 0;
       align-items: center;
     }
 
-    ul.nav-links li a { /* Standardized nav link items */
+    ul.nav-links li a {
       color: #fff;
       text-decoration: none;
       padding: 0.5rem 0.75rem;
@@ -75,108 +73,102 @@
       display: block;
     }
 
-    ul.nav-links li a:hover,
-    ul.nav-links li a.active { /* 'Training.html' or similar might be active */
+    ul.nav-links li a:hover {
       background-color: #f9dc5c;
       color: #1e1e2f;
     }
-    
-    /* Main Content Styles for On-Campus Training Page */
+
     main {
-      padding: 7rem 2rem 2rem; /* Ensure space for fixed header */
+      padding: 7rem 2rem 2rem;
       flex-grow: 1;
       width: 100%;
+      
     }
 
-    .container { /* Styles from user's provided code for the main content block */
-      max-width: 1000px; /* Max-width from previous version for better table display */
-      margin: 0 auto; /* Centered, top margin handled by main's padding */
-      background-color: rgba(0, 0, 0, 0.65); /* Dark semi-transparent background from user's code (was rgba(0,0,0,0.6)) */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background-color: rgba(0, 0, 0, 0.65);
       padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Shadow from previous version */
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     }
 
-    /* h2 within .container, specific to this page's content */
-    .container h2 { 
+    .container h2 {
       text-align: center;
-      margin-bottom: 20px; /* User's original margin */
-      color: #ffcc00; /* User's original color */
-      font-size: 2rem; /* User's original font-size for header h1, applied to section h2 */
-      font-weight: 600; /* Added for emphasis */
+      margin-bottom: 20px;
+      color: #ffcc00;
+      font-size: 2rem;
+      font-weight: 600;
     }
 
-    /* p within .container, specific to this page's content */
-    .container p { 
-      font-size: 1.1rem; /* User's original font-size */
-      margin-bottom: 20px; /* User's original margin */
-      text-align: justify; /* User's original text-align */
-      color: #f0f0f0; /* Light text for readability on dark background */
-      line-height: 1.7; /* Improved line-height */
+    .container p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      text-align: justify;
+      color: #f0f0f0;
+      line-height: 1.7;
     }
 
-    .table-wrapper { /* Wrapper for table for potential horizontal scroll */
+    .table-wrapper {
         overflow-x: auto;
-        margin-top: 20px; /* Space above the table */
+        margin-top: 20px;
     }
 
-    table { /* Styles from user's provided code */
+    table {
       width: 100%;
       border-collapse: collapse;
-      background-color: #ffffff; /* Table background from user's code */
-      color: #000; /* Table text color from user's code */
-      border-radius: 8px; /* Rounded corners for the table */
-      overflow: hidden; /* To make border-radius work on table */
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2); /* Subtle shadow for the table */
+      background-color: #ffffff;
+      color: #000;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
 
-    th, td { /* Styles from user's provided code */
-      padding: 12px; /* User's original padding */
-      border: 1px solid #333; /* User's original border */
-      text-align: center; /* User's original text-align */
-    }
-    
-    th { /* Styles from user's provided code */
-      background-color: #2e7d32; /* User's original th background */
-      color: #fff; /* User's original th text color */
-      font-weight: 600; /* Added for emphasis */
-      font-size: 1.05rem; /* Slightly larger font for headers */
+    th, td {
+      padding: 12px;
+      border: 1px solid #333;
+      text-align: center;
     }
 
-    .register-btn { /* Styles from user's provided code */
+    th {
+      background-color: #2e7d32;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+
+    .register-btn {
       display: inline-block;
-      margin-top: 0; /* Removed margin-top as it's inside a td */
-      padding: 10px 20px; /* User's original padding */
-      background-color: #ff9800; /* User's original button background */
-      color: white; /* User's original button text color */
+      margin-top: 0;
+      padding: 10px 20px;
+      background-color: #ff9800;
+      color: white;
       text-decoration: none;
-      border-radius: 6px; /* User's original border-radius */
-      font-weight: bold; /* User's original font-weight */
-      transition: background-color 0.3s ease, transform 0.2s ease; /* Added transform */
-      font-size: 0.9rem; /* Consistent button font size */
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      font-size: 0.9rem;
     }
 
-    .register-btn:hover { /* Styles from user's provided code */
-      background-color: #f57c00; /* User's original hover background */
-      transform: translateY(-2px); /* Added hover effect */
+    .register-btn:hover {
+      background-color: #f57c00;
+      transform: translateY(-2px);
     }
 
-    /* Footer Styles (Standardized) */
     footer {
-      background-color: #2a2a3d; /* Standardized footer background */
+      background-color: #2a2a3d;
       color: #ffffff;
       text-align: center;
       padding: 1.5rem;
       font-weight: bold;
       font-size: 1rem;
-      margin-top: auto; /* Push footer to bottom */
-      border-top: 2px solid #f9dc5c; /* Standardized border */
+      margin-top: auto;
+      border-top: 2px solid #f9dc5c;
       width: 100%;
     }
 
-    /* Responsive Media Queries */
     @media (max-width: 768px) {
-      /* Standardized Header Responsive */
       header {
         padding: 1rem;
       }
@@ -208,14 +200,13 @@
         text-align: center;
         padding: 0.75rem;
       }
-      
+
       main {
-        padding-top: 15rem; /* Increased top padding for taller mobile header */
+        padding-top: 15rem;
         padding-left: 1rem;
         padding-right: 1rem;
       }
 
-      /* Page Specific Responsive */
       .container {
         padding: 20px;
       }
@@ -224,7 +215,7 @@
       }
       .container p {
         font-size: 0.95rem;
-        text-align: left; /* Ensure readability on mobile */
+        text-align: left;
       }
       th, td {
         padding: 10px;
@@ -245,13 +236,13 @@
             padding: 0.6rem;
         }
         main {
-             padding-top: 14rem; /* Adjust if header is still too tall */
+             padding-top: 14rem;
         }
         .container h2 {
             font-size: 1.4rem;
         }
         th, td {
-            font-size: 0.8rem; 
+            font-size: 0.8rem;
             padding: 8px;
         }
         .register-btn {
@@ -289,7 +280,7 @@
         Our On-Campus Training is designed to bring quality technical education directly to your college or university. This program enables students to receive hands-on experience with trending technologies guided by our experienced mentors. This type of training helps bridge the gap between academia and the software industry by providing real-time insights into professional development environments. We collaborate with institutions to deliver tailored workshops and courses that align with academic schedules and industry demands.
       </p>
 
-      <div class="table-wrapper"> 
+      <div class="table-wrapper">
         <table>
           <thead>
             <tr>
