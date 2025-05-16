@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Software Institute Courses</title>
     <style>
-    /* General Reset & Base Styles */
     * {
       margin: 0;
       padding: 0;
@@ -16,78 +15,75 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4; /* Background for the page content area */
+      background-color: #f4f4f4;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       color: #333;
     }
 
-    /* Header Styles (Standardized Fixed Header) */
     header {
-      background-color: #1e1e2f; /* Standardized header background */
+      background-color: #1e1e2f;
       color: #fff;
       padding: 1rem 2rem;
-      position: fixed; /* Standardized fixed header */
+      position: fixed;
       top: 0;
       width: 100%;
-      z-index: 1000; /* Ensure header is above other content */
+      z-index: 1000;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
 
-    header nav { /* Targets the nav within the header */
+    header nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
     }
 
-    .logo h1 { /* Standardized logo style */
+    .logo h1 {
       font-size: 1.8rem;
       font-weight: bold;
       color: #f9dc5c;
       margin: 0;
     }
 
-    .logo h6 { /* Standardized tagline style */
+    .logo h6 {
       font-size: 0.9rem;
       color: #cccccc;
       font-style: italic;
       margin: 0;
     }
 
-    ul.nav-links { /* Standardized nav links container */
+    ul.nav-links {
       list-style: none;
       display: flex;
-      gap: 0.5rem; /* Slightly reduced gap for more links if needed */
-      padding: 0; /* Remove default padding */
-      margin: 0; /* Remove default margin */
-      align-items: center; /* Align items vertically */
+      gap: 0.5rem;
+      padding: 0;
+      margin: 0;
+      align-items: center;
     }
 
-    ul.nav-links li a { /* Standardized nav link items */
+    ul.nav-links li a {
       color: #fff;
       text-decoration: none;
       padding: 0.5rem 0.75rem;
       border-radius: 4px;
       font-weight: bold;
       transition: background-color 0.3s, color 0.3s;
-      display: block; /* Ensure padding is applied correctly */
+      display: block;
     }
 
-    ul.nav-links li a:hover { /* Style for hover and active state */
+    ul.nav-links li a:hover {
       background-color: #f9dc5c;
       color: #1e1e2f;
     }
-    
-    /* Main content wrapper */
+
     main {
-      padding-top: 7rem; /* Adjusted for fixed header (approx height: 1rem padding + 1.8rem h1 + 0.9rem h6 + 1rem padding ~4.7rem, plus buffer) */
+      padding-top: 7rem;
       flex-grow: 1;
       width: 100%;
     }
 
-    /* Courses Page Specific Styles (Card Container & Cards) - Unchanged */
     .card-container {
       display: grid;
       grid-template-columns: 1fr;
@@ -161,7 +157,6 @@
       transform: scale(1.03);
     }
 
-    /* Footer Styles (Standardized) - Unchanged */
     footer {
       background-color: #2a2a3d;
       color: #ffffff;
@@ -173,21 +168,19 @@
       border-top: 2px solid #f9dc5c;
       width: 100%;
     }
-    
-    /* Responsive Media Queries */
-    /* Standardized Header Responsive */
-    @media (max-width: 880px) { 
+
+    @media (max-width: 880px) {
       header {
         padding: 1rem;
       }
-      header nav { /* nav element itself */
+      header nav {
         flex-direction: column;
         align-items: center;
-        width: 100%; 
+        width: 100%;
       }
       .logo {
         margin-bottom: 10px;
-        text-align: center; 
+        text-align: center;
       }
       .logo h1 { font-size: 1.6rem; }
       .logo h6 { font-size: 0.8rem; }
@@ -196,28 +189,26 @@
         flex-direction: column;
         gap: 0.5rem;
         width: 100%;
-        margin-top: 10px; 
-        align-items: center; 
+        margin-top: 10px;
+        align-items: center;
       }
       ul.nav-links li {
-        width: 80%; 
-        max-width: 300px; 
+        width: 80%;
+        max-width: 300px;
       }
       ul.nav-links li a {
         font-size: 1rem;
         display: block;
         text-align: center;
         padding: 0.75rem;
-        width: 100%; 
+        width: 100%;
       }
-      
+
       main {
-        /* Adjust top padding for taller fixed header on mobile */
-        padding-top: 15rem; /* Increased from 7rem, adjust as needed */
+        padding-top: 15rem;
       }
     }
 
-    /* Card Container Responsive Adjustments (from user's original CSS) - Unchanged */
     @media (min-width: 501px) {
         .card-container {
             grid-template-columns: repeat(2, 1fr);
@@ -228,10 +219,9 @@
         .card-container {
             grid-template-columns: repeat(3, 1fr);
         }
-        /* Revert main padding-top if header is not stacked */
-        @media (min-width: 881px) { 
+        @media (min-width: 881px) {
             main {
-                padding-top: 7rem; /* Revert to desktop fixed header padding */
+                padding-top: 7rem;
             }
         }
     }
@@ -247,8 +237,7 @@
             grid-template-columns: repeat(5, 1fr);
         }
     }
-    
-    /* Further responsive adjustments for very small screens if necessary */
+
      @media (max-width: 480px) {
         .logo h1 {
             font-size: 1.4rem;
@@ -258,7 +247,7 @@
             padding: 0.6rem;
         }
         main {
-             padding-top: 14rem; /* Adjust if header is still too tall */
+             padding-top: 14rem;
         }
         .course-card h2 {
             font-size: 1.1rem;
@@ -394,8 +383,6 @@
 
     <script>
         function goToPayment(courseName) {
-            // Construct the URL for the payment page, passing the course name as a query parameter
-            // Ensure the paymentmethod.html page exists or this will lead to a 404 error.
             window.location.href = `paymentmethod.html?course=${encodeURIComponent(courseName)}`;
         }
     </script>
