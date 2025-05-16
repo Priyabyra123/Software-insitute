@@ -6,7 +6,6 @@
   <title>Software Institute | HTML, CSS, JS Courses</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* General Reset & Base Styles */
     * {
       margin: 0;
       padding: 0;
@@ -14,19 +13,18 @@
     }
 
     body {
-      font-family: 'Poppins', sans-serif; /* Font from user's new page */
-      background: #f4f7fa; /* Background from user's new page */
+      font-family: 'Poppins', sans-serif;
+      background: #f4f7fa;
       color: #333;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
 
-    /* Header Styles (Standardized Fixed Header) */
     header {
-      background-color: #1e1e2f; /* Standardized header background */
+      background-color: #1e1e2f;
       color: #fff;
-      padding: 1rem 2rem; /* Standardized padding */
+      padding: 1rem 2rem;
       position: fixed;
       width: 100%;
       top: 0;
@@ -34,43 +32,43 @@
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
 
-    header nav { /* Targets the nav within the header */
+    header nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
     }
 
-    .logo h1 { /* Standardized logo h1 */
-      font-size: 1.8rem; /* Standardized size */
+    .logo h1 {
+      font-size: 1.8rem;
       font-weight: bold;
-      color: #f9dc5c; /* Standardized color */
+      color: #f9dc5c;
       margin: 0;
-      letter-spacing: normal; /* Reset letter-spacing if not desired from user's .logo */
+      letter-spacing: normal;
     }
 
-    .logo h6 { /* Standardized logo h6 */
+    .logo h6 {
       font-size: 0.9rem;
       color: #cccccc;
       font-style: italic;
       margin: 0;
     }
 
-    ul.nav-links { /* Standardized nav links container */
+    ul.nav-links {
       list-style: none;
       display: flex;
-      gap: 0.5rem; 
+      gap: 0.5rem;
       padding: 0;
       margin: 0;
       align-items: center;
     }
 
-    ul.nav-links li a { /* Standardized nav link items */
+    ul.nav-links li a {
       color: #fff;
       text-decoration: none;
       padding: 0.5rem 0.75rem;
       border-radius: 4px;
-      font-weight: bold; /* Standardized font-weight */
+      font-weight: bold;
       transition: background-color 0.3s, color 0.3s;
       display: block;
     }
@@ -79,33 +77,30 @@
       background-color: #f9dc5c;
       color: #1e1e2f;
     }
-    
-    /* Main Content Styles */
+
     main {
-      padding-top: 7rem; /* Adjusted for fixed header */
+      padding-top: 7rem;
       flex-grow: 1;
     }
 
-    /* Hero Section Styles (from user's new page) */
     .hero {
       text-align: center;
-      padding: 60px 20px; /* Adjusted padding slightly */
+      padding: 60px 20px;
       background: linear-gradient(135deg, #3b82f6, #1e40af);
       color: white;
-      margin-bottom: 30px; /* Space below hero */
+      margin-bottom: 30px;
     }
 
     .hero h1 {
-      font-size: 2.5rem; /* Adjusted font size */
-      font-weight: 700; /* User's Poppins font has good weight options */
+      font-size: 2.5rem;
+      font-weight: 700;
     }
 
-    /* Courses Section Styles (from user's new page) */
-    .courses-section { /* Renamed class to avoid conflict if 'courses' is too generic */
+    .courses-section {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      padding: 20px; /* Reduced padding as hero has margin-bottom */
+      padding: 20px;
       gap: 30px;
     }
 
@@ -114,8 +109,8 @@
       border-radius: 12px;
       padding: 25px;
       width: 320px;
-      max-width: calc(100% - 20px); /* Ensure card fits on smaller screens with padding */
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08); /* Softer shadow */
+      max-width: calc(100% - 20px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       display: flex;
       flex-direction: column;
@@ -123,24 +118,24 @@
     }
 
     .card:hover {
-      transform: translateY(-8px); /* Slightly less lift */
-      box-shadow: 0 10px 25px rgba(0,0,0,0.12); /* Softer hover shadow */
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
     }
 
     .card h2 {
       color: #1e3a8a;
-      font-size: 1.3rem; /* Slightly larger */
-      margin-bottom: 15px; /* More space */
+      font-size: 1.3rem;
+      margin-bottom: 15px;
     }
 
     .card p {
-      font-size: 0.95rem; /* Adjusted for Poppins */
-      line-height: 1.7; /* Increased line height */
-      margin-bottom: 25px; /* More space */
-      color: #4a5568; /* Softer text color */
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 25px;
+      color: #4a5568;
     }
-    
-    .card ul { /* Styling for lists within cards if any are added */
+
+    .card ul {
         list-style-position: inside;
         padding-left: 0;
     }
@@ -148,44 +143,40 @@
         margin-bottom: 5px;
     }
 
-
     .card .btn {
       background-color: #1e3a8a;
       color: white;
-      padding: 12px 22px; /* Adjusted padding */
+      padding: 12px 22px;
       border-radius: 25px;
       border: none;
-      font-size: 0.9rem; /* Adjusted for Poppins */
-      font-weight: 600; /* Good weight for Poppins button text */
+      font-size: 0.9rem;
+      font-weight: 600;
       cursor: pointer;
       transition: background-color 0.3s ease, transform 0.2s ease;
       text-align: center;
-      text-decoration: none; /* Ensure links styled as buttons don't have underlines */
-      display: inline-block; /* For proper padding and centering if needed */
-      margin-top: auto; /* Pushes button to the bottom if card content varies */
+      text-decoration: none;
+      display: inline-block;
+      margin-top: auto;
     }
 
     .card .btn:hover {
       background-color: #2563eb;
-      transform: translateY(-2px); /* Slight lift on hover */
+      transform: translateY(-2px);
     }
 
-    /* Footer Styles (Standardized) */
     footer {
-      background-color: #2a2a3d; /* Standardized footer background */
+      background-color: #2a2a3d;
       color: #ffffff;
       text-align: center;
       padding: 1.5rem;
-      font-weight: bold; /* Standardized */
-      font-size: 1rem; /* Standardized */
-      margin-top: 40px; /* Ensure space above footer */
-      border-top: 2px solid #f9dc5c; /* Standardized */
+      font-weight: bold;
+      font-size: 1rem;
+      margin-top: 40px;
+      border-top: 2px solid #f9dc5c;
       width: 100%;
     }
 
-    /* Responsive Media Queries */
     @media (max-width: 768px) {
-      /* Standardized Header Responsive */
       header {
         padding: 1rem;
       }
@@ -217,23 +208,22 @@
         text-align: center;
         padding: 0.75rem;
       }
-      
+
       main {
-        padding-top: 15rem; /* Increased top padding for taller mobile header */
+        padding-top: 15rem;
       }
 
-      /* Page Specific Responsive */
       .hero h1 {
-        font-size: 2rem; /* Adjust hero heading for mobile */
+        font-size: 2rem;
       }
       .courses-section {
-        flex-direction: column; /* Stack cards on mobile */
-        align-items: center; /* Center cards when stacked */
-        padding: 20px 10px; /* Adjust padding */
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 10px;
       }
       .card {
-        width: 90%; /* Make cards wider on mobile */
-        max-width: 350px; /* Max width for cards on mobile */
+        width: 90%;
+        max-width: 350px;
       }
     }
 
@@ -246,7 +236,7 @@
             padding: 0.6rem;
         }
         main {
-             padding-top: 14rem; /* Adjust if header is still too tall */
+             padding-top: 14rem;
         }
         .hero h1 {
             font-size: 1.8rem;
