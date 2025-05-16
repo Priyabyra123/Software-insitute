@@ -9,7 +9,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%); /* Consistent background */
+            background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%); 
             display: flex;
             justify-content: center;
             align-items: center;
@@ -36,8 +36,8 @@
         }
         
         .forgot-password-container p.instructions {
-            font-size: 0.9375rem; /* 15px */
-            color: #4B5563; /* Medium gray */
+            font-size: 0.9375rem; 
+            color: #4B5563; 
             text-align: center;
             margin-bottom: 2rem;
         }
@@ -141,8 +141,8 @@
         const emailError = document.getElementById('emailError');
 
         forgotPasswordForm.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
-            emailError.textContent = ''; // Clear previous errors
+            event.preventDefault(); 
+            emailError.textContent = ''; 
             let isValid = true;
 
             if (emailInput.value.trim() === '' || !/^\S+@\S+\.\S+$/.test(emailInput.value)) {
@@ -151,10 +151,8 @@
             }
 
             if (isValid) {
-                // Simulate sending a reset link
                 alert('If an account exists for ' + emailInput.value + ', a password reset link has been sent. Please check your email.');
-                // In a real application, you would make an API call here.
-                forgotPasswordForm.reset(); // Optionally reset the form
+                forgotPasswordForm.reset(); 
             }
         });
     </script>
