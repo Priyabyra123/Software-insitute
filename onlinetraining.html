@@ -6,7 +6,6 @@
   <title>Online Training - Software Institute</title>
   <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* General Reset & Base Styles */
     * {
       margin: 0;
       padding: 0;
@@ -15,15 +14,14 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #333; /* Default text color for content on light backgrounds (like the table) */
-      position: relative; /* For the ::before pseudo-element */
+      color: #333;
+      position: relative;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      background-color: #f4f4f4; /* Fallback background if image fails */
+      background-color: #f4f4f4;
     }
 
-    /* Background image with overlay (from user's new page) */
     body::before {
       content: '';
       position: fixed;
@@ -34,14 +32,13 @@
       background-image: url('https://cdn.wallpapersafari.com/48/48/NQV7zq.jpg');
       background-size: cover;
       background-position: center;
-      background-attachment: fixed; /* Ensures background stays fixed during scroll */
-      opacity: 0.25; /* User's desired opacity */
-      z-index: -1; /* Place it behind all other content */
+      background-attachment: fixed;
+      opacity: 0.25;
+      z-index: -1;
     }
 
-    /* Header Styles (Standardized Fixed Header) */
     header {
-      background-color: #1e1e2f; /* Standardized header background */
+      background-color: #1e1e2f;
       color: #fff;
       padding: 1rem 2rem;
       position: fixed;
@@ -51,37 +48,37 @@
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
 
-    header nav { /* Targets the nav element within the header */
+    header nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
     }
 
-    .logo h1 { /* Standardized logo h1 */
-      font-size: 1.8rem; /* Standardized size */
+    .logo h1 {
+      font-size: 1.8rem;
       font-weight: bold;
-      color: #f9dc5c; /* Standardized color */
+      color: #f9dc5c;
       margin: 0;
     }
 
-    .logo h6 { /* Standardized logo h6 */
+    .logo h6 {
       font-size: 0.9rem;
       color: #cccccc;
       font-style: italic;
       margin: 0;
     }
 
-    ul.nav-links { /* Standardized nav links container */
+    ul.nav-links {
       list-style: none;
       display: flex;
-      gap: 0.5rem; 
+      gap: 0.5rem;
       padding: 0;
       margin: 0;
       align-items: center;
     }
 
-    ul.nav-links li a { /* Standardized nav link items */
+    ul.nav-links li a {
       color: #fff;
       text-decoration: none;
       padding: 0.5rem 0.75rem;
@@ -91,109 +88,101 @@
       display: block;
     }
 
-    ul.nav-links li a:hover { /* 'Training.html' or similar might be active */
+    ul.nav-links li a:hover {
       background-color: #f9dc5c;
       color: #1e1e2f;
     }
-    
-    /* Main Content Styles for Online Training Page */
+
     main {
-      padding-top: 7rem; /* Adjust for fixed header height */
+      padding-top: 7rem;
       padding-bottom: 2rem;
       flex-grow: 1;
       width: 100%;
-      max-width: 1000px; /* Max width for the content area */
+      max-width: 1000px;
       margin-left: auto;
       margin-right: auto;
-      padding-left: 20px; /* Side padding for content */
+      padding-left: 20px;
       padding-right: 20px;
-      position: relative; /* Ensure content is above body::before */
+      position: relative;
       z-index: 1;
     }
-    
-    /* Page specific title (h1 outside header) */
-    .page-title { /* Changed from just h1 to avoid conflict with header's h1 */
+
+    .page-title {
       text-align: center;
-      color: #1e3a8a; /* Dark blue, stands out on light/textured background */
+      color: #1e3a8a;
       margin-bottom: 20px;
-      font-size: 2.2rem; /* Prominent title */
+      font-size: 2.2rem;
       font-weight: 600;
     }
 
-    /* Page specific introductory paragraphs */
-    .intro-text { /* Changed from just p to avoid conflict */
+    .intro-text {
       text-align: center;
       margin-bottom: 30px;
       font-weight: 500;
-      color: #2c3e50; /* Darker text for readability */
+      color: #2c3e50;
       font-size: 1.05rem;
       line-height: 1.7;
-      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for readability */
+      background-color: rgba(255, 255, 255, 0.8);
       padding: 20px;
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
 
-
-    /* Table styles from user's new page */
     table {
       width: 100%;
       border-collapse: collapse;
       background-color: white;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      border-radius: 8px; /* Rounded corners for the table */
-      overflow: hidden; /* To make border-radius work */
+      border-radius: 8px;
+      overflow: hidden;
     }
 
     th, td {
       padding: 12px 15px;
       text-align: left;
-      border-bottom: 1px solid #ddd; /* Softer border */
+      border-bottom: 1px solid #ddd;
     }
 
     th {
-      background-color: #007acc; /* User's original blue for table header */
+      background-color: #007acc;
       color: white;
-      font-weight: 600; /* Bolder table headers */
+      font-weight: 600;
     }
 
-    tr:nth-child(even) { /* Changed from odd to even for alternating rows, or remove if not desired */
-      background-color: #f8f9fa; /* Lighter alternating row color */
+    tr:nth-child(even) {
+      background-color: #f8f9fa;
     }
 
     tr:hover {
-      background-color: #e9ecef; /* Hover effect for rows */
+      background-color: #e9ecef;
     }
 
-    .Demo { /* Style for Demo links */
-      color: #dc3545; /* Red color from user's code */
+    .Demo {
+      color: #dc3545;
       cursor: pointer;
       text-decoration: underline;
       font-weight: bold;
       transition: color 0.3s ease;
     }
     .Demo:hover {
-        color: #c82333; /* Darker red on hover */
+        color: #c82333;
     }
 
-    /* Footer Styles (Standardized) */
     footer {
-      background-color: #2a2a3d; /* Standardized footer background */
+      background-color: #2a2a3d;
       color: #ffffff;
       text-align: center;
       padding: 1.5rem;
       font-weight: bold;
       font-size: 1rem;
-      margin-top: auto; /* Push footer to bottom */
-      border-top: 2px solid #f9dc5c; /* Standardized border */
+      margin-top: auto;
+      border-top: 2px solid #f9dc5c;
       width: 100%;
-      position: relative; /* Ensure footer is above body::before */
+      position: relative;
       z-index: 1;
     }
 
-    /* Responsive Media Queries */
     @media (max-width: 768px) {
-      /* Standardized Header Responsive */
       header {
         padding: 1rem;
       }
@@ -225,14 +214,13 @@
         text-align: center;
         padding: 0.75rem;
       }
-      
+
       main {
-        padding-top: 15rem; /* Increased top padding for taller mobile header */
+        padding-top: 15rem;
         padding-left: 1rem;
         padding-right: 1rem;
       }
 
-      /* Page Specific Responsive */
       .page-title {
         font-size: 1.8rem;
       }
@@ -244,7 +232,6 @@
         padding: 10px;
         font-size: 0.9rem;
       }
-      /* Make table scrollable horizontally on small screens */
       .table-wrapper {
           overflow-x: auto;
       }
@@ -259,13 +246,13 @@
             padding: 0.6rem;
         }
         main {
-             padding-top: 14rem; /* Adjust if header is still too tall */
+             padding-top: 14rem;
         }
         .page-title {
             font-size: 1.6rem;
         }
         th, td {
-            font-size: 0.85rem; /* Smaller font for table cells on very small screens */
+            font-size: 0.85rem;
         }
     }
   </style>
@@ -301,60 +288,60 @@
     <div class="table-wrapper">
       <table>
         <thead> <tr>
-            <th>Course</th>
-            <th>Time (IST)</th>
-            <th>Duration</th>
-            <th>Request Demo</th>
-          </tr>
+          <th>Course</th>
+          <th>Time (IST)</th>
+          <th>Duration</th>
+          <th>Request Demo</th>
+        </tr>
         </thead>
         <tbody> <tr>
-            <td>HTML - Mr. Ram</td>
-            <td>10:00 AM</td>
-            <td>4 Weeks</td>
-            <td><a href="Contact.html?request_demo=HTML" class="Demo">Request Demo</a></td>
-          </tr>
-          <tr>
-            <td>CSS - Mr. Ravi</td>
-            <td>6:00 PM</td>
-            <td>4 Weeks</td>
-            <td><a href="Contact.html?request_demo=CSS" class="Demo">Request Demo</a></td>
-          </tr>
-          <tr>
-            <td>SQL - Mrs. Padmavathi</td>
-            <td>7:00 PM</td>
-            <td>4 Weeks</td>
-            <td><a href="Contact.html?request_demo=SQL" class="Demo">Request Demo</a></td>
-          </tr>
-          <tr>
-            <td>ReactJS - Mrs. Nandhini</td>
-            <td>3:00 PM</td>
-            <td>4 Weeks</td>
-            <td><a href="Contact.html?request_demo=ReactJS" class="Demo">Request Demo</a></td>
-          </tr>
-          <tr>
-            <td>Core Java - Mr. Narayana</td>
-            <td>12:00 PM</td>
-            <td>6 Weekends</td>
-            <td><a href="Contact.html?request_demo=Core%20Java" class="Demo">Request Demo</a></td>
-          </tr>
-          <tr>
-            <td>Full Stack Java - Mrs. Swapna</td>
-            <td>8:00 AM</td>
-            <td>6 Months</td>
-            <td><a href="Contact.html?request_demo=Full%20Stack%20Java" class="Demo">Request Demo</a></td>
-          </tr>
-          <tr>
-            <td>Python with Django - Mr. Kumar</td>
-            <td>11:00 AM</td>
-            <td>5 Weeks</td>
-            <td><a href="Contact.html?request_demo=Python%20Django" class="Demo">Request Demo</a></td>
-          </tr>
-          <tr>
-            <td>Data Science Foundations - Dr. Priya</td>
-            <td>4:00 PM</td>
-            <td>8 Weeks</td>
-            <td><a href="Contact.html?request_demo=Data%20Science" class="Demo">Request Demo</a></td>
-          </tr>
+          <td>HTML - Mr. Ram</td>
+          <td>10:00 AM</td>
+          <td>4 Weeks</td>
+          <td><a href="Contact.html?request_demo=HTML" class="Demo">Request Demo</a></td>
+        </tr>
+        <tr>
+          <td>CSS - Mr. Ravi</td>
+          <td>6:00 PM</td>
+          <td>4 Weeks</td>
+          <td><a href="Contact.html?request_demo=CSS" class="Demo">Request Demo</a></td>
+        </tr>
+        <tr>
+          <td>SQL - Mrs. Padmavathi</td>
+          <td>7:00 PM</td>
+          <td>4 Weeks</td>
+          <td><a href="Contact.html?request_demo=SQL" class="Demo">Request Demo</a></td>
+        </tr>
+        <tr>
+          <td>ReactJS - Mrs. Nandhini</td>
+          <td>3:00 PM</td>
+          <td>4 Weeks</td>
+          <td><a href="Contact.html?request_demo=ReactJS" class="Demo">Request Demo</a></td>
+        </tr>
+        <tr>
+          <td>Core Java - Mr. Narayana</td>
+          <td>12:00 PM</td>
+          <td>6 Weekends</td>
+          <td><a href="Contact.html?request_demo=Core%20Java" class="Demo">Request Demo</a></td>
+        </tr>
+        <tr>
+          <td>Full Stack Java - Mrs. Swapna</td>
+          <td>8:00 AM</td>
+          <td>6 Months</td>
+          <td><a href="Contact.html?request_demo=Full%20Stack%20Java" class="Demo">Request Demo</a></td>
+        </tr>
+        <tr>
+          <td>Python with Django - Mr. Kumar</td>
+          <td>11:00 AM</td>
+          <td>5 Weeks</td>
+          <td><a href="Contact.html?request_demo=Python%20Django" class="Demo">Request Demo</a></td>
+        </tr>
+        <tr>
+          <td>Data Science Foundations - Dr. Priya</td>
+          <td>4:00 PM</td>
+          <td>8 Weeks</td>
+          <td><a href="Contact.html?request_demo=Data%20Science" class="Demo">Request Demo</a></td>
+        </tr>
         </tbody>
       </table>
     </div>
