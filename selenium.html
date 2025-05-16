@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selenium Course - Software Institute</title>
-    <link rel="stylesheet" href="styles-selenium.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Selenium Course - Software Institute</title>
+  <link rel="stylesheet" href="styles-selenium.css">
 </head>
-<style>/* General Styles */
+<style>
  *, *::before, *::after {
       box-sizing: border-box;
     }
 
     body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Fallback fonts */
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 0; /* Added padding reset */
-      color: #333; 
+      padding: 0;
+      color: #333;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      position: relative; /* For the ::before pseudo-element */
-      background-color: #f8f9fa; /* Fallback background color */
+      position: relative;
+      background-color: #f8f9fa;
     }
 
-    body::before { /* Full page background image with opacity */
+    body::before {
       content: "";
       position: fixed;
       top: 0;
@@ -34,19 +34,18 @@
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      opacity: 0.1; /* Adjust opacity as needed */
-      z-index: -1; /* Place it behind the content */
+      opacity: 0.1;
+      z-index: -1;
     }
 
-    /* Header Styles */
     header {
-      background-color: #1e1e2f; /* Original dark header */
+      background-color: #1e1e2f;
       color: #fff;
-      padding: 1rem 2rem; 
-      position: fixed; /* Changed from sticky to fixed as per user's new code */
+      padding: 1rem 2rem;
+      position: fixed;
       top: 0;
       width: 100%;
-      z-index: 999; /* Original z-index */
+      z-index: 999;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
 
@@ -54,17 +53,17 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap; 
+      flex-wrap: wrap;
     }
 
     .logo h1 {
-      font-size: 1.8rem; 
+      font-size: 1.8rem;
       font-weight: bold;
-      color: #f9dc5c; 
+      color: #f9dc5c;
       margin: 0;
     }
 
-    .logo h6 { 
+    .logo h6 {
       font-size: 0.9rem;
       color: #cccccc;
       margin: 0;
@@ -74,7 +73,7 @@
     .nav-links {
       list-style: none;
       display: flex;
-      gap: 1rem; 
+      gap: 1rem;
       margin: 0;
       padding: 0;
     }
@@ -84,8 +83,8 @@
       text-decoration: none;
       padding: 0.5rem 0.75rem;
       border-radius: 4px;
-      font-weight: bold; /* Kept bold from user's new code */
-      transition: background-color 0.3s, color 0.3s; /* Added color transition */
+      font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
     }
 
     .nav-links li a:hover {
@@ -183,64 +182,62 @@ section {
     background-color: #218838;
 }
 
- footer {
-      background-color: #2a2a3d; /* User's new footer background */
+  footer {
+      background-color: #2a2a3d;
       color: #ffffff;
       text-align: center;
-      padding: 1.5rem; /* User's new padding */
-      font-weight: bold; 
-      font-size: 1rem; 
-      margin-top: auto; /* Push footer to bottom */
-      border-top: 2px solid #f9dc5c; /* User's new border */
-      position: relative; /* Ensure footer is above body::before */
+      padding: 1.5rem;
+      font-weight: bold;
+      font-size: 1rem;
+      margin-top: auto;
+      border-top: 2px solid #f9dc5c;
+      position: relative;
       z-index: 1;
     }@media (max-width: 768px) {
       header nav {
-        flex-direction: column; 
-        align-items: center; 
+        flex-direction: column;
+        align-items: center;
       }
       .logo {
-        margin-bottom: 10px; 
+        margin-bottom: 10px;
       }
       .nav-links {
         flex-direction: column;
         gap: 0.5rem;
-        /* background: rgba(0, 0, 0, 0.3); User's new style, applied this */
         padding: 0.5rem;
         border-radius: 5px;
-        width: 100%; 
-        align-items: center; 
-        margin-top: 10px; /* User's new style */
+        width: 100%;
+        align-items: center;
+        margin-top: 10px;
       }
       .nav-links li a {
-        display: block; 
+        display: block;
         text-align: center;
         width: 100%;
       }
 
       .flex-container {
         flex-direction: column;
-        align-items: center; 
+        align-items: center;
       }
-      .flex-container .image-container, /* Target the wrapper */
+      .flex-container .image-container,
       .flex-container img {
-         max-width: 100%; 
-         flex-basis: auto; 
-         height: auto; /* Let height adjust in column layout, or set a specific mobile height */
-         min-height: 300px; /* Example minimum height for mobile image */
+         max-width: 100%;
+         flex-basis: auto;
+         height: auto;
+         min-height: 300px;
       }
        .content {
-         max-width: 100%; 
+         max-width: 100%;
          flex-basis: auto;
       }
       main {
-        padding-top: 170px; /* Increased padding top for potentially taller mobile header */
+        padding-top: 170px;
       }
     }
 </style>
 <body>
-    <!-- Header -->
-   <header>
+    <header>
     <nav>
       <div class="logo">
         <h1>Software Institute</h1>
@@ -259,16 +256,14 @@ section {
     </nav>
   </header>
 
-    <!-- Selenium Course Section -->
     <section class="course-intro">
         <div class="course-info">
             <h2>Selenium Automation Testing Course</h2>
             <p>Become proficient in test automation with Selenium. This course covers everything from the basics of Selenium to advanced automation techniques.</p>
         </div>
-       
+
     </section>
 
-    <!-- Course Curriculum -->
     <section class="curriculum">
         <h3>Course Curriculum</h3>
         <ul>
@@ -281,11 +276,10 @@ section {
         </ul>
     </section>
 
-    <!-- Instructor Information -->
     <section class="instructor">
         <h3>Meet Your Instructor</h3>
         <div class="instructor-info">
-            
+
             <div class="instructor-details">
                 <h4>Jane Smith</h4>
                 <p>Jane is an experienced test automation engineer with expertise in Selenium and over 8 years of experience in the industry.</p>
@@ -293,13 +287,11 @@ section {
         </div>
     </section>
 
-    <!-- Call to Action -->
     <section class="cta">
         <p>Start your Selenium journey today!</p>
         <a href="Login.html" class="cta-btn">Enroll Now</a>
     </section>
 
-    <!-- Footer -->
     <footer>
     &copy; 2025 Software Institute. All rights reserved.
   </footer>
