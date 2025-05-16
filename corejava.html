@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Core Java Course - Software Institute</title>
   <style>
-    /* General Reset & Base Styles */
     * {
       margin: 0;
       padding: 0;
@@ -13,58 +12,57 @@
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Standardized font */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4; /* Specific background for this page */
+      background-color: #f4f4f4;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      color: #333; /* Default text color for the page content */
+      color: #333;
     }
 
-    /* Header Styles (Standardized) */
     header {
       background-color: #1e1e2f;
       color: #fff;
       padding: 1rem 2rem;
-      position: fixed; /* Standardized fixed header */
+      position: fixed;
       top: 0;
       width: 100%;
-      z-index: 1000; /* Ensure header is above other content */
+      z-index: 1000;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
 
-    header nav { /* Targets the nav within the header */
+    header nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
     }
 
-    .logo h1 { /* Standardized logo style */
+    .logo h1 {
       font-size: 1.8rem;
       font-weight: bold;
       color: #f9dc5c;
       margin: 0;
     }
 
-    .logo h6 { /* Standardized tagline style */
+    .logo h6 {
       font-size: 0.9rem;
       color: #cccccc;
       font-style: italic;
       margin: 0;
     }
 
-    ul.nav-links { /* Standardized nav links container */
+    ul.nav-links {
       list-style: none;
       display: flex;
       gap: 1rem;
-      padding: 0; /* Remove default padding */
-      margin: 0; /* Remove default margin */
+      padding: 0;
+      margin: 0;
     }
 
-    ul.nav-links li a { /* Standardized nav link items */
+    ul.nav-links li a {
       color: #fff;
       text-decoration: none;
       padding: 0.5rem 0.75rem;
@@ -77,63 +75,58 @@
       background-color: #f9dc5c;
       color: #1e1e2f;
     }
-    
-    /* Main content wrapper */
+
     main {
-      padding-top: 5rem; /* Adjust based on actual header height, initial value */
-      flex-grow: 1; /* For sticky footer */
+      padding-top: 5rem;
+      flex-grow: 1;
       width: 100%;
     }
 
-
-    /* Styles for Core Java Course Page Content */
     section {
       padding: 20px;
-      margin: 20px auto; /* Centering sections */
+      margin: 20px auto;
       background-color: white;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      max-width: 1000px; /* Max width for content sections */
+      max-width: 1000px;
     }
 
     .course-intro {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 20px; /* Add gap between info and image */
-      flex-wrap: wrap; /* Allow wrapping on smaller screens */
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
     .course-info {
-      flex: 1 1 50%; /* Allow flex grow and shrink, basis 50% */
-      min-width: 300px; /* Minimum width before wrapping */
+      flex: 1 1 50%;
+      min-width: 300px;
     }
-    
-    .course-info h2 { /* Specific h2 style for this page */
-        font-size: 1.8em; /* From original, ensure it's applied */
-        color: #333; /* Darker color for heading */
+
+    .course-info h2 {
+        font-size: 1.8em;
+        color: #333;
         margin-bottom: 0.5em;
     }
     .course-info p {
-        font-size: 1em; /* From original */
-        color: #555; /* From original */
-        line-height: 1.6; /* Improve readability */
+        font-size: 1em;
+        color: #555;
+        line-height: 1.6;
     }
 
-
     .course-image {
-      flex: 1 1 40%; /* Allow flex grow and shrink, basis 40% */
-      min-width: 280px; /* Minimum width before wrapping */
+      flex: 1 1 40%;
+      min-width: 280px;
     }
 
     .course-image img {
       width: 100%;
-      height: auto; /* Maintain aspect ratio */
+      height: auto;
       border-radius: 8px;
-      display: block; /* Remove extra space below image */
+      display: block;
     }
-    
-    /* Section headings (h3) */
+
     section h3 {
         font-size: 1.5em;
         color: #333;
@@ -142,81 +135,76 @@
         padding-bottom: 10px;
     }
 
-
     .curriculum ul {
-      list-style-type: disc; /* Standard disc bullets */
+      list-style-type: disc;
       padding-left: 20px;
     }
 
     .curriculum li {
       margin-bottom: 10px;
-      font-size: 1em; /* Consistent font size */
-      color: #444; /* Slightly darker text for list items */
+      font-size: 1em;
+      color: #444;
     }
 
     .instructor {
-      /* display: flex; -- Removed as inner div handles flex */
-      /* align-items: center; -- Removed as inner div handles flex */
       margin-top: 20px;
     }
 
     .instructor-info {
       display: flex;
-      align-items: center; /* Vertically align image and details */
-      gap: 20px; /* Add gap */
-      flex-wrap: wrap; /* Allow wrapping */
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
     .instructor-info img {
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      object-fit: cover; /* Ensure image covers the area well */
+      object-fit: cover;
     }
 
     .instructor-details h4 {
-      margin: 0 0 5px 0; /* Adjusted margin */
-      font-size: 1.4em; /* From original, adjusted */
+      margin: 0 0 5px 0;
+      font-size: 1.4em;
       color: #333;
     }
 
     .instructor-details p {
-      font-size: 1em; /* From original */
+      font-size: 1em;
       color: #555;
       line-height: 1.6;
     }
 
     .cta {
       text-align: center;
-      margin-top: 30px; /* Increased margin */
-      padding: 20px; /* Add padding to CTA section */
-      background-color: #f9f9f9; /* Light background for CTA section */
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #f9f9f9;
     }
-    
+
     .cta p {
         font-size: 1.1em;
         margin-bottom: 15px;
         color: #333;
     }
 
-
     .cta-btn {
       background-color: #007BFF;
       color: white;
-      padding: 12px 25px; /* Increased padding */
+      padding: 12px 25px;
       text-decoration: none;
       border-radius: 5px;
-      font-size: 1.1em; /* Slightly larger font */
+      font-size: 1.1em;
       font-weight: bold;
       transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
     .cta-btn:hover {
       background-color: #0056b3;
-      transform: translateY(-2px); /* Slight lift on hover */
+      transform: translateY(-2px);
     }
 
-    /* Footer Styles (Standardized) */
     footer {
       background-color: #2a2a3d;
       color: #ffffff;
@@ -224,14 +212,12 @@
       padding: 1.5rem;
       font-weight: bold;
       font-size: 1rem;
-      margin-top: auto; /* Pushes footer to bottom */
+      margin-top: auto;
       border-top: 2px solid #f9dc5c;
       width: 100%;
     }
-    
-    /* Responsive Media Queries */
+
     @media (max-width: 768px) {
-      /* Standardized Header Responsive */
       header {
         padding: 1rem;
       }
@@ -260,25 +246,24 @@
         text-align: center;
         padding: 0.75rem;
       }
-      
+
       main {
-        padding-top: 12rem; /* Adjust for taller mobile header */
+        padding-top: 12rem;
       }
 
-      /* Course Page Specific Responsive */
       .course-intro, .instructor-info {
-        flex-direction: column; /* Stack elements in intro and instructor sections */
-        align-items: flex-start; /* Align items to the start */
+        flex-direction: column;
+        align-items: flex-start;
       }
       .course-info, .course-image, .instructor-details {
-        width: 100%; /* Make info, image, and details full width */
-        flex-basis: auto; /* Reset flex-basis */
+        width: 100%;
+        flex-basis: auto;
       }
       .course-image {
-        margin-top: 15px; /* Add space above image when stacked */
+        margin-top: 15px;
       }
       .instructor-info img {
-        margin-bottom: 15px; /* Add space below instructor image when stacked */
+        margin-bottom: 15px;
       }
       section {
         margin-left: 1rem;
@@ -287,18 +272,16 @@
     }
 
     @media (max-width: 480px) {
-      /* Standardized Header Responsive */
       .logo h1 { font-size: 1.4rem; }
       ul.nav-links li a {
         font-size: 0.9rem;
         padding: 0.6rem;
       }
-      
+
       main {
-        padding-top: 10rem; /* Further adjust for very small screens */
+        padding-top: 10rem;
       }
-      
-      /* Course Page Specific Responsive */
+
       .course-info h2, section h3 { font-size: 1.3em; }
       .instructor-details h4 { font-size: 1.2em; }
       .course-info p, .curriculum li, .instructor-details p, .cta p { font-size: 0.95em; }
