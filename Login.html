@@ -9,82 +9,81 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            /* Gradient background similar to the screenshot */
             background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            padding: 1rem; /* For small screen padding */
+            padding: 1rem;
         }
 
         .login-container {
             background-color: white;
-            padding: 2.5rem; /* Increased padding */
-            border-radius: 0.75rem; /* Slightly larger border radius */
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 6px 10px rgba(0, 0, 0, 0.06); /* Softer shadow */
+            padding: 2.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 6px 10px rgba(0, 0, 0, 0.06);
             width: 100%;
-            max-width: 400px; /* Max width for the form container */
+            max-width: 400px;
         }
 
         .login-container h2 {
-            font-size: 1.75rem; /* Larger heading */
+            font-size: 1.75rem;
             font-weight: 700;
-            color: #374151; /* Darker gray */
+            color: #374151;
             text-align: center;
-            margin-bottom: 2rem; /* Increased bottom margin */
+            margin-bottom: 2rem;
         }
 
         .form-group {
-            margin-bottom: 1.25rem; /* Spacing between form groups */
+            margin-bottom: 1.25rem;
         }
 
         .form-group label {
             display: block;
-            font-size: 0.875rem; /* 14px */
+            font-size: 0.875rem;
             font-weight: 600;
-            color: #4B5563; /* Medium gray */
+            color: #4B5563;
             margin-bottom: 0.5rem;
         }
 
         .form-group input {
             width: 100%;
             padding: 0.75rem 1rem;
-            border: 1px solid #D1D5DB; /* Gray-300 border */
-            border-radius: 0.375rem; /* 6px */
-            font-size: 0.9375rem; /* 15px */
-            color: #1F2937; /* Darker input text */
+            border: 1px solid #D1D5DB;
+            border-radius: 0.375rem;
+            font-size: 0.9375rem;
+            color: #1F2937;
             transition: border-color 0.2s ease, box-shadow 0.2s ease;
             outline: none;
-            box-sizing: border-box; /* Ensures padding doesn't add to width */
+            box-sizing: border-box;
         }
 
         .form-group input:focus {
-            border-color: #4F46E5; /* Indigo-600 border on focus */
-            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15); /* Indigo-100 shadow */
+            border-color: #4F46E5;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
         }
-        
+
         .form-group input::placeholder {
-            color: #9CA3AF; /* Gray-400 placeholder */
+            color: #9CA3AF;
         }
 
         .submit-btn {
             width: 100%;
-            background-color: #4F46E5; /* Indigo-600 */
+            background-color: #4F46E5;
             color: white;
-            padding: 0.875rem 1rem; /* Slightly more padding */
+            padding: 0.875rem 1rem;
             border-radius: 0.375rem;
             font-weight: 600;
-            font-size: 1rem; /* 16px */
+            font-size: 1rem;
             transition: background-color 0.3s ease;
             border: none;
             cursor: pointer;
-            margin-top: 0.5rem; /* Space above button */
+            margin-top: 0.5rem;
         }
 
         .submit-btn:hover {
-            background-color: #4338CA; /* Indigo-700 */
+            background-color: #4338CA;
         }
 
         .extra-links {
@@ -96,16 +95,15 @@
 
         .extra-links a {
             color: #4F46E5;
-            font-weight: 500; /* Slightly less bold than register link */
+            font-weight: 500;
             text-decoration: none;
         }
 
         .extra-links a:hover {
             text-decoration: underline;
         }
-         /* Error message styling (optional, if you add validation) */
         .error-message {
-            color: #EF4444; /* Red-500 */
+            color: #EF4444;
             font-size: 0.875rem;
             margin-top: 0.25rem;
         }
@@ -148,14 +146,12 @@
         const passwordError = document.getElementById('passwordError');
 
         loginForm.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
+            event.preventDefault();
 
-            // Clear previous errors
             emailError.textContent = '';
             passwordError.textContent = '';
             let isValid = true;
 
-            // Basic validation (you can expand this)
             if (emailInput.value.trim() === '' || !/^\S+@\S+\.\S+$/.test(emailInput.value)) {
                 emailError.textContent = 'Please enter a valid email address.';
                 isValid = false;
@@ -167,12 +163,8 @@
             }
 
             if (isValid) {
-                // Simulate successful login
                 alert('Login successful! Redirecting to homepage...');
-                
-                // Redirect to index.html (homepage)
-                // Make sure 'index.html' is in the same directory or provide the correct path
-                window.location.href = 'index.html'; 
+                window.location.href = 'index.html';
             }
         });
     </script>
