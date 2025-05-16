@@ -10,18 +10,18 @@
     }
 
     body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Fallback fonts */
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 0; /* Added padding reset */
-      color: #333; 
+      padding: 0;
+      color: #333;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      position: relative; /* For the ::before pseudo-element */
-      background-color: #f8f9fa; /* Fallback background color */
+      position: relative;
+      background-color: #f8f9fa;
     }
 
-    body::before { /* Full page background image with opacity */
+    body::before {
       content: "";
       position: fixed;
       top: 0;
@@ -32,19 +32,18 @@
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      opacity: 0.1; /* Adjust opacity as needed */
-      z-index: -1; /* Place it behind the content */
+      opacity: 0.1;
+      z-index: -1;
     }
 
-    /* Header Styles */
     header {
-      background-color: #1e1e2f; /* Original dark header */
+      background-color: #1e1e2f;
       color: #fff;
-      padding: 1rem 2rem; 
-      position: fixed; /* Changed from sticky to fixed as per user's new code */
+      padding: 1rem 2rem;
+      position: fixed;
       top: 0;
       width: 100%;
-      z-index: 999; /* Original z-index */
+      z-index: 999;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
 
@@ -52,17 +51,17 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap; 
+      flex-wrap: wrap;
     }
 
     .logo h1 {
-      font-size: 1.8rem; 
+      font-size: 1.8rem;
       font-weight: bold;
-      color: #f9dc5c; 
+      color: #f9dc5c;
       margin: 0;
     }
 
-    .logo h6 { 
+    .logo h6 {
       font-size: 0.9rem;
       color: #cccccc;
       margin: 0;
@@ -72,7 +71,7 @@
     .nav-links {
       list-style: none;
       display: flex;
-      gap: 1rem; 
+      gap: 1rem;
       margin: 0;
       padding: 0;
     }
@@ -82,161 +81,159 @@
       text-decoration: none;
       padding: 0.5rem 0.75rem;
       border-radius: 4px;
-      font-weight: bold; /* Kept bold from user's new code */
-      transition: background-color 0.3s, color 0.3s; /* Added color transition */
+      font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
     }
 
     .nav-links li a:hover {
       background-color: #f9dc5c;
       color: #1e1e2f;
     }
-   
+
     main {
-      padding: 7rem 2rem 2rem; /* Original padding for fixed header */
+      padding: 7rem 2rem 2rem;
       flex-grow: 1;
-      position: relative; /* Ensure main content is above the body::before pseudo-element */
+      position: relative;
       z-index: 1;
     }
 
     .section-title {
-      font-size: 32px; /* User's new size */
-      color: #00bcd4; 
-      margin-bottom: 20px; 
+      font-size: 32px;
+      color: #00bcd4;
+      margin-bottom: 20px;
       text-align: center;
-      font-weight: 600; /* Added for consistency */
+      font-weight: 600;
     }
 
     .flex-container {
       display: flex;
       gap: 30px;
-      align-items: stretch; /* Ensures flex items (image and content) have the same height */
-      flex-wrap: wrap; 
-      justify-content: center; 
+      align-items: stretch;
+      flex-wrap: wrap;
+      justify-content: center;
       max-width: 1200px;
-      margin: 0 auto; 
+      margin: 0 auto;
     }
 
-    .flex-container .image-container { /* Added a wrapper for the image for better flex control */
-        flex: 1 1 550px; /* Adjust flex-basis as needed */
-        display: flex; /* To make the image itself fill this container */
+    .flex-container .image-container {
+        flex: 1 1 550px;
+        display: flex;
     }
 
     .flex-container img {
-      width: 100%; 
-      height: 1050px; /* INCREASED explicit height for the image */
-      object-fit: cover; 
+      width: 100%;
+      height: 1050px;
+      object-fit: cover;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
-    
+
     .content {
-      flex: 1 1 500px; 
-      max-width: 600px; /* Max width from user's new code */
-      background: #ffffffdd; /* Semi-transparent white from user's new code */
-      color: #333; 
-      padding: 20px; 
+      flex: 1 1 500px;
+      max-width: 600px;
+      background: #ffffffdd;
+      color: #333;
+      padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
-      display: flex; 
-      flex-direction: column; 
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
     }
 
     .content h3 {
-      font-size: 22px; /* User's new size */
+      font-size: 22px;
       font-weight: bold;
-      margin-bottom: 10px; 
-      color: #00796b; /* User's new color */
+      margin-bottom: 10px;
+      color: #00796b;
     }
 
     .content p {
-      line-height: 1.6; 
-      margin-bottom: 15px; 
-      font-size: 0.95rem; /* Consistent font size */
-      text-align: justify; /* Justify text */
+      line-height: 1.6;
+      margin-bottom: 15px;
+      font-size: 0.95rem;
+      text-align: justify;
     }
 
     .content ul {
-      padding-left: 0; /* Remove default padding if using custom markers */
-      margin-bottom: 20px; 
-      list-style: none; /* Remove default list style */
+      padding-left: 0;
+      margin-bottom: 20px;
+      list-style: none;
     }
 
     .content ul li {
-      margin-bottom: 10px; 
-      font-size: 0.95rem; 
-      line-height: 1.6; 
-      position: relative; /* For custom marker positioning */
-      padding-left: 25px; /* Space for custom marker */
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      position: relative;
+      padding-left: 25px;
     }
-    
-    .content ul li::before { /* Custom list item marker */
-      content: '✔'; /* Checkmark character */
+
+    .content ul li::before {
+      content: '✔';
       position: absolute;
       left: 0;
-      color: #00bcd4; /* Teal color for marker */
-      font-weight: bold; /* Make marker bold */
+      color: #00bcd4;
+      font-weight: bold;
     }
 
     .highlight {
       font-weight: bold;
-      color: #d32f2f; 
+      color: #d32f2f;
     }
 
-    /* Footer Styles */
     footer {
-      background-color: #2a2a3d; /* User's new footer background */
+      background-color: #2a2a3d;
       color: #ffffff;
       text-align: center;
-      padding: 1.5rem; /* User's new padding */
-      font-weight: bold; 
-      font-size: 1rem; 
-      margin-top: auto; /* Push footer to bottom */
-      border-top: 2px solid #f9dc5c; /* User's new border */
-      position: relative; /* Ensure footer is above body::before */
+      padding: 1.5rem;
+      font-weight: bold;
+      font-size: 1rem;
+      margin-top: auto;
+      border-top: 2px solid #f9dc5c;
+      position: relative;
       z-index: 1;
     }
-   
+
     @media (max-width: 768px) {
       header nav {
-        flex-direction: column; 
-        align-items: center; 
+        flex-direction: column;
+        align-items: center;
       }
       .logo {
-        margin-bottom: 10px; 
+        margin-bottom: 10px;
       }
       .nav-links {
         flex-direction: column;
         gap: 0.5rem;
-        /* background: rgba(0, 0, 0, 0.3); User's new style, applied this */
         padding: 0.5rem;
         border-radius: 5px;
-        width: 100%; 
-        align-items: center; 
-        margin-top: 10px; /* User's new style */
+        width: 100%;
+        align-items: center;
+        margin-top: 10px;
       }
       .nav-links li a {
-        display: block; 
+        display: block;
         text-align: center;
         width: 100%;
       }
 
       .flex-container {
         flex-direction: column;
-        align-items: center; 
+        align-items: center;
       }
-      .flex-container .image-container, /* Target the wrapper */
+      .flex-container .image-container,
       .flex-container img {
-         max-width: 100%; 
-         flex-basis: auto; 
-         height: auto; /* Let height adjust in column layout, or set a specific mobile height */
-         min-height: 300px; /* Example minimum height for mobile image */
+         max-width: 100%;
+         flex-basis: auto;
+         height: auto;
+         min-height: 300px;
       }
        .content {
-         max-width: 100%; 
+         max-width: 100%;
          flex-basis: auto;
       }
       main {
-        padding-top: 170px; /* Increased padding top for potentially taller mobile header */
+        padding-top: 170px;
       }
     }
   </style>
@@ -287,7 +284,6 @@
           <li>Hands-on projects enable the application of theoretical knowledge.</li>
           <li>State-of-the-art lab facility for practical experimentation.</li>
           <li>Mentor support to navigate and overcome real-world challenges in the IT domain.</li>
-          {/* Added items from the user's image_8891cf.jpg if they were missing */}
           <li>Dedicated mentors to support and guide students throughout their learning journey.</li>
           <li>Industry-standard tools and technologies used during training.</li>
           <li>Final project presentations help build confidence and professionalism.</li>
