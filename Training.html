@@ -7,7 +7,6 @@
   <title>Software Institute | Training</title>
   <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* General Reset & Base Styles */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -16,25 +15,24 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f4f4f4; /* Page background from user's training page */
+      background: #f4f4f4;
       color: #333;
       line-height: 1.6;
       min-height: 100vh;
-      display: flex; /* For sticky footer */
-      flex-direction: column; /* For sticky footer */
+      display: flex;
+      flex-direction: column;
     }
 
-    a { /* General link styling for content, not header/footer */
-      color: #007bff; /* Default link color for content */
+    a {
+      color: #007bff;
       text-decoration: none;
       transition: color 0.3s ease;
     }
 
     a:hover {
-      color: #0056b3; /* Darker blue on hover */
+      color: #0056b3;
     }
 
-    /* Header Styles (Standardized Fixed Header) */
     header {
       background-color: #1e1e2f;
       color: #fff;
@@ -46,7 +44,7 @@
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
 
-    header nav { /* Targets the nav element within the header */
+    header nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -67,104 +65,101 @@
       margin: 0;
     }
 
-    ul.nav-links { /* Standardized nav links container */
+    ul.nav-links {
       list-style: none;
       display: flex;
-      gap: 0.5rem; 
+      gap: 0.5rem;
       padding: 0;
       margin: 0;
       align-items: center;
       flex-wrap: wrap;
     }
 
-    ul.nav-links li a { /* Standardized nav link items */
-      color: #fff; 
+    ul.nav-links li a {
+      color: #fff;
       text-decoration: none;
       padding: 0.5rem 0.75rem;
       border-radius: 4px;
-      font-weight: bold; 
+      font-weight: bold;
       transition: background-color 0.3s, color 0.3s;
       display: block;
     }
 
-    ul.nav-links li a:hover { 
+    ul.nav-links li a:hover {
       background-color: #f9dc5c;
       color: #1e1e2f;
     }
-    
-    /* Main Content Styles for Training Page */
+
     main {
-      padding-top: 7rem; /* Adjusted for fixed header */
-      padding-bottom: 2rem; 
-      max-width: 1000px; /* Max width from user's training page */
+      padding-top: 7rem;
+      padding-bottom: 2rem;
+      max-width: 1000px;
       margin-left: auto;
       margin-right: auto;
       width: 100%;
-      flex-grow: 1; /* For sticky footer */
-      padding-left: 1rem; /* Side padding for main content */
+      flex-grow: 1;
+      padding-left: 1rem;
       padding-right: 1rem;
     }
 
-    /* Section styling from user's training page */
-    section { /* This will style the <section> elements directly */
-      margin-bottom: 2.5rem; /* Increased margin */
+    section {
+      margin-bottom: 2.5rem;
       background: #ffffff;
-      padding: 2rem; /* Increased padding */
+      padding: 2rem;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Softer shadow */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
 
     section h2 {
-      font-size: 1.8rem; /* Increased size */
-      margin-bottom: 1.5rem; /* Increased margin */
-      border-bottom: 3px solid #f9dc5c; /* Thicker, more prominent border */
-      padding-bottom: 0.75rem; /* Increased padding */
-      color: #1e1e2f; /* Dark color for section titles */
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 3px solid #f9dc5c;
+      padding-bottom: 0.75rem;
+      color: #1e1e2f;
       font-weight: 600;
     }
-    
-    section p { /* General paragraph styling within sections */
+
+    section p {
         margin-bottom: 1rem;
-        color: #454545; /* Slightly softer text color */
+        color: #454545;
     }
 
-    .training-types { /* Styles from user's training page */
+    .training-types {
       display: flex;
-      justify-content: space-around; /* Changed to space-around for better distribution */
-      gap: 1.5rem; /* Increased gap */
+      justify-content: space-around;
+      gap: 1.5rem;
       flex-wrap: wrap;
-      margin-top: 1rem; /* Add some space above the types */
+      margin-top: 1rem;
     }
 
-    .training-type { /* Styles from user's training page, applied to <a> tags */
+    .training-type {
       background-color: #7655c276;
       padding: 1.5rem;
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      /* width: 30%; Removed fixed width to allow flex-basis to work better */
-      flex: 1 1 280px; /* Flex grow, shrink, and basis for responsiveness */
-      max-width: 300px; /* Max width for each type */
+      flex: 1 1 280px;
+      max-width: 300px;
       transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
       text-align: center;
-      text-decoration: none; /* Ensure a tags don't have underlines */
-      color: #333; /* Default text color for training type cards */
-      border: 1px solid #e0e0e0; /* Subtle border */
+      text-decoration: none;
+      color: #333;
+      border: 1px solid #e0e0e0;
     }
 
     .training-type:hover {
-      transform: translateY(-5px) scale(1.03); /* Enhanced hover effect */
+      transform: translateY(-5px) scale(1.03);
       box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-      background-color: #f0f8ff; /* Light blue hover, was #f9dc5c */
+      background-color: #f0f8ff;
       cursor: pointer;
     }
      .training-type:hover h3 {
-        color: #eaed05; /* Darker blue heading on hover */
+        color: #eaed05;
      }
 
 
-    .training-type h3 { /* Styles from user's training page */
+    .training-type h3 {
       font-size: 1.4rem;
-      margin-bottom: 0.75rem; /* Increased margin */
+      margin-bottom: 0.75rem;
       color: #1e1e2f;
       font-weight: 600;
     }
@@ -174,19 +169,18 @@
     }
 
 
-    .classroom-img { /* Styles from user's training page */
+    .classroom-img {
       width: 100%;
-      max-width: 600px; /* Max width for images */
-      height: auto; /* Maintain aspect ratio */
+      max-width: 600px;
+      height: auto;
       border-radius: 10px;
       margin-top: 1rem;
-      display: block; /* Center image if its container is text-align:center */
+      display: block;
       margin-left: auto;
       margin-right: auto;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
-    /* Footer Styles (Standardized) */
     footer {
       background-color: #2a2a3d;
       color: #ffffff;
@@ -194,14 +188,12 @@
       padding: 1.5rem;
       font-weight: bold;
       font-size: 1rem;
-      margin-top: auto; /* Push footer to bottom */
+      margin-top: auto;
       border-top: 2px solid #f9dc5c;
       width: 100%;
     }
 
-    /* Responsive Media Queries */
     @media (max-width: 768px) {
-      /* Standardized Header Responsive */
       header {
         padding: 1rem;
       }
@@ -233,25 +225,24 @@
         text-align: center;
         padding: 0.75rem;
       }
-      
+
       main {
-        padding-top: 15rem; /* Increased top padding for taller mobile header */
-        padding-left: 1rem; 
+        padding-top: 15rem;
+        padding-left: 1rem;
         padding-right: 1rem;
       }
-      
-      /* Page Specific Responsive */
+
       .training-types {
-        flex-direction: column; /* Stack training types on mobile */
-        gap: 1.5rem; /* Maintain gap */
+        flex-direction: column;
+        gap: 1.5rem;
       }
       .training-type {
-        width: 100%; /* Make training types full width on mobile */
-        max-width: none; /* Remove max-width for stacked items */
-        flex-basis: auto; /* Reset flex-basis */
+        width: 100%;
+        max-width: none;
+        flex-basis: auto;
       }
       section {
-        padding: 1.5rem; /* Adjust section padding */
+        padding: 1.5rem;
       }
       section h2 {
         font-size: 1.6rem;
@@ -267,7 +258,7 @@
             padding: 0.6rem;
         }
         main {
-             padding-top: 14rem; /* Adjust if header is still too tall */
+             padding-top: 14rem;
         }
         section h2 {
             font-size: 1.4rem;
