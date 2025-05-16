@@ -3,212 +3,141 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact - Software Institute</title>
+  <meta name="description" content="About Software Institute" />
+  <title>About - Software Institute</title>
   <style>
-    /* General Reset & Layout */
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
-
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #6a11cb, #2575fc); /* Specific background for Contact page */
+      background-color: #1a1a1a;
+      background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url("https://www.elegantthemes.com/blog/wp-content/uploads/2013/09/bg-2-full.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: #f0f0f0; 
+      line-height: 1.6;
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
-      color: #333; /* Default text color for form elements on white background */
+      flex-direction: column; 
     }
-
-    /* Header Styles (Standardized) */
+    a {
+      color: #0077cc; 
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #005fa3;
+    }
     header {
-      background-color: #1e1e2f; /* Standardized header background */
+      background-color: #1e1e2f;
       color: #fff;
       padding: 1rem 2rem;
-      position: fixed; /* Standardized fixed header */
+      position: fixed;
       top: 0;
       width: 100%;
-      z-index: 1000; /* Ensure header is above other content */
+      z-index: 999;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
-
-    header nav { /* This targets the nav within the header */
+    header nav { 
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
     }
-
-    .logo h1 { /* Standardized logo style */
+    .logo h1 {
       font-size: 1.8rem;
       font-weight: bold;
       color: #f9dc5c;
-      margin: 0;
+      margin:0; 
     }
-
-    .logo h6 { /* Standardized tagline style */
+    .logo h6 {
       font-size: 0.9rem;
       color: #cccccc;
       font-style: italic;
-      margin: 0;
+      margin:0; 
     }
-
-    ul.nav-links { /* Standardized nav links container */
+    .nav-links {
       list-style: none;
       display: flex;
       gap: 1rem;
-      padding: 0;
     }
-
-    ul.nav-links li a { /* Standardized nav link items */
-      color: #fff;
-      text-decoration: none;
+    .nav-links li a {
       padding: 0.5rem 0.75rem;
-      border-radius: 4px;
       font-weight: bold;
+      border-radius: 4px;
+      color: #fff; 
+      text-decoration: none; 
       transition: background-color 0.3s, color 0.3s;
     }
-
-    ul.nav-links li a:hover {
+    .nav-links li a:hover {
       background-color: #f9dc5c;
       color: #1e1e2f;
     }
-
-    /* Main Contact Form Section Styles */
-    main.contact-main { /* Renamed class for clarity and specificity */
-      flex: 1; /* Allows main content to grow and push footer down */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 7rem 1rem 2rem; /* Top padding for fixed header, sides/bottom from original */
-      width: 100%;
+    main {
+      padding: 7rem 2rem 2rem; 
+      max-width: 900px;
+      margin-left: auto; 
+      margin-right: auto; 
+      flex-grow: 1; 
+      width: 100%; 
     }
-
-    .contact-box { /* Renamed from login-box for clarity */
-      background: #fff;
-      padding: 2.5rem 3rem 3rem;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-      width: 380px; /* Slightly increased width for better spacing */
-      max-width: calc(100% - 2rem); /* Ensure padding on small screens */
-      text-align: center;
-    }
-
-    .contact-box h2 {
-      font-size: 2rem;
-      color: #2575fc;
-      margin-bottom: 1rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
-
-    .contact-box h2::after {
-      content: '';
-      display: block;
-      width: 60px;
-      height: 4px;
-      background: #6a11cb;
-      margin: 12px auto 0;
-      border-radius: 2px;
-    }
-
-    .contact-box form {
-      margin-top: 1.5rem; /* Increased margin for better separation */
-      text-align: left;
-    }
-
-    .contact-box label {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 8px; /* Increased margin */
-      color: #555;
-    }
-
-    .contact-box input[type="text"],
-    .contact-box input[type="email"],
-    .contact-box textarea {
-      width: 100%;
-      padding: 12px 14px; /* Increased padding */
-      margin-bottom: 20px; /* Increased margin */
-      border: 1.8px solid #ddd;
-      border-radius: 8px;
-      font-size: 1rem;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-      font-family: inherit;
-      background-color: #fdfdfd; /* Slightly off-white background for inputs */
-    }
-
-    .contact-box input[type="text"]:focus,
-    .contact-box input[type="email"]:focus,
-    .contact-box textarea:focus {
-      border-color: #2575fc;
-      outline: none;
-      box-shadow: 0 0 8px rgba(37, 117, 252, 0.3); /* Softer focus shadow */
-      background-color: #fff; /* Brighter white on focus */
-    }
-
-    .contact-box textarea {
-      resize: vertical;
-      min-height: 100px; /* Increased min-height */
-    }
-
-    .contact-box button {
-      width: 100%;
-      padding: 14px 0; /* Increased padding */
-      font-size: 1.1rem;
-      background: linear-gradient(90deg, #2575fc, #6a11cb);
-      color: white;
-      border: none;
+    section {
+      margin-bottom: 2rem;
+      background: rgba(255, 255, 255, 0.95); 
+      padding: 1.5rem;
       border-radius: 10px;
-      cursor: pointer;
-      font-weight: 700;
-      transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease; /* Added transform */
-      box-shadow: 0 6px 12px rgba(38, 117, 252, 0.35); /* Adjusted shadow */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      color: #222; 
     }
-
-    .contact-box button:hover {
-      background: linear-gradient(90deg, #6a11cb, #2575fc);
-      box-shadow: 0 8px 16px rgba(106, 17, 203, 0.5); /* Adjusted hover shadow */
-      transform: translateY(-2px); /* Slight lift on hover */
+    section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #f9dc5c; 
+      padding-bottom: 0.3rem;
+      color: #1e1e2f; 
     }
-     .contact-box button:active {
-      transform: translateY(0px); /* Button press effect */
-      box-shadow: 0 4px 8px rgba(106, 17, 203, 0.4);
+    section p { 
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      color: #333; 
     }
-
-
-    /* Footer Styles (Standardized) */
+    section p strong {
+        color: #111;
+    }
     footer {
-      background-color: #2a2a3d; /* Standardized footer background */
+      background-color: #2a2a3d;
       color: #ffffff;
       text-align: center;
       padding: 1.5rem;
       font-weight: bold;
       font-size: 1rem;
-      margin-top: auto; /* Pushes footer to bottom */
-      border-top: 2px solid #f9dc5c; /* Standardized border */
+      margin-top: auto; 
+      border-top: 2px solid #f9dc5c;
       width: 100%;
     }
-
-    /* Responsive Media Queries */
     @media (max-width: 768px) {
-      /* Standardized Header Responsive */
       header {
-        padding: 1rem;
-      }
-      header nav { /* This targets the nav within the header */
+        padding: 1rem; 
+      } 
+      header nav {
         flex-direction: column;
         align-items: center;
       }
       .logo {
         margin-bottom: 10px;
-        text-align: center;
+        text-align: center; 
       }
-       .logo h1 { font-size: 1.6rem; }
-       .logo h6 { font-size: 0.8rem; }
-
-      ul.nav-links {
+      .logo h1 {
+        font-size: 1.6rem; 
+      }
+      .logo h6 {
+        font-size: 0.8rem;
+      }
+      .nav-links {
         flex-direction: column;
         gap: 0.5rem;
         width: 100%;
@@ -216,98 +145,73 @@
         padding: 0.5rem 0;
         border-radius: 6px;
       }
-      ul.nav-links li a {
-        font-size: 1rem;
-        display: block;
-        text-align: center;
-        padding: 0.75rem;
+      .nav-links li a {
+        font-size: 1rem; 
+        display: block; 
+        text-align: center; 
+        padding: 0.75rem; 
       }
-      
-      /* Contact Page Responsive */
-      main.contact-main {
-        padding-top: 12rem; /* Increased padding for taller mobile header */
-        align-items: flex-start; /* Align form to top on mobile if it overflows */
+      main {
+        padding: 12rem 1rem 2rem; 
       }
-      .contact-box {
-        padding: 2rem 1.5rem; /* Adjust padding for smaller screens */
-        width: 90%;
+      section {
+        padding: 1rem; 
       }
-      .contact-box h2 {
-        font-size: 1.8rem;
+      section h2 {
+        font-size: 1.4rem;
+      }
+      section p {
+        font-size: 0.95rem;
       }
     }
-
     @media (max-width: 480px) {
-      /* Standardized Header Responsive */
-      .logo h1 { font-size: 1.4rem; }
-      ul.nav-links li a {
-        font-size: 0.9rem;
-        padding: 0.6rem;
-      }
-
-      /* Contact Page Responsive */
-      main.contact-main {
-        padding-top: 10rem; /* Adjust if header is still too tall */
-      }
-      .contact-box {
-        padding: 1.5rem 1rem;
-        width: 95%;
-      }
-      .contact-box h2 {
-        font-size: 1.6rem;
-      }
-      .contact-box input[type="text"],
-      .contact-box input[type="email"],
-      .contact-box textarea {
-        font-size: 0.95rem;
-        padding: 10px 12px;
-        margin-bottom: 16px;
-      }
-      .contact-box button {
-        font-size: 1rem;
-        padding: 12px 0;
-      }
+        main {
+             padding: 10rem 1rem 2rem; 
+        }
+         .logo h1 {
+            font-size: 1.4rem;
+        }
+        .nav-links li a {
+            font-size: 0.9rem;
+            padding: 0.6rem;
+        }
     }
   </style>
 </head>
 <body>
 
-  <header role="banner">
-    <nav role="navigation" aria-label="Main navigation">
+  <header>
+    <nav>
       <div class="logo">
         <h1>Software Institute</h1>
         <h6>Best Courses</h6>
       </div>
       <ul class="nav-links">
         <li><a href="index.html#Home">Home</a></li>
-        <li><a href="Course.html">All Courses</a></li>
-        <li><a href="Training.html">Software Training</a></li>
-        <li><a href="projects.html">Projects</a></li>
+        <li><a href="Course.html">All Courses</a></li> <li><a href="Training.html">Software Training</a></li> <li><a href="projects.html">Projects</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="Contact.html">Contact</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="Contact.html">Contact</a></li> <li><a href="about.html">About</a></li>
         <li><a href="Login.html">Login</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="contact-main" role="main">
-    <div class="contact-box">
-      <h2>Contact Us</h2> <form action="#" method="POST"> <label for="name">Name</label> <input type="text" id="name" name="name" placeholder="Enter your name" required />
+  <main>
+    <section id="about-us"> <h2>Software Technologies</h2>
+      <p>Software Technologies (Pronounced: Softwaretraining) is a leading software training institute providing Software Training, Project Guidance, IT Consulting, and Technology Workshops.</p>
+      <p>Using our enhanced global software training delivery methodology, innovative software training approach, and industry expertise, we provide high-value corporate training services that enable our clients to enhance business performance, accelerate time-to-market, increase productivity, and improve customer service.</p>
+      <p>We serve Global 100 companies and the leading software vendors in Banking & Financial Services, Insurance, Telecommunications, Technology and Media, Information & Education industries. We design and mentor human resources for our clients who create competitive advantage.</p>
+      <p>Founded in 2004 and headquartered in Hyderabad, India, we have offices and training institutes throughout India.</p>
+    </section>
 
-        <label for="contact_number">Contact Number</label> <input type="text" id="contact_number" name="contact_number" placeholder="Enter your contact number" required />
-
-        <label for="email">E-mail</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email address" required />
-
-        <label for="message">Message</label> <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
-
-        <button type="submit">Submit</button>
-      </form>
-    </div>
+    <section id="contact-info" aria-label="Contact Information"> <h2>Contact Information</h2>
+      <p><strong>Headquarters:</strong> Durga Bhavani Plaza, Ameerpet, Hyderabad.</p>
+      <p><strong>Offices:</strong> Hyderabad, Chennai.</p>
+      <p><strong>Training Institutes:</strong> Hyderabad, Chennai.</p>
+    </section>
   </main>
 
-  <footer role="contentinfo">
+  <footer>
     &copy; 2025 Software Institute. All rights reserved.
   </footer>
 
