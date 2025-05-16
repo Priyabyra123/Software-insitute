@@ -6,7 +6,6 @@
   <title>Services - Software Institute</title>
   <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    /* General Reset & Base Styles */
     * {
       margin: 0;
       padding: 0;
@@ -15,17 +14,16 @@
 
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f6f8; /* Background from user's services page */
+      background-color: #f4f6f8;
       color: #333;
-      line-height: 1.6; /* Default line height */
+      line-height: 1.6;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
 
-    /* Header Styles (Standardized Fixed Header) */
     header {
-      background-color: #1e1e2f; /* Standardized header background */
+      background-color: #1e1e2f;
       color: #fff;
       padding: 1rem 2rem;
       position: fixed;
@@ -35,109 +33,104 @@
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
 
-    header nav { /* Targets the nav element within the header */
+    header nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
     }
 
-    .logo h1 { /* Standardized logo h1 */
-      font-size: 1.8rem; /* Standardized size */
+    .logo h1 {
+      font-size: 1.8rem;
       font-weight: bold;
-      color: #f9dc5c; /* Standardized color */
+      color: #f9dc5c;
       margin: 0;
     }
 
-    .logo h6 { /* Standardized logo h6 */
+    .logo h6 {
       font-size: 0.9rem;
       color: #cccccc;
       font-style: italic;
       margin: 0;
     }
 
-    ul.nav-links { /* Standardized nav links container */
+    ul.nav-links {
       list-style: none;
       display: flex;
-      gap: 0.5rem; 
+      gap: 0.5rem;
       padding: 0;
       margin: 0;
       align-items: center;
-      flex-wrap: wrap; /* Allow nav links to wrap */
+      flex-wrap: wrap;
     }
 
-    ul.nav-links li a { /* Standardized nav link items */
-      color: #fff; 
+    ul.nav-links li a {
+      color: #fff;
       text-decoration: none;
       padding: 0.5rem 0.75rem;
       border-radius: 4px;
-      font-weight: bold; 
+      font-weight: bold;
       transition: background-color 0.3s, color 0.3s;
       display: block;
     }
 
-    ul.nav-links li a:hover { 
+    ul.nav-links li a:hover {
       background-color: #f9dc5c;
       color: #1e1e2f;
     }
-    
-    /* Main Content Styles for Services Page */
+
     main {
-      padding-top: 7rem; /* Adjust for fixed header height */
-      padding-bottom: 2rem; /* Bottom padding for main content */
+      padding-top: 7rem;
+      padding-bottom: 2rem;
       flex-grow: 1;
       width: 100%;
     }
 
-    .section-container { /* Renamed from .section to avoid conflict with semantic <section> tag if used elsewhere */
-      max-width: 1000px; /* Max width from user's services page */
-      margin: 20px auto; /* Top/bottom margin, centered */
-      padding: 0 20px; /* Side padding */
+    .section-container {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 0 20px;
     }
-    
-    /* Styling for individual service sections */
+
     .service-item {
-        background-color: #fff; /* White background for each service item block */
+        background-color: #fff;
         padding: 25px;
-        margin-bottom: 30px; /* Space between service items */
+        margin-bottom: 30px;
         border-radius: 8px;
         box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
 
-    .service-item h2 { /* Styles from user's services page .section h2 */
-      font-size: 1.8rem; /* Increased size slightly for better hierarchy */
-      color: #007bff; /* Changed to a more common blue, was #00bcd4 */
-      margin-bottom: 15px; /* Increased margin */
-      border-bottom: 2px solid #007bff; /* Matching border color */
-      padding-bottom: 8px; /* Increased padding */
-      font-weight: 600; /* Bolder heading */
+    .service-item h2 {
+      font-size: 1.8rem;
+      color: #007bff;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 8px;
+      font-weight: 600;
     }
 
-    .service-item p { /* Styles from user's services page .section p */
-      font-size: 1rem; /* Standardized font size */
+    .service-item p {
+      font-size: 1rem;
       line-height: 1.8;
-      margin-bottom: 15px; /* Adjusted margin */
-      text-align: left; /* Changed from justify for better readability */
-      color: #444; /* Slightly darker text for better contrast on white */
+      margin-bottom: 15px;
+      text-align: left;
+      color: #444;
     }
 
-    /* Footer Styles (Standardized) */
     footer {
-      background-color: #2a2a3d; /* Standardized footer background */
+      background-color: #2a2a3d;
       color: #ffffff;
       text-align: center;
       padding: 1.5rem;
       font-weight: bold;
       font-size: 1rem;
-      margin-top: auto; /* Push footer to bottom */
-      border-top: 2px solid #f9dc5c; /* Standardized border */
+      margin-top: auto;
+      border-top: 2px solid #f9dc5c;
       width: 100%;
     }
 
-    /* Responsive Media Queries */
     @media (max-width: 768px) {
-      /* Standardized Header Responsive */
       header {
         padding: 1rem;
       }
@@ -169,14 +162,14 @@
         text-align: center;
         padding: 0.75rem;
       }
-      
+
       main {
-        padding-top: 15rem; /* Increased top padding for taller mobile header */
-        padding-left: 1rem; /* Adjust side padding */
+        padding-top: 15rem;
+        padding-left: 1rem;
         padding-right: 1rem;
       }
       .section-container {
-          margin-top: 0; /* Remove top margin as main has padding */
+          margin-top: 0;
       }
       .service-item h2 {
         font-size: 1.5rem;
@@ -195,7 +188,7 @@
             padding: 0.6rem;
         }
         main {
-             padding-top: 14rem; /* Adjust if header is still too tall */
+             padding-top: 14rem;
         }
         .service-item h2 {
             font-size: 1.3rem;
