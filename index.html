@@ -7,25 +7,24 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <style>
-  /* Reset some default styles */
- * {
+  * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Standardized font */
-      background-color: #f4f4f4; /* Fallback background, will be mostly covered by ::before */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
       color: #333;
       line-height: 1.6;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      position: relative; /* For the ::before pseudo-element */
+      position: relative;
     }
 
-    body::before { /* Full page background image with opacity from user's new page */
+    body::before {
       content: "";
       position: fixed;
       top: 0;
@@ -40,7 +39,6 @@
       z-index: -1;
     }
 
-    /* Header Styles (Standardized Fixed Header) */
     header {
       background-color: #1e1e2f;
       color: #fff;
@@ -52,7 +50,7 @@
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
 
-    header nav { /* Targets the nav within the header */
+    header nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -73,16 +71,16 @@
       margin: 0;
     }
 
-    ul.nav-links { /* Standardized nav links container */
+    ul.nav-links {
       list-style: none;
       display: flex;
-      gap: 0.5rem; 
+      gap: 0.5rem;
       padding: 0;
       margin: 0;
       align-items: center;
     }
 
-    ul.nav-links li a { /* Standardized nav link items */
+    ul.nav-links li a {
       color: #fff;
       text-decoration: none;
       padding: 0.5rem 0.75rem;
@@ -92,12 +90,11 @@
       display: block;
     }
 
-    ul.nav-links li a:hover { /* Assuming 'projects.html' is the current page */
+    ul.nav-links li a:hover {
       background-color: #f9dc5c;
       color: #1e1e2f;
     }
-    
-/* Hero Section */
+
 .hero {
   background-color: #1a1a1a;
   color: white;
@@ -128,7 +125,6 @@
   background-color: #e0a800;
 }
 
-/* Courses Section */
 .courses-section {
   padding: 60px 20px;
   text-align: center;
@@ -165,7 +161,6 @@
   color: #004080;
 }
 
-/* Footer */
 footer {
   background-color: #002147;
   color: white;
@@ -176,8 +171,7 @@ footer {
 </style>
 <body>
 
-  <!-- Header -->
- <header role="banner">
+  <header role="banner">
     <nav role="navigation" aria-label="Main navigation">
       <div class="logo">
         <h1>Software Institute</h1>
@@ -195,14 +189,12 @@ footer {
     </nav>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero">
     <h1>Master real-world software technologies</h1>
     <p>with expert training & projects.</p>
     <a href="Course.html" class="btn">Explore Courses</a>
   </section>
 
-  <!-- Course Cards Section -->
   <section id="Services" class="courses-section">
     <h2>Our Courses</h2>
     <div class="courses-container">
@@ -228,7 +220,6 @@ footer {
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     &copy; 2025 Software Institute. All rights reserved.
   </footer>
