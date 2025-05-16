@@ -6,38 +6,32 @@
   <meta name="description" content="About Software Institute" />
   <title>About - Software Institute</title>
   <style>
-    /* General Reset and Base Styles */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #1a1a1a; /* Fallback background color */
+      background-color: #1a1a1a;
       background:
         linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
         url("https://www.elegantthemes.com/blog/wp-content/uploads/2013/09/bg-2-full.jpg") no-repeat center center fixed;
       background-size: cover;
-      color: #f0f0f0; /* Default text color for the page */
+      color: #f0f0f0; 
       line-height: 1.6;
       min-height: 100vh;
-      display: flex; /* For sticky footer */
-      flex-direction: column; /* For sticky footer */
+      display: flex;
+      flex-direction: column; 
     }
-
     a {
-      color: #0077cc; /* Link color for content, can be overridden */
+      color: #0077cc; 
       text-decoration: none;
       transition: color 0.3s ease;
     }
-
     a:hover {
       color: #005fa3;
     }
-
-    /* Header Styles (from shared_css_v1) */
     header {
       background-color: #1e1e2f;
       color: #fff;
@@ -48,86 +42,72 @@
       z-index: 999;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
-
-    header nav { /* Renamed from 'nav' to 'header nav' to be more specific if needed */
+    header nav { 
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
     }
-
     .logo h1 {
       font-size: 1.8rem;
       font-weight: bold;
       color: #f9dc5c;
-      margin:0; /* Ensure no default margin */
+      margin:0; 
     }
-
     .logo h6 {
       font-size: 0.9rem;
       color: #cccccc;
       font-style: italic;
-      margin:0; /* Ensure no default margin */
+      margin:0; 
     }
-
     .nav-links {
       list-style: none;
       display: flex;
       gap: 1rem;
     }
-
     .nav-links li a {
       padding: 0.5rem 0.75rem;
       font-weight: bold;
       border-radius: 4px;
-      color: #fff; /* Consistent with shared style */
-      text-decoration: none; /* Explicitly remove underline */
+      color: #fff; 
+      text-decoration: none; 
       transition: background-color 0.3s, color 0.3s;
     }
-
     .nav-links li a:hover {
       background-color: #f9dc5c;
       color: #1e1e2f;
     }
-
-    /* Main Content Styles */
     main {
-      padding: 7rem 2rem 2rem; /* Adjusted top padding for fixed header */
+      padding: 7rem 2rem 2rem; 
       max-width: 900px;
-      margin-left: auto; /* Centering main content */
-      margin-right: auto; /* Centering main content */
-      flex-grow: 1; /* For sticky footer */
-      width: 100%; /* Ensure it takes up available width within max-width */
+      margin-left: auto; 
+      margin-right: auto; 
+      flex-grow: 1; 
+      width: 100%; 
     }
-
     section {
       margin-bottom: 2rem;
-      background: rgba(255, 255, 255, 0.95); /* Light background for content sections */
+      background: rgba(255, 255, 255, 0.95); 
       padding: 1.5rem;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      color: #222; /* Darker text color for readability on light background */
+      color: #222; 
     }
-
     section h2 {
       font-size: 1.6rem;
       margin-bottom: 1rem;
-      border-bottom: 2px solid #f9dc5c; /* Accent color border */
+      border-bottom: 2px solid #f9dc5c; 
       padding-bottom: 0.3rem;
-      color: #1e1e2f; /* Dark color for section titles */
+      color: #1e1e2f; 
     }
-
-    section p { /* Targeting p inside section for specificity */
+    section p { 
       margin-bottom: 1rem;
       font-size: 1rem;
-      color: #333; /* Slightly lighter than section title */
+      color: #333; 
     }
-    
     section p strong {
-        color: #111; /* Make bold text in paragraphs slightly darker */
+        color: #111;
     }
-
-    /* Footer Styles (from shared_css_v1) */
     footer {
       background-color: #2a2a3d;
       color: #ffffff;
@@ -135,62 +115,47 @@
       padding: 1.5rem;
       font-weight: bold;
       font-size: 1rem;
-      margin-top: auto; /* Pushes footer to bottom with flex body */
+      margin-top: auto; 
       border-top: 2px solid #f9dc5c;
-      width: 100%; /* Ensure footer spans full width */
+      width: 100%;
     }
-
-    /* Responsive Media Queries */
     @media (max-width: 768px) {
       header {
-        padding: 1rem; /* Reduce padding on smaller screens */
-      }
-      
+        padding: 1rem; 
+      } 
       header nav {
         flex-direction: column;
         align-items: center;
       }
-
       .logo {
         margin-bottom: 10px;
-        text-align: center; /* Center logo text if nav is column */
+        text-align: center; 
       }
       .logo h1 {
-        font-size: 1.6rem; /* Slightly smaller logo on mobile */
+        font-size: 1.6rem; 
       }
       .logo h6 {
         font-size: 0.8rem;
       }
-
       .nav-links {
         flex-direction: column;
         gap: 0.5rem;
         width: 100%;
         margin-top: 10px;
-        /* background: rgba(0, 0, 0, 0.6); Optional: if you want a bg for mobile nav items */
-        padding: 0.5rem 0; /* Adjust padding for column layout */
+        padding: 0.5rem 0;
         border-radius: 6px;
       }
-
       .nav-links li a {
-        font-size: 1rem; /* Adjust font size for mobile nav links */
-        display: block; /* Make links take full width for easier tapping */
-        text-align: center; /* Center text in links */
-        padding: 0.75rem; /* Increase padding for tap targets */
+        font-size: 1rem; 
+        display: block; 
+        text-align: center; 
+        padding: 0.75rem; 
       }
-
       main {
-        /* Adjust top padding to account for potentially taller header on mobile */
-        /* Header height: logo (approx 40-50px) + nav links (8 links * ~40px each if they stack) -> can be large */
-        /* A fixed value like 170px from shared_css was a good estimate. */
-        /* Let's calculate: header padding (1rem*2) + logo h1 (1.6rem) + logo h6 (0.8rem) + margin (10px) + nav-links margin (10px) */
-        /* This calculation is complex as nav-links height depends on items. */
-        /* Using a safe, slightly larger fixed padding for main is better. */
-        padding: 12rem 1rem 2rem; /* Increased top padding significantly for mobile header */
+        padding: 12rem 1rem 2rem; 
       }
-
       section {
-        padding: 1rem; /* Reduce padding in sections on mobile */
+        padding: 1rem; 
       }
       section h2 {
         font-size: 1.4rem;
@@ -201,7 +166,7 @@
     }
     @media (max-width: 480px) {
         main {
-             padding: 10rem 1rem 2rem; /* Further adjust if header is still too tall on very small screens */
+             padding: 10rem 1rem 2rem; 
         }
          .logo h1 {
             font-size: 1.4rem;
