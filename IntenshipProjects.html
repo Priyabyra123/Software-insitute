@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Real-Time Projects - Software Institute</title>
   <style>
-    /* General Reset & Base Styles */
+  
     * {
       box-sizing: border-box;
       margin: 0;
@@ -13,17 +13,17 @@
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Standardized font */
-      background-color: #f4f4f4; /* Fallback background, will be mostly covered by ::before */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
       color: #333;
       line-height: 1.6;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      position: relative; /* For the ::before pseudo-element */
+      position: relative; 
     }
 
-    body::before { /* Full page background image with opacity from user's new page */
+    body::before { 
       content: "";
       position: fixed;
       top: 0;
@@ -37,8 +37,6 @@
       opacity: 0.1;
       z-index: -1;
     }
-
-    /* Header Styles (Standardized Fixed Header) */
     header {
       background-color: #1e1e2f;
       color: #fff;
@@ -50,7 +48,7 @@
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
 
-    header nav { /* Targets the nav within the header */
+    header nav { 
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -71,7 +69,7 @@
       margin: 0;
     }
 
-    ul.nav-links { /* Standardized nav links container */
+    ul.nav-links {
       list-style: none;
       display: flex;
       gap: 0.5rem; 
@@ -80,7 +78,7 @@
       align-items: center;
     }
 
-    ul.nav-links li a { /* Standardized nav link items */
+    ul.nav-links li a { 
       color: #fff;
       text-decoration: none;
       padding: 0.5rem 0.75rem;
@@ -90,104 +88,99 @@
       display: block;
     }
 
-    ul.nav-links li a:hover { /* Assuming 'projects.html' is the current page */
+    ul.nav-links li a:hover { 
       background-color: #f9dc5c;
       color: #1e1e2f;
     }
-    
-    /* Main Content Styles for Real-Time Projects Page */
     main {
-      padding: 7rem 2rem 2rem; /* Ensure space for fixed header */
+      padding: 7rem 2rem 2rem; 
       flex-grow: 1;
-      position: relative; /* Ensure main content is above body::before */
+      position: relative; 
       z-index: 1;
       width: 100%;
-      max-width: 1200px; /* Max width for the content area */
+      max-width: 1200px; 
       margin-left: auto;
       margin-right: auto;
     }
 
-    .section-title { /* Style from user's new page */
+    .section-title { 
       font-size: 32px;
       color: #00bcd4;
-      margin-bottom: 30px; /* Increased margin */
+      margin-bottom: 30px; 
       text-align: center;
-      font-weight: 600; /* Added for emphasis */
+      font-weight: 600; 
     }
 
     .flex-container {
       display: flex;
       gap: 30px;
-      align-items: stretch; /* Ensures flex items (image and content) have the same height */
+      align-items: stretch; 
       flex-wrap: wrap; 
       justify-content: center; 
       max-width: 1200px;
       margin: 0 auto; 
     }
 
-     .flex-container .image-container { /* Added a wrapper for the image for better flex control */
-        flex: 1 1 550px; /* Adjust flex-basis as needed */
-        display: flex; /* To make the image itself fill this container */
+     .flex-container .image-container { 
+        flex: 1 1 550px; 
+        display: flex; 
     }
 
     .flex-container img {
       width: 100%; 
-      height: 1100px; /* INCREASED explicit height for the image */
+      height: 1100px; 
       object-fit: cover; 
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
     }
-    .content { /* Style from user's new page */
-      flex: 1 1 500px; /* Allow content to take up space */
+    .content { 
+      flex: 1 1 500px; 
       max-width: 600px;
-      background: #ffffffea; /* Slightly more opaque for better readability */
-      padding: 25px; /* Increased padding */
+      background: #ffffffea; 
+      padding: 25px; 
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Slightly enhanced shadow */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     }
 
-    .content h3 { /* Style from user's new page */
-      font-size: 1.5rem; /* Adjusted for Poppins if used, or general readability */
-      font-weight: 600; /* Poppins bold */
-      margin-bottom: 15px; /* Increased margin */
+    .content h3 { 
+      font-size: 1.5rem; 
+      font-weight: 600;
+      margin-bottom: 15px; 
       color: #00796b;
     }
 
-    .content p { /* Style from user's new page */
-      line-height: 1.7; /* Increased line height */
+    .content p { 
+      line-height: 1.7; 
       margin-bottom: 15px;
-      font-size: 0.95rem; /* Good default size */
+      font-size: 0.95rem; 
       color: #333;
     }
 
-    .content ul { /* Style from user's new page */
-      list-style: none; /* Remove default disc, using ::before */
-      padding-left: 0; /* Remove default padding, using li padding for indent */
+    .content ul { 
+      list-style: none; 
+      padding-left: 0; 
     }
 
-    .content ul li { /* Style from user's new page */
-      margin-bottom: 12px; /* Increased margin */
+    .content ul li {
+      margin-bottom: 12px; 
       position: relative;
-      padding-left: 30px; /* Space for custom marker */
+      padding-left: 30px; 
       font-size: 0.95rem;
     }
 
-    .content ul li::before { /* Style from user's new page */
+    .content ul li::before { 
       content: '✔';
       position: absolute;
       left: 0;
-      top: 2px; /* Align with text better */
+      top: 2px; 
       color: #00bcd4;
-      font-weight: bold; /* Make checkmark bolder */
-      font-size: 1.1em; /* Slightly larger checkmark */
+      font-weight: bold; 
+      font-size: 1.1em; 
     }
-
-    .highlight { /* Style from user's new page */
+    .highlight { 
       font-weight: bold;
       color: #d32f2f;
     }
-
-    /* Footer Styles (Standardized) */
     footer {
       background-color: #2a2a3d;
       color: #ffffff;
@@ -195,16 +188,13 @@
       padding: 1.5rem;
       font-weight: bold;
       font-size: 1rem;
-      margin-top: auto; /* Push footer to bottom */
+      margin-top: auto; 
       border-top: 2px solid #f9dc5c;
-      position: relative; /* Ensure footer is above body::before */
+      position: relative;
       z-index: 1;
       width: 100%;
     }
-
-    /* Responsive Media Queries */
     @media (max-width: 768px) {
-      /* Standardized Header Responsive */
       header {
         padding: 1rem;
       }
@@ -225,9 +215,6 @@
         width: 100%;
         margin-top: 10px;
         align-items: center;
-        /* background: rgba(0,0,0,0.3); From user's project page, can be added if desired */
-        /* padding: 0.5rem; */
-        /* border-radius: 5px; */
       }
       ul.nav-links li {
         width: 80%;
@@ -241,23 +228,21 @@
       }
       
       main {
-        padding-top: 15rem; /* Increased top padding for taller mobile header */
+        padding-top: 15rem;
         padding-left: 1rem;
         padding-right: 1rem;
       }
-
-      /* Page Specific Responsive */
       .flex-container {
-        flex-direction: column; /* Stack image and content on mobile */
-        align-items: center; /* Center items when stacked */
+        flex-direction: column; 
+        align-items: center;
       }
       .image-container, .content {
-        flex-basis: auto; /* Reset flex-basis */
-        width: 100%; /* Make them full width */
-        max-width: 500px; /* Max width for content on mobile for readability */
+        flex-basis: auto; 
+        width: 100%; 
+        max-width: 500px; 
       }
        .image-container {
-        max-width: 600px; /* Allow image to be a bit wider if needed */
+        max-width: 600px; 
       }
     }
      @media (max-width: 480px) {
@@ -269,7 +254,7 @@
             padding: 0.6rem;
         }
         main {
-             padding-top: 14rem; /* Adjust if header is still too tall */
+             padding-top: 14rem; 
         }
         .section-title {
             font-size: 28px;
