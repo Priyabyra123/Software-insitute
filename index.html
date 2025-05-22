@@ -8,165 +8,189 @@
 </head>
 <style>
   * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
-      line-height: 1.6;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
 
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      opacity: 0.1;
-      z-index: -1;
-    }
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.1;
+    z-index: -1;
+  }
 
-    header {
-      background-color: #1e1e2f;
-      color: #fff;
-      padding: 1rem 2rem;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 999;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    }
+  header {
+    background-color: #1e1e2f;
+    color: #fff;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
 
-    header nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
+  header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 
-    .logo h1 {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: #f9dc5c;
-      margin: 0;
-    }
+  .logo h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #f9dc5c;
+    margin: 0;
+  }
 
-    .logo h6 {
-      font-size: 0.9rem;
-      color: #cccccc;
-      font-style: italic;
-      margin: 0;
-    }
+  .logo h6 {
+    font-size: 0.9rem;
+    color: #cccccc;
+    font-style: italic;
+    margin: 0;
+  }
 
-    ul.nav-links {
-      list-style: none;
-      display: flex;
-      gap: 0.5rem;
-      padding: 0;
-      margin: 0;
-      align-items: center;
-    }
+  ul.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+  }
 
-    ul.nav-links li a {
-      color: #fff;
-      text-decoration: none;
-      padding: 0.5rem 0.75rem;
-      border-radius: 4px;
-      font-weight: bold;
-      transition: background-color 0.3s, color 0.3s;
-      display: block;
-    }
+  ul.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+    display: block;
+  }
 
-    ul.nav-links li a:hover {
-      background-color: #f9dc5c;
-      color: #1e1e2f;
-    }
+  ul.nav-links li a:hover {
+    background-color: #f9dc5c;
+    color: #1e1e2f;
+  }
 
-.hero {
-  background-color: #1a1a1a;
-  color: white;
-  text-align: center;
-  padding: 100px 80px;
-}
+  .search-container {
+    margin-left: auto;
+    padding: 0 1rem;
+  }
 
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-}
+  .search-container input[type="search"] {
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 0.9rem;
+  }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-}
+  .hero {
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 140px 80px 100px;
+  }
 
-.btn {
-  background-color: #ffc107;
-  padding: 12px 24px;
-  border-radius: 5px;
-  color: #000;
-  text-decoration: none;
-  font-weight: bold;
-}
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
 
-.btn:hover {
-  background-color: #e0a800;
-}
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
 
-.courses-section {
-  padding: 60px 20px;
-  text-align: center;
-  background-color: #f7f7f7;
-}
+  .btn {
+    background-color: #ffc107;
+    padding: 12px 24px;
+    border-radius: 5px;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+  }
 
-.courses-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-}
+  .btn:hover {
+    background-color: #e0a800;
+  }
 
-.courses-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-}
+  .courses-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f7f7f7;
+  }
 
-.course-card {
-  background-color: white;
-  color: #0a0a0a;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  width: 250px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
+  .courses-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
 
-.course-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-  background-color: #f0f8ff;
-  color: #004080;
-}
+  .courses-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
 
-footer {
-  background-color: #002147;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
+  .course-card {
+    background-color: white;
+    color: #0a0a0a;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 250px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .course-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    background-color: #f0f8ff;
+    color: #004080;
+  }
+
+  .course-card.highlight {
+    background-color: #f9dc5c;
+    color: #1e1e2f;
+    box-shadow: 0 5px 15px rgba(249, 220, 92, 0.5);
+  }
+  .course-card .highlight-text {
+      background-color: yellow;
+      color: black;
+  }
+
+
+  footer {
+    background-color: #002147;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+  }
 
 </style>
 <body>
@@ -177,11 +201,14 @@ footer {
         <h1>Software Institute</h1>
         <h6>Best Courses</h6>
       </div>
+      <div class="search-container"> <input type="search" id="courseSearch" placeholder="Search courses..." onkeyup="searchCourses()">
+      </div>
       <ul class="nav-links">
         <li><a href="index.html#Home">Home</a></li>
         <li><a href="Course.html">All Courses</a></li>
         <li><a href="Training.html">Software Training</a></li>
-        <li><a href="projects.html" class="active">Projects</a></li> <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="services.html">Services</a></li>
         <li><a href="Contact.html">Contact</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="Login.html">Login</a></li>
@@ -223,6 +250,59 @@ footer {
   <footer>
     &copy; 2025 Software Institute. All rights reserved.
   </footer>
+
+<script>
+  function searchCourses() {
+    let input = document.getElementById('courseSearch');
+    let filter = input.value.toUpperCase();
+
+    let coursesContainer = document.querySelector(".courses-container");
+    let courseCards = coursesContainer.getElementsByClassName('course-card');
+
+    for (let i = 0; i < courseCards.length; i++) {
+      let h3 = courseCards[i].getElementsByTagName("h3")[0];
+      let p = courseCards[i].getElementsByTagName("p")[0];
+      let titleText = h3.textContent || h3.innerText;
+      let descriptionText = p.textContent || p.innerText;
+
+      if (!courseCards[i].originalH3HTML) {
+        courseCards[i].originalH3HTML = h3.innerHTML;
+      }
+      if (!courseCards[i].originalPHTML) {
+        courseCards[i].originalPHTML = p.innerHTML;
+      }
+
+      h3.innerHTML = courseCards[i].originalH3HTML;
+      p.innerHTML = courseCards[i].originalPHTML;
+      courseCards[i].classList.remove('highlight');
+
+      if (filter === "") {
+        courseCards[i].style.display = "";
+        continue;
+      }
+
+      let titleMatches = titleText.toUpperCase().indexOf(filter) > -1;
+      let descriptionMatches = descriptionText.toUpperCase().indexOf(filter) > -1;
+
+      if (titleMatches || descriptionMatches) {
+        courseCards[i].style.display = "";
+        courseCards[i].classList.add('highlight');
+
+        if (titleMatches) {
+          let regExp = new RegExp(input.value, 'gi');
+          h3.innerHTML = titleText.replace(regExp, '<span class="highlight-text">$&</span>');
+        }
+        if (descriptionMatches) {
+          let regExp = new RegExp(input.value, 'gi');
+          p.innerHTML = descriptionText.replace(regExp, '<span class="highlight-text">$&</span>');
+        }
+
+      } else {
+        courseCards[i].style.display = "none";
+      }
+    }
+  }
+</script>
 
 </body>
 </html>
