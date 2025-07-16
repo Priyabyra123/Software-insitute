@@ -4,8 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Software Institute | Home</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
 <style>
   * {
     box-sizing: border-box;
@@ -46,7 +44,7 @@
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 999;
+    z-index: 998; /* Lowered slightly for chat icon button */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
 
@@ -192,7 +190,162 @@
     margin-top: auto;
   }
 
+  /* CHATBOT STYLES START */
+  #chat-open-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #1e1e2f; /* Main theme color */
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      z-index: 999;
+      transition: background-color 0.3s;
+  }
+  #chat-open-button:hover {
+      background-color: #3c3c5d; /* Slightly lighter shade */
+  }
+  #chat-open-button svg {
+      width: 32px; /* Adjust size as needed */
+      height: 32px;
+      fill: white;
+  }
+
+
+  #chat-widget-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 320px;
+      max-width: 90%;
+      background-color: #fff;
+      border-radius: 8px; /* Rounded all corners now */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      z-index: 1000; /* Higher than open button when visible */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+      display: none; /* Initially hidden */
+      flex-direction: column;
+  }
+
+  #chat-widget-header {
+      background-color: #1e1e2f;
+      color: #f9dc5c;
+      padding: 10px 15px;
+      /* cursor: pointer; No longer primary toggle, only X is */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+      border-top-left-radius: 8px; /* Keep top corners rounded */
+      border-top-right-radius: 8px;
+  }
+
+  #chat-widget-title-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+  }
+
+  #chat-title-icon-placeholder svg { /* Icon next to title */
+      display: block;
+      width: 20px;
+      height: 20px;
+      fill: #f9dc5c;
+  }
+
+  #chat-widget-toggle svg { /* This is now the CLOSE (X) icon */
+      display: block;
+      width: 20px;
+      height: 20px;
+      fill: #f9dc5c;
+      cursor: pointer;
+  }
+
+
+  #chat-widget-body {
+      height: 350px;
+      display: flex;
+      flex-direction: column;
+      border-left: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+  }
+
+  #chat-messages {
+      flex-grow: 1;
+      overflow-y: auto;
+      padding: 15px;
+      background-color: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  .chat-message {
+      padding: 8px 12px;
+      border-radius: 18px;
+      max-width: 85%;
+      line-height: 1.4;
+      font-size: 0.9rem;
+  }
+
+  .chat-message.user {
+      background-color: #f9dc5c;
+      color: #1e1e2f;
+      align-self: flex-end;
+      margin-left: auto;
+  }
+
+  .chat-message.bot {
+      background-color: #e9e9eb;
+      color: #333;
+      align-self: flex-start;
+      margin-right: auto;
+  }
+
+  #chat-widget-input-container {
+      display: flex;
+      padding: 10px;
+      border-top: 1px solid #ddd;
+      background-color: #fff;
+      border-bottom-left-radius: 8px; /* Round bottom corners of main container */
+      border-bottom-right-radius: 8px;
+  }
+
+  #chat-widget-userInput {
+      flex-grow: 1;
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      margin-right: 8px;
+      font-size: 0.9rem;
+  }
+
+  #chat-widget-sendButton {
+      background-color: #1e1e2f;
+      color: #fff;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 0.9rem;
+      transition: background-color 0.3s;
+  }
+
+  #chat-widget-sendButton:hover {
+      background-color: #3c3c5d;
+  }
+  /* CHATBOT STYLES END */
+
 </style>
+</head>
 <body>
 
   <header role="banner">
@@ -251,7 +404,29 @@
     &copy; 2025 Software Institute. All rights reserved.
   </footer>
 
-<script>
+  <div id="chat-open-button">
+      </div>
+
+  <div id="chat-widget-container">
+      <div id="chat-widget-header">
+          <span id="chat-widget-title-container">
+              <span id="chat-title-icon-placeholder"></span>
+              <span>Chat with Our Assistant</span>
+          </span>
+          <span id="chat-widget-toggle">
+              </span>
+      </div>
+      <div id="chat-widget-body">
+          <div id="chat-messages">
+              <div class="chat-message bot">Hello! How can I help you with our courses or services?</div>
+          </div>
+          <div id="chat-widget-input-container">
+              <input type="text" id="chat-widget-userInput" placeholder="Ask a question..." />
+              <button id="chat-widget-sendButton">Send</button>
+          </div>
+      </div>
+  </div>
+  <script>
   function searchCourses() {
     let input = document.getElementById('courseSearch');
     let filter = input.value.toUpperCase();
@@ -302,6 +477,146 @@
       }
     }
   }
+</script>
+
+<script>
+// CHATBOT SCRIPT START
+document.addEventListener('DOMContentLoaded', () => {
+    const chatOpenButton = document.getElementById('chat-open-button');
+    const chatWidgetContainer = document.getElementById('chat-widget-container');
+    // const chatWidgetHeader = document.getElementById('chat-widget-header'); // Not directly used for primary toggle now
+    const chatWidgetToggle = document.getElementById('chat-widget-toggle'); // This is the "X" close button
+    const chatMessages = document.getElementById('chat-messages');
+    const userInput = document.getElementById('chat-widget-userInput');
+    const sendButton = document.getElementById('chat-widget-sendButton');
+    const chatTitleIconPlaceholder = document.getElementById('chat-title-icon-placeholder');
+
+    // SVG Icon Strings
+    const svgFloatingChatIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/><path d="M0 0h24v24H0z" fill="none"/></svg>';
+    const svgHeaderChatIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/><path d="M0 0h24v24H0z" fill="none"/></svg>';
+    const svgCloseIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/><path d="M0 0h24v24H0z" fill="none"/></svg>';
+
+
+    // Set initial icons
+    if (chatOpenButton) {
+        chatOpenButton.innerHTML = svgFloatingChatIcon;
+    }
+    if (chatTitleIconPlaceholder) {
+        chatTitleIconPlaceholder.innerHTML = svgHeaderChatIcon;
+    }
+    // The close icon for chatWidgetToggle will be set when the widget opens,
+    // or you can set it here if you prefer it to always be the close icon.
+    // For now, it's set when chatOpenButton is clicked.
+
+
+    const botResponses = { // Keep your extensive list of responses
+        "hello": "Hi there! Welcome to Software Institute. How can I assist you today?",
+        "hi": "Hello! Ask me anything about our courses, training, or services.",
+        "courses": "We offer a variety of courses including HTML/CSS/JavaScript, React.js, Core Java, and Selenium. You can explore all courses on our 'All Courses' page.",
+        "contact": "You can reach us through the form on our 'Contact' page.",
+        "default": "I'm sorry, I didn't quite understand that. Could you please rephrase?"
+        // Add all your other responses here
+    };
+
+    if (chatOpenButton) {
+        chatOpenButton.addEventListener('click', () => {
+            if (chatWidgetContainer) chatWidgetContainer.style.display = 'flex'; // Show the main chat window
+            chatOpenButton.style.display = 'none'; // Hide the floating icon button
+            if (chatWidgetToggle) chatWidgetToggle.innerHTML = svgCloseIcon; // Set close icon in header
+        });
+    }
+
+    if (chatWidgetToggle) { // This is the "X" close button in the widget header
+        chatWidgetToggle.addEventListener('click', () => {
+            if (chatWidgetContainer) chatWidgetContainer.style.display = 'none'; // Hide the main chat window
+            if (chatOpenButton) chatOpenButton.style.display = 'flex'; // Show the floating icon button
+        });
+    }
+
+    if(sendButton) {
+        sendButton.addEventListener('click', sendMessage);
+    }
+    if(userInput) {
+        userInput.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    }
+
+    function sendMessage() {
+        if(!userInput) return;
+        const userText = userInput.value.trim();
+        if (userText === "") return;
+
+        appendMessage(userText, 'user');
+        userInput.value = "";
+
+        setTimeout(() => {
+            const botText = getBotResponse(userText.toLowerCase());
+            appendMessage(botText, 'bot');
+        }, 600 + Math.random() * 400);
+    }
+
+    function appendMessage(text, type) {
+        if(!chatMessages) return;
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('chat-message', type);
+        messageElement.textContent = text;
+        chatMessages.appendChild(messageElement);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function getBotResponse(userText) {
+        // --- Make sure to include your full list of responses here for matching ---
+        const fullBotResponses = {
+            "hello": "Hi there! Welcome to Software Institute. How can I assist you today?",
+            "hi": "Hello! Ask me anything about our courses, training, or services.",
+            "hey": "Hey! How can I help?",
+            "how are you": "I'm doing great, ready to help you learn about Software Institute!",
+            "what is your name": "I'm the virtual assistant for Software Institute.",
+            "bye": "Goodbye! Feel free to ask if you have more questions later. Have a great day!",
+            "thanks": "You're welcome! Is there anything else I can help you with?",
+            "thank you": "You're welcome! Let me know if you need further assistance.",
+            "courses": "We offer a variety of courses including HTML/CSS/JavaScript, React.js, Core Java, and Selenium. You can explore all courses on our 'All Courses' page.",
+            "list courses": "Our main courses are: HTML, CSS, JavaScript, React.js, Core Java, and Selenium. For a full list, please visit the 'All Courses' page.",
+            "html course": "Our HTML, CSS, JavaScript course covers modern front-end development practices. You can find more details on the specific course page or the 'All Courses' page.",
+            "react course": "Our React.js course helps you build dynamic, single-page applications. Check out the 'All Courses' page for more information.",
+            "java course": "Our Core Java course is designed to master Java programming fundamentals. More details are available on the 'All Courses' page.",
+            "selenium course": "Learn automation testing with real-time scripts in our Selenium course. Visit the 'All Courses' page for more.",
+            "course details": "Could you specify which course you're interested in? Or you can browse all details on our 'All Courses' page.",
+            "course duration": "Course durations vary. For specific details on a course's length, please check the individual course page or contact us.",
+            "course fees": "For information on course fees and payment options, please navigate to our 'Contact' page to get in touch with our admissions team.",
+            "price": "For pricing details, please contact our admissions team through the 'Contact' page. They can provide the most up-to-date information.",
+            "enroll": "To enroll in a course, please visit the 'Contact' page and get in touch with our team. They will guide you through the process.",
+            "how to enroll": "You can start the enrollment process by contacting us via the 'Contact' page.",
+            "about": "Software Institute provides expert training and projects to help you master real-world software technologies. Learn more on our 'About' page.",
+            "software institute": "We are dedicated to offering top-notch software training. You can find out more about our mission and vision on the 'About' page.",
+            "training": "We offer software training in various cutting-edge technologies. Check our 'Software Training' page for more details.",
+            "projects": "Yes, we incorporate real-world projects into our training to give you hands-on experience. See our 'Projects' page for examples.",
+            "services": "We provide comprehensive software training services. You can find an overview on our 'Services' page.",
+            "contact": "You can reach us through the form on our 'Contact' page, or check there for our phone number and email address.",
+            "location": "Our contact details, which may include location information, can be found on the 'Contact' page.",
+            "login": "You can log in to your account via the 'Login' link in the navigation menu.",
+            "default": "I'm sorry, I didn't quite understand that. Could you please rephrase? You can ask about our courses, training, or how to contact us."
+        };
+        // --- End of full BotResponses list ---
+
+        for (const keyword in fullBotResponses) {
+            if (userText.includes(keyword)) {
+                return fullBotResponses[keyword];
+            }
+        }
+        // More specific keyword combinations (optional enhancement)
+        if (userText.includes("course") && userText.includes("html")) return fullBotResponses["html course"];
+        if (userText.includes("course") && userText.includes("react")) return fullBotResponses["react course"];
+        if (userText.includes("course") && userText.includes("java")) return fullBotResponses["java course"];
+        if (userText.includes("course") && userText.includes("selenium")) return fullBotResponses["selenium course"];
+        return fullBotResponses['default'];
+    }
+
+});
+// CHATBOT SCRIPT END
 </script>
 
 </body>
